@@ -52,13 +52,20 @@ const plugins = [
   svelte({
     // enable run-time checks when not in production
     dev: !production,
-    // we'll extract any component CSS out into
-    // a separate file - better for performance
-    // css: (css) => {
-    //   css.write("public/assets/css/bundle.css");
-    // },
 
-    preprocess: sveltePreprocess(),
+    preprocess: sveltePreprocess({
+      postcss: true,
+    }),
+
+    css: function (css) {
+      // console.log(css.code); // the concatenated CSS
+      // console.log(css.map); // a sourcemap
+
+      // creates `main.css` and `main.css.map`
+      // using a falsy name will default to the bundle name
+      // — pass `false` as the second argument if you don't want the sourcemap
+      css.write(`public/assets/css/bundle.css`, true);
+    },
 
     onwarn: (warning, handler) => {
       // e.g. don't warn on <marquee> elements, cos they're cool
