@@ -36,7 +36,7 @@
     "routve": "1.1.11",
     "sass": "^1.27.0",
     "sirv-cli": "^1.0.8",
-    "svelte": "^3.29.3",
+    "svelte": "^3.29.4",
     "svelte-awesome": "^2.3.0",
     "svelte-preprocess": "^4.5.1",
     "@fullhuman/postcss-purgecss": "^3.0.0",
