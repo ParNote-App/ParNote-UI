@@ -45,6 +45,11 @@ const plugins = [
     outputDir: "public",
   }),
 
+  copyTo({
+    assets: ["./node_modules/@fortawesome/fontawesome-free/webfonts"],
+    outputDir: "public/assets",
+  }),
+
   babel({
     runtimeHelpers: true,
   }),
