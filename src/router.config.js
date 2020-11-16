@@ -12,6 +12,9 @@ export default {
     "/login": {
       component: () => import("./pages/Login.svelte"),
     },
+    "/terms-and-policy": {
+      component: () => import("./pages/TermsAndPolicy.svelte"),
+    },
     "*": {
       component: () => import("./pages/Error404.svelte"),
     },

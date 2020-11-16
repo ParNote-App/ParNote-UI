@@ -1,0 +1,1 @@
+<h1>Terms And Policy</h1>
