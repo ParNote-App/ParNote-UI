@@ -21,11 +21,12 @@
         </div>
       </li>
       <li class="nav-item mx-4">
-        <button class="btn btn-primary d-flex align-items-center"><i
+        <a href="/login" class="btn btn-primary d-flex align-items-center"><i
             class="far fa-user fa-xs mr-2"
           ></i>
           Login
-          <i class="fas fa-chevron-right fa-xs ml-2"></i></button>
+          <i class="fas fa-chevron-right fa-xs ml-2"></i>
+        </a>
       </li>
     </ul>
   </div>
