@@ -18,6 +18,9 @@ export default {
     "/reset-password": {
       component: () => import("./pages/ResetPassword.svelte"),
     },
+    "/activate": {
+      component: () => import("./pages/ActivateEmail.svelte"),
+    },
     "*": {
       component: () => import("./pages/Error404.svelte"),
     },
