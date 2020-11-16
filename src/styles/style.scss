@@ -2,3 +2,11 @@
 @import "node_modules/bootstrap/dist/css/bootstrap.min";
 @import "node_modules/animate.css/animate.min";
 @import "min.styles";
+
+html,body {
+  height:100%;
+}
+
+.bg-light-primary {
+  background-color: #E0EAFF;
+}
