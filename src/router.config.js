@@ -9,6 +9,9 @@ export default {
     "/register": {
       component: () => import("./pages/Register.svelte"),
     },
+    "/login": {
+      component: () => import("./pages/Login.svelte"),
+    },
     "*": {
       component: () => import("./pages/Error404.svelte"),
     },
