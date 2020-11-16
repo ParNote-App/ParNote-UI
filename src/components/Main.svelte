@@ -10,7 +10,7 @@
 
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <div class="col-lg d-flex h-100 container flex-column">
+    <div class="col col-lg d-flex h-100 container flex-column">
       <div class="mb-auto">
         <LeftHeader />
       </div>
@@ -19,7 +19,7 @@
 
       <LeftFooter />
     </div>
-    <div class="col-lg bg-light-primary d-flex h-100 container flex-column">
+    <div class="col col-lg bg-light-primary d-flex h-100 container flex-column">
       <RightHeader />
       <RightFooter />
     </div>
