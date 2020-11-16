@@ -15,6 +15,9 @@ export default {
     "/terms-and-policy": {
       component: () => import("./pages/TermsAndPolicy.svelte"),
     },
+    "/reset-password": {
+      component: () => import("./pages/ResetPassword.svelte"),
+    },
     "*": {
       component: () => import("./pages/Error404.svelte"),
     },
