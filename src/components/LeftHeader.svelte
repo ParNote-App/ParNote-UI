@@ -11,7 +11,7 @@
           <img src="/assets/img/logo.svg">
         </li>
         <li class="nav-item active ml-3 mx-2">
-          <a class="nav-link text-primary" href="#">About</a>
+          <a class="nav-link text-primary" href="/about">About</a>
         </li>
         <li class="nav-item ml-3 mx-2">
           <a class="nav-link text-primary d-flex align-items-center" href="https://github.com/ParNote-App" target="_blank"><i class="fab fa-github mr-2"></i>
