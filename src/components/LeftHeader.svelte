@@ -14,7 +14,7 @@
           <a class="nav-link text-primary" href="#">About</a>
         </li>
         <li class="nav-item ml-3 mx-2">
-          <a class="nav-link text-primary d-flex align-items-center" href="#"><i class="fab fa-github mr-2"></i>
+          <a class="nav-link text-primary d-flex align-items-center" href="https://github.com/ParNote-App" target="_blank"><i class="fab fa-github mr-2"></i>
             GitHub</a>
         </li>
       </ul>
