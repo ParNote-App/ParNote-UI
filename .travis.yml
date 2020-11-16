@@ -1,0 +1,34 @@
+language: generic
+
+install:
+  - nvm use 11.0.0
+  - npm --version
+  - node --version
+  - mkdir ../backup
+  - mv * ../backup
+  - git clone https://github.com/ParNote-App/ParNote.git parnote-back-end
+  - cd parnote-back-end
+  - mv * ../
+  - cd ..
+  - rm -rf parnote-back-end
+  - ./gradlew build
+  - mkdir parnote-front-end
+  - mv ../backup/* parnote-front-end
+  - rm -rf ../backup
+  - cd parnote-front-end
+  - npm install
+  - npm run build
+  - cp -avr public ../public
+  - cd ..
+  - rm -rf parnote-front-end
+  - ls -a
+  - ls -a public
+
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  api_key: $HEROKU_API_KEY
+  strategy: api
+  app: parnote
+  on:
+    branch: master
