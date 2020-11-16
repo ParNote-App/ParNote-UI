@@ -15,9 +15,9 @@
           <i class="fas fa-angle-down"></i>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">EN (US)</a>
-          <a class="dropdown-item" href="#">HU</a>
-          <a class="dropdown-item" href="#">DE</a>
+          <a class="dropdown-item text-primary" href="#">EN (US)</a>
+          <a class="dropdown-item text-primary" href="#">HU</a>
+          <a class="dropdown-item text-primary" href="#">DE</a>
         </div>
       </li>
       <li class="nav-item mx-4">
