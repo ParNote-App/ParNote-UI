@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand text-primary mt-3">
+<nav class="navbar navbar-expand text-primary mt-3 mr-2">
   <div class="container-fluid">
     <ul class="ml-auto navbar-nav">
       <li class="nav-item dropdown">

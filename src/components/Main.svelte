@@ -5,6 +5,7 @@
   import LeftHeader from "./LeftHeader.svelte";
   import RightHeader from "./RightHeader.svelte";
   import LeftFooter from "./LeftFooter.svelte";
+  import RightFooter from "./RightFooter.svelte";
 </script>
 
 <div class="container-fluid h-100">
@@ -18,8 +19,9 @@
 
       <LeftFooter />
     </div>
-    <div class="col-lg bg-light-primary">
+    <div class="col-lg bg-light-primary d-flex h-100 container flex-column">
       <RightHeader />
+      <RightFooter />
     </div>
   </div>
 </div>
