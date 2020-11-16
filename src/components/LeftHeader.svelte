@@ -8,13 +8,16 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo05">
       <ul class="navbar-nav">
         <li class="nav-item mx-5 my-auto">
-          <img src="/assets/img/logo.svg">
+          <a href="/">
+            <img src="/assets/img/logo.svg">
+          </a>
         </li>
         <li class="nav-item active ml-3 mx-2">
           <a class="nav-link text-primary" href="/about">About</a>
         </li>
         <li class="nav-item ml-3 mx-2">
-          <a class="nav-link text-primary d-flex align-items-center" href="https://github.com/ParNote-App" target="_blank"><i class="fab fa-github mr-2"></i>
+          <a class="nav-link text-primary d-flex align-items-center" href="https://github.com/ParNote-App"
+             target="_blank"><i class="fab fa-github mr-2"></i>
             GitHub</a>
         </li>
       </ul>
