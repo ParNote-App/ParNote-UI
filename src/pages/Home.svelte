@@ -8,7 +8,7 @@
           moreover discover other people notes.
         </p>
         <div class="mt-4">
-          <a href="#" class="btn btn-lg btn-primary">Create Account</a>
+          <a href="/register" class="btn btn-lg btn-primary">Create Account</a>
           <a href="#" class="btn btn-lg btn-outline-primary align-items-center ml-3">
             <i
             class="far fa-compass mr-1"
