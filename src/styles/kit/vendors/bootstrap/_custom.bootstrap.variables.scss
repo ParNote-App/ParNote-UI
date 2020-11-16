@@ -1,0 +1,269 @@
+//
+// Custom Bootstrap SASS
+//
+
+
+
+// Links
+// ====================================================
+
+$link-hover-decoration: $link-hover-decoration !default;
+
+
+
+// Color System
+// ====================================================
+
+$primary: $primary !default;
+$secondary: $secondary !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $light !default;
+$dark: $dark !default;
+
+
+
+// Border Radius
+// ====================================================
+
+$border-radius: $border-radius !default;
+
+
+
+// Text Muted
+// ====================================================
+
+$text-muted: $text-muted !default;
+
+
+
+// Spacing
+// ====================================================
+
+// stylelint-disable
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 2.5),
+  7: ($spacer * 3),
+  8: ($spacer * 3.5),
+  9: ($spacer * 4)
+), $spacers);
+
+
+
+
+// Width and Height
+// ====================================================
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+$sizes: map-merge((
+  25: 25%,
+  30: 30%,
+  50: 50%,
+  60: 60%,
+  75: 75%,
+  100: 100%
+), $sizes);
+// stylelint-enable
+
+
+
+// Image Thumbnails
+// ====================================================
+
+$thumbnail-border-color: $thumbnail-border-color !default;
+
+
+
+// Pagination
+// ====================================================
+
+// Border
+$pagination-border-color: $pagination-border-color !default;
+
+// Hover
+$pagination-hover-color: $pagination-hover-color !default;
+$pagination-hover-bg: $pagination-hover-bg !default;
+$pagination-hover-border-color: $pagination-hover-border-color !default;
+
+// Active
+$pagination-active-color: $pagination-active-color !default;
+$pagination-active-bg: $pagination-active-bg !default;
+$pagination-active-border-color: $pagination-active-border-color !default;
+
+
+
+// Buttons + Forms
+// ====================================================
+
+// Default Spacing
+$input-btn-padding-y: $input-btn-padding-y !default;
+$input-btn-padding-x: $input-btn-padding-x !default;
+
+// Large Spacing
+$input-btn-padding-y-lg: $input-btn-padding-y-lg !default;
+$input-btn-padding-x-lg: $input-btn-padding-x-lg !default;
+
+// Focus Width
+$input-btn-focus-width: $input-btn-focus-width !default;
+
+
+
+// Forms Inputs
+// ====================================================
+
+// Colors
+$input-color: $input-color !default;
+$input-group-addon-color: $input-group-addon-color !default;
+
+// Border Colors
+$input-border-color: $input-border-color !default;
+$input-focus-border-color: $input-focus-border-color;
+
+// Background Colors
+$input-group-addon-bg: $input-group-addon-bg !default;
+
+// Focus Colors
+$input-focus-color: $input-focus-color !default;
+$input-placeholder-color: $input-placeholder-color !default;
+
+// Box Focus Shadow
+$input-focus-box-shadow: $input-focus-box-shadow !default;
+
+
+
+// Close
+// ====================================================
+
+$close-font-size: $close-font-size !default;
+$close-font-weight: $close-font-weight !default;
+$close-color: $dark !default;
+$close-text-shadow: $close-text-shadow !default;
+
+
+
+// Alerts
+// ====================================================
+
+$alert-padding-y: $alert-padding-y !default;
+$alert-padding-x: $alert-padding-x !default;
+
+
+
+// Progress Bars
+// ====================================================
+
+$progress-bg: $progress-bg !default;
+
+
+
+// List Groups
+// ====================================================
+
+$list-group-border-color: $list-group-border-color !default;
+$list-group-hover-bg: $list-group-hover-bg !default;
+
+
+// Blockquote
+// ====================================================
+$blockquote-small-color: $blockquote-small-color !default;
+$blockquote-font-size: $blockquote-font-size !default;
+
+
+
+// Card
+// ====================================================
+
+$card-cap-bg: $card-cap-bg !default;
+$card-border-color: $card-border-color !default;
+
+
+
+// Modals
+// ====================================================
+
+// Background Color
+$modal-backdrop-bg: $modal-backdrop-bg !default;
+$modal-backdrop-opacity: $modal-backdrop-opacity !default;
+
+// Border Color
+$modal-content-border-color: $modal-content-border-color !default;
+
+// Box Shadow
+$modal-content-box-shadow-xs: $modal-content-box-shadow-xs !default;
+$modal-content-box-shadow-sm-up: $modal-content-box-shadow-sm-up !default;
+
+// Sizes
+$modal-lg: $modal-lg !default;
+$modal-md: $modal-md !default;
+$modal-sm: $modal-sm !default;
+
+
+
+// Popovers
+// ====================================================
+
+// Background Color
+$popover-header-bg: $popover-header-bg !default;
+
+// Border Color
+$popover-border-color: $popover-border-color !default;
+
+// Box Shadow
+$popover-box-shadow: $popover-box-shadow !default;
+
+
+
+// Navbar
+// ====================================================
+$navbar-dark-color: $navbar-dark-color !default;
+
+
+
+// Nav Tabs
+// ====================================================
+
+// Active Color
+$nav-tabs-link-active-color:                           $g-nav-tabs-link-active-color !default;
+
+// Border Color
+$nav-tabs-border-color: $nav-tabs-border-color !default;
+
+
+
+// Drop Down
+// ====================================================
+
+$dropdown-link-hover-bg: $dropdown-link-hover-bg !default;
+$dropdown-border-color: $dropdown-border-color !default;
+$dropdown-min-width: $dropdown-min-width !default;
+$dropdown-box-shadow: $dropdown-box-shadow !default;
+
+
+
+// Carousel
+// ====================================================
+
+$carousel-control-color: $carousel-control-color !default;
+
+
+
+// Tooltips
+// ====================================================
+
+$tooltip-max-width: $tooltip-max-width !default;
+$tooltip-color: $tooltip-color !default;
+$tooltip-bg: $tooltip-bg !default;
+$tooltip-opacity: $tooltip-opacity !default;
+$tooltip-padding-y: $tooltip-padding-y !default;
+$tooltip-padding-x: $tooltip-padding-x !default;

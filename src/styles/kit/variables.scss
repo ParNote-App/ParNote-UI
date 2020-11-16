@@ -1,0 +1,450 @@
+// ============================================================= //
+// Stream UI Kit Variables                                       //
+// ============================================================= //
+
+// Retreive color Sass maps
+@function theme-color($hs-key: "primary") {
+  @return map-get($theme-colors, $hs-key);
+}
+
+@function accent-color($hs-key: "accent") {
+  @return map-get($accent-colors, $hs-key);
+}
+
+$root-path:                                                    "../";
+
+
+
+// Breakpoints
+// =========================================================
+
+$breakpoints: (
+  xs:                                                           0,
+  sm:                                                           576px,
+  md:                                                           768px,
+  lg:                                                           992px,
+  xl:                                                           1200px
+) !default;
+
+
+
+// Color System
+// =============================================================
+
+// Main Colors
+$white:                                                       #fff !default;
+$dark:                                                        #1b1e24 !default;
+$transparent:                                                 transparent !default;
+
+// Grays
+$gray-50:                                                     #f3f5f9 !default;
+$gray-100:                                                    #e6e7e9 !default;
+$gray-150:                                                    #d5d7dc !default;
+$gray-200:                                                    #8f95a0 !default;
+$gray-400:                                                    #8c98a4 !default;
+$gray-500:                                                    #828286 !default;
+$gray-600:                                                    #5a5f69 !default;
+
+// Light Primary
+$light-primary-100:                                           #faf7fc !default;
+$light-primary-125:                                           #ede6f2 !default;
+$light-primary-200:                                           #85778f !default;
+$light-primary-300:                                           #998ba3 !default;
+
+// Light Blues
+$color-light-blue-100:                                        #f6f9fc !default;
+$color-light-blue-200:                                        #77838f !default;
+$color-light-blue-300:                                        #8c98a4 !default;
+
+// Colors
+$purple:                                                      #59287a !default;
+$cyan:                                                        #00dffc !default;
+$teal:                                                        #00c9a7 !default;
+$blue:                                                        #2972fa !default;
+$green:                                                       #0dd157 !default;
+$yellow:                                                      #fab633 !default;
+$red:                                                         #fb4143 !default;
+$facebook:                                                    #3b5998 !default;
+$google:                                                      #d14130 !default;
+$twitter:                                                     #1da1f2 !default;
+$instagram:                                                   #3f729b !default;
+$github:                                                      #24292e !default;
+
+// Accent Colors
+$accent-colors: () !default;
+$accent-colors: map-merge((
+  "white": $white
+), $accent-colors);
+
+// Social Network Colors
+$social-network-colors: () !default;
+$social-network-colors: map-merge((
+  "facebook": $facebook,
+  "google": $google,
+  "twitter": $twitter,
+  "instagram": $instagram,
+  "github": $github
+), $social-network-colors);
+
+// Theme Colors
+$primary: $purple !default;
+$secondary: $teal !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $color-light-blue-100 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+), $theme-colors);
+
+
+// Links (Style anchor elements)
+$link-color:                                                  theme-color("primary") !default;
+$link-color-hover:                                            darken($link-color, 7.5%) !default;
+$link-hover-decoration:                                       none !default;
+
+// Text Muted
+$text-muted: $gray-200 !default;
+
+// Link Muted
+$link-muted-color: $light-primary-300 !default;
+$link-muted-hover-color:                                      theme-color("primary") !default;
+
+
+
+// Typography
+// =============================================================
+
+// Font Families
+$font-primary:                                                "Open Sans", sans-serif !default;
+$font-accent:                                                 "Playfair Display", serif !default;
+
+// Font Sizes
+$font-size-base:                                              1rem !default;
+
+// Font Weight
+$font-weight-light:                                           300 !default;
+$font-weight-normal:                                          400 !default;
+$font-weight-medium:                                          500 !default;
+$font-weight-semi-bold:                                       600 !default;
+$font-weight-bold:                                            700 !default;
+
+$headings-font-weight: $font-weight-light !default;
+$headings-line-height:                                        1.5 !default;
+$display-lin-height:                                          1.2 !default;
+$paragraph-line-height:                                       1.7 !default;
+$outline:                                                     5px auto -webkit-focus-ring-color !default;
+$display-1:                                                   72px !default;
+$display-2:                                                   56px !default;
+$display-3:                                                   48px !default;
+$hr-color: $gray-100 !default;
+
+
+
+// Content Spacing
+// =============================================================
+
+$content-space-y:                                              6.25rem !default;
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 2),
+  6: ($spacer * 2.5),
+  7: ($spacer * 3),
+  8: ($spacer * 3.5),
+  9: ($spacer * 4)
+), $spacers);
+
+
+
+// Box Shadow
+// =============================================================
+
+$box-shadow-sm:                                                0 .20rem 1.25rem 0 rgba($dark, 0.07) !default;
+$box-shadow-lg:                                                0 .4rem 2.2rem 0 rgba($dark, 0.1) !default;
+
+
+
+// Image Thumbnails
+// =============================================================
+
+$thumbnail-border-color: $gray-100 !default;
+
+
+
+// Pagination
+// =============================================================
+
+// Colors
+$pagination-color: $secondary !default;
+
+// Border
+$pagination-border-color: $gray-100 !default;
+
+// Hover
+$pagination-hover-color: $white !default;
+$pagination-hover-bg:                                         theme-color("primary") !default;
+$pagination-hover-border-color:                               theme-color("primary") !default;
+
+// Active
+$pagination-active-color: $white !default;
+$pagination-active-bg:                                        theme-color("primary") !default;
+$pagination-active-border-color:                              theme-color("primary") !default;
+
+
+
+// Border Radius
+// =============================================================
+
+$border-radius:                                               .25rem !default;
+$border-radius-pill:                                          6.25rem !default;
+$border-radius-circle:                                        50% !default;
+
+
+
+// Buttons + Forms
+// =============================================================
+
+// Default Spacing
+$input-btn-padding-y:                                         .5rem !default;
+$input-btn-padding-x:                                         .8rem !default;
+
+// Large Spacing
+$input-btn-padding-y-lg:                                      .625rem !default;
+$input-btn-padding-x-lg:                                      1.2rem !default;
+
+// Focus Width
+$input-btn-focus-width:                                       0 !default;
+
+
+
+// Forms Inputs
+// =============================================================
+
+// Color
+$input-color: $dark !default;
+$input-group-addon-color: $gray-200 !default;
+
+// Border Colors
+$form-border-color: $gray-100 !default;
+$input-border-color: $gray-100 !default;
+$input-focus-border-color:                                    lighten(theme-color("primary"), 30%) !default;
+
+// Background Colors
+$input-group-addon-bg:                                        transparent !default;
+
+// Focus Colors
+$input-focus-color: $dark !default;
+$input-placeholder-color: $gray-400 !default;
+
+// Box Shadow
+$input-focus-box-shadow:                                      none !default;
+
+
+
+// Forms States + Icon
+// =============================================================
+
+// Form Icon
+$form-icon-color: $gray-200 !default;
+
+// Forms States (e.g. Disabled)
+$form-label-color-disabled: $text-muted !default;
+$custom-control-indicator-disabled-bg: $gray-150 !default;
+
+
+
+// Form Toggles
+// =============================================================
+
+// Unchecked (Off)
+$form-toggle-color: $gray-150 !default;
+$form-toggle-border-color: $gray-150 !default;
+$form-toggle-circle-bg-color: $gray-150 !default;
+
+// Checked (On)
+$form-toggle-color-checked: $white !default;
+$form-toggle-bg-color-checked:                                 theme-color("primary") !default;
+$form-toggle-border-color-checked:                             theme-color("primary") !default;
+$form-toggle-circle-bg-color-checked: $white !default;
+
+// Disabled
+$form-toggle-color-disabled: $gray-100 !default;
+$form-toggle-border-color-disabled: $gray-100 !default;
+$form-toggle-circle-bg-color-disabled: $gray-100 !default;
+
+// Disabled + Checked (On)
+$form-toggle-bg-color-disabled-checked: $gray-100 !default;
+$form-toggle-border-color-disabled-checked: $gray-100 !default;
+
+
+
+// Close
+// =============================================================
+
+$close-font-size:                                              $font-size-base * 2 !default;
+$close-font-weight: $font-weight-light !default;
+$close-color: $dark !default;
+$close-text-shadow:                                            none !default;
+
+
+
+// Alert
+// =============================================================
+
+// Spacing
+$alert-padding-y:                                              1rem !default;
+$alert-padding-x:                                              1.25rem !default;
+
+// Border
+$alert-border-width:                                           0 !default;
+
+
+
+// Progress Bars
+// =============================================================
+
+$progress-bg: $gray-50 !default;
+
+
+
+// List Groups
+// =============================================================
+
+$list-group-border-color: $gray-100 !default;
+$list-group-hover-bg:                                         theme-color("light") !default;
+
+
+
+// Blockquote
+// =============================================================
+
+// Spacing
+$blockquote-padding-y:                                        1.5rem !default;
+$blockquote-padding-x:                                        1.25rem !default;
+
+// Background Color
+$blockquote-bg:                                               theme-color("light") !default;
+
+// Border Color
+$blockquote-border-color:                                     theme-color("primary") !default;
+
+// Content
+$blockquote-small-color: $dark !default;
+$blockquote-font-size:                                        ($font-size-base * 1.25) !default;
+$blockquote-font-weight: $font-weight-light !default;
+
+
+
+// Card
+// =============================================================
+
+$card-cap-bg:                                                 theme-color("light") !default;
+$card-border-color: $gray-100 !default;
+
+
+
+// Modals
+// =============================================================
+
+// Background Color
+$modal-backdrop-bg: $dark !default;
+$modal-backdrop-opacity:                                      .1 !default;
+
+// Border Color
+$modal-content-border-color: $gray-100 !default;
+
+// Box Shadow
+$modal-content-box-shadow-xs:                                 0 .25rem .6rem rgba(theme-color("dark"), .07) !default;
+$modal-content-box-shadow-sm-up:                              0 .5rem 1.625rem rgba(theme-color("dark"), .07) !default;
+
+// Sizes
+$modal-lg:                                                    800px !default;
+$modal-md:                                                    500px !default;
+$modal-sm:                                                    350px !default;
+
+
+
+// Popovers
+// =============================================================
+
+// Background Color
+$popover-header-bg:                                           theme-color("light") !default;
+
+// Border Color
+$popover-border-color: $gray-100 !default;
+
+// Box Shadow
+$popover-box-shadow:                                          0 .25rem .6rem rgba(theme-color("dark"), .07) !default;
+
+
+
+// Navbar
+// =============================================================
+
+// Dark Mode Colors
+$navbar-dark-color:                                           rgba($white, .9) !default;
+$navbar-dark-hover-color: $white !default;
+
+// Onscroll
+$navbar-bg-onscroll:                                            lighten(theme-color("primary"), 5%) !default;
+
+
+
+// Drop Down
+// =============================================================
+
+// $g-dropdown-link-active-bg:                                     transparent !default;
+$dropdown-link-hover-bg:                                      theme-color("light") !default;
+$dropdown-border-color: $gray-100 !default;
+
+// Dropdown menu container and contents.
+$dropdown-min-width:                                          200px !default;
+$dropdown-box-shadow:                                         0 .4rem 2.2rem 0 rgba(27,30,36, .1) !default;
+
+
+
+// Nav Tabs
+// =============================================================
+
+// Active Color
+$nav-tabs-link-active-color: $dark !default;
+
+// Border Color
+$nav-tabs-border-color: $gray-100 !default;
+
+
+
+// Carousel
+// =============================================================
+
+$carousel-control-color: $white !default;
+$carousel-control-size:                                       2rem !default;
+
+
+
+// Tooltips
+// =============================================================
+
+$tooltip-max-width:                                           200px !default;
+$tooltip-color: $white !default;
+$tooltip-bg:                                                  theme-color("primary") !default;
+$tooltip-opacity:                                             1 !default;
+$tooltip-padding-y:                                           .5rem !default;
+$tooltip-padding-x:                                           1rem !default;

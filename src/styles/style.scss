@@ -1,7 +1,7 @@
 @import "node_modules/@fortawesome/fontawesome-free/css/all.min";
-@import "node_modules/bootstrap/dist/css/bootstrap.min";
 @import "node_modules/animate.css/animate.min";
-@import "min.styles";
+@import "kit/styles";
+@import "node_modules/bootstrap/scss/bootstrap";
 
 html,body {
   height:100%;
