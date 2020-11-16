@@ -5,7 +5,7 @@
         <a class="nav-link text-primary" href="#">Terms</a>
       </li>
       <li class="nav-item ml-4">
-        <a class="nav-link text-primary" href="#">Contact</a>
+        <a class="nav-link text-primary" href="mailto:contact@parnote.me" target="_blank">Contact</a>
       </li>
     </ul>
   </nav>
