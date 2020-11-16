@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand pl-5">
     <ul class="navbar-nav pl-2">
       <li class="nav-item ml-0">
-        <a class="nav-link text-primary" href="#">Terms</a>
+        <a class="nav-link text-primary" href="/terms-and-policy">Terms</a>
       </li>
       <li class="nav-item ml-4">
         <a class="nav-link text-primary" href="mailto:contact@parnote.me" target="_blank">Contact</a>
