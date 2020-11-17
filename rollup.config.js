@@ -91,12 +91,7 @@ const plugins = [
     dedupe: ["svelte"],
   }),
 
-  commonjs({
-    namedExports: {
-      "node_modules/jquery/dist/jquery.min.js": ["jquery"],
-      "node_modules/bootstrap/dist/js/bootstrap.min.js": ["bootstrap"],
-    },
-  }),
+  commonjs(),
 
   replace({
     "process.env.NODE_ENV": JSON.stringify(
