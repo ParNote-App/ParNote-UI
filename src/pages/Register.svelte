@@ -66,7 +66,7 @@
               class="form-control"
               id="password"
               aria-describedby="password"
-              placeholder="password"
+              placeholder="Password"
             />
           </div>
 
