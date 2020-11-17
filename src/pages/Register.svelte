@@ -81,7 +81,10 @@
               class="custom-control-label u-font-size-90"
               for="customCheck2"
             >I accept
-              <a href="/terms-and-policy"><b>terms.</b></a></label>
+              <a
+                href="/terms-and-policy"
+                class="font-weight-bold"
+              >terms.</a></label>
           </div>
           <div class="container-fluid w-100">
             <div class="row w-100">
