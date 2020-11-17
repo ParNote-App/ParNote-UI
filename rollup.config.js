@@ -14,6 +14,8 @@ rmdir("public/assets", function (error) {});
 const fs = require("fs");
 const configPath = "./config.js";
 
+let systemBuildStarted = false;
+
 const config = {
   port: 5000,
   "api-url": "http://localhost:8088/api/",
@@ -63,13 +65,39 @@ const plugins = [
     }),
 
     css: function (css) {
-      // console.log(css.code); // the concatenated CSS
-      // console.log(css.map); // a sourcemap
+      if (!systemBuildStarted) {
+        const cssFileName = "bundle.css",
+          stupidOutputDir = "public/assets/js/es",
+          sensibleOutputDir = "public/assets/css",
+          maxAttempts = 4;
 
-      // creates `main.css` and `main.css.map`
-      // using a falsy name will default to the bundle name
-      // — pass `false` as the second argument if you don't want the sourcemap
-      css.write(`public/assets/css/bundle.css`, true);
+        // console.log(css.code); // the concatenated CSS
+        // console.log(css.map); // a sourcemap
+
+        // creates `bundle.css` and `bundle.css.map`
+        // using a falsy name will default to the bundle name
+        // — pass `false` as the second argument if you don't want the sourcemap
+        css.write(cssFileName, true);
+
+        setTimeout(function check_for_css(attempts = 0) {
+          const outputCSS = stupidOutputDir + "/" + cssFileName;
+          const outputMap = outputCSS + ".map";
+
+          const newOutputCSS = sensibleOutputDir + "/" + cssFileName;
+          const newOutputMap = sensibleOutputDir + "/" + cssFileName + ".map";
+
+          if (fs.existsSync(outputCSS) && fs.existsSync(outputMap)) {
+            fs.mkdirSync(sensibleOutputDir);
+
+            fs.renameSync(outputCSS, newOutputCSS);
+            fs.renameSync(outputMap, newOutputMap);
+          } else {
+            if (attempts < maxAttempts) {
+              setTimeout(() => check_for_css(attempts + 1), 250);
+            }
+          }
+        }, 250);
+      }
     },
 
     onwarn: (warning, handler) => {
@@ -130,6 +158,8 @@ const esExport = {
   watch: watch,
 };
 
+const systemBundlePlugins = [...plugins, onSystemBuildStart()];
+
 const systemExport = {
   input: input,
   output: [
@@ -140,7 +170,7 @@ const systemExport = {
       dir: "public/assets/js/system/",
     },
   ],
-  plugins: plugins,
+  plugins: systemBundlePlugins,
   watch: watch,
 };
 
@@ -149,6 +179,14 @@ const listExports = [esExport];
 if (production) listExports.push(systemExport);
 
 export default listExports;
+
+function onSystemBuildStart() {
+  return {
+    buildStart() {
+      systemBuildStarted = true;
+    },
+  };
+}
 
 function serve() {
   let started = false;
