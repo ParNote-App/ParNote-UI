@@ -8,7 +8,7 @@
             <label for="usernameOrEmail" class="u-font-size-90">Username or
               Email</label>
             <input
-              type="email"
+              type="text"
               class="form-control"
               id="usernameOrEmail"
               aria-describedby="emailHelp"
