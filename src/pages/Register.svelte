@@ -90,22 +90,12 @@
           <div class="container-fluid pt-4">
             <div class="row">
               <div class="col-md-6">
-                <lt class="btn-primary btn-md">
-                  <lt class="lt-highlighter__wrapper">
-                    <lt class="lt-highlighter__scrollElement"></lt>
-                  </lt>
-                </lt>
                 <button type="submit" class="btn btn-md btn-primary">Create
                   Account</button>
               </div>
-              <div class="col-md-6">
-                <lt class="btn-link">
-                  <lt class="lt-highlighter__wrapper">
-                    <lt class="lt-highlighter__scrollElement"></lt>
-                  </lt>
-                </lt>
-                <a type="button" class="btn btn-link font-weight-bold">
-                  <i class="fas fa-arrow-left"></i>
+              <div class="col-md-6 pl-9">
+                <a href="/login" class="btn btn-link font-weight-bold">
+                  <i class="fas fa-arrow-left "></i>
                   Login
                 </a>
               </div>
