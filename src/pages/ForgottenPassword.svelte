@@ -25,15 +25,15 @@
                            placeholder="Username or Email">
                 </div>
 
-                <div class="form-group mb-4 ">
-                    <a class="text-center" href="/reset-password" class="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
+                <div class="form-group mb-4 text-center ">
+                    <a  href="/reset-password" class ="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
                         <i class="fas fa-chevron-right"></i></a>
 
 
                 </div>
-                <div class="form-group mb-4 ">
+                <div class="form-group mb-4 text-center ">
 
-                    <a class="text-center" href="/register" class="btn btn-group-sm btn-primary py-1 px-2" type="submit">Create Account</a>
+                    <a  href="/register" class="btn btn-group-sm btn-primary py-1 px-2" type="submit">Create Account</a>
 
                 </div>
 
