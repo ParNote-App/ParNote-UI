@@ -2,9 +2,7 @@
     <div class="container-fluid px-9 mx-9">
         <div class="row">
             <div class="col-auto">
-                <center>
-                    <h1>Reset Password</h1>
-                </center>
+                <h1 class="text-center pt-2">About Parnote</h1>
                 <div class="alert bg-danger text-white fade show" role="alert">
                     <div class="d-flex">
                         <div class="alert__icon mr-3">
