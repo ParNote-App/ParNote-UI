@@ -26,25 +26,28 @@
               placeholder="Password"
             />
           </div>
+
           <div class="container-fluid">
             <div class="row">
-              <div class="col-12 col-sm-6 col-md-6">
+              <div class="col-auto">
                 <form>
-                  <a href="/login" class="btn btn-primary btn-lg">Login<i
-                      class="fas fa-chevron-right pl-2"
-                    ></i>
+                  <a href="/login" class="btn btn-primary btn-lg mt-3">Login
+                    <i class="fas fa-chevron-right pl-2"></i>
                   </a>
                 </form>
               </div>
-              <div class="col-12 col-sm-6 col-md-6">
+              <div class="col-auto">
                 <form>
-                  <a href="/register" class="btn btn-link btn-lg">Create Account
+                  <a
+                    href="/register"
+                    class="btn btn-link btn-lg mt-3 pl-7"
+                  >Create Account
                   </a>
                 </form>
               </div>
             </div>
             <div class="container my-3">
-              <div class="col-md-12 text-center">
+              <div class="col-auto text-center mt-7">
                 <form>
                   <a
                     href="/reset-password"
@@ -52,7 +55,6 @@
                   >Reset Password
                   </a>
                 </form>
-                <!--                <button type="button" class="btn btn-outline-primary">Reset Password</button>-->
               </div>
             </div>
           </div>
