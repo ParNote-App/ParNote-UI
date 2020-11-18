@@ -51,7 +51,7 @@
                 <div class="col-auto text-center mt-3">
                   <form>
                     <a
-                      href="/reset-password"
+                      href="/forgotten-password"
                       class="btn btn-outline-primary"
                     >Reset Password
                     </a>
