@@ -2,7 +2,7 @@
     <div class="container-fluid px-9 mx-9">
         <div class="row">
             <div class="col-auto">
-                <h1 class="text-center pt-2">About Parnote</h1>
+                <h1 class="text-center pt-2">Reset Password</h1>
                 <div class="alert bg-danger text-white fade show" role="alert">
                     <div class="d-flex">
                         <div class="alert__icon mr-3">
@@ -25,15 +25,15 @@
                            placeholder="Username or Email">
                 </div>
 
-                <div class="form-group mb-4 text-center">
-                    <a href="/reset-password" class="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
+                <div class="form-group mb-4 ">
+                    <a class="text-center" href="/reset-password" class="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
                         <i class="fas fa-chevron-right"></i></a>
 
 
                 </div>
-                <div class="form-group mb-4 text-center">
+                <div class="form-group mb-4 ">
 
-                    <a href="/register" class="btn btn-group-sm btn-primary py-1 px-2" type="submit">Create Account</a>
+                    <a class="text-center" href="/register" class="btn btn-group-sm btn-primary py-1 px-2" type="submit">Create Account</a>
 
                 </div>
 
