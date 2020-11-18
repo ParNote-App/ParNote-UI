@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="form-group mb-4 text-center">
-                    <a href="#" class="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
+                    <a href="/reset-password" class="btn btn-lg btn-primary py-2 px-3" type="submit">Reset Password
                         <i class="fas fa-chevron-right"></i></a>
 
 
