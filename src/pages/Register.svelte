@@ -86,17 +86,28 @@
                 class="font-weight-bold"
               >terms.</a></label>
           </div>
-          <div class="container-fluid w-100">
-            <div class="row w-100">
-              <div class="col-auto d-flex w-100 flex-column">
-                <div class="mr-auto mt-4">
-                  <button type="submit" class="btn btn-lg btn-primary">Create
-                    Account</button>
-                </div>
-                <div class="ml-auto">
-                  <a href="/login"><i class="fas fa-arrow-left"></i><b
-                    >Login</b></a>
-                </div>
+
+          <div class="container-fluid pt-4">
+            <div class="row">
+              <div class="col-md-6">
+                <lt class="btn-primary btn-md">
+                  <lt class="lt-highlighter__wrapper">
+                    <lt class="lt-highlighter__scrollElement"></lt>
+                  </lt>
+                </lt>
+                <button type="submit" class="btn btn-md btn-primary">Create
+                  Account</button>
+              </div>
+              <div class="col-md-6">
+                <lt class="btn-link">
+                  <lt class="lt-highlighter__wrapper">
+                    <lt class="lt-highlighter__scrollElement"></lt>
+                  </lt>
+                </lt>
+                <a type="button" class="btn btn-link font-weight-bold">
+                  <i class="fas fa-arrow-left"></i>
+                  Login
+                </a>
               </div>
             </div>
           </div>
