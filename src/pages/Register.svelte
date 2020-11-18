@@ -1,6 +1,6 @@
-<main role="main" class="px-9 mx-9">
-  <div class="container-fluid px-9 mx-9">
-    <div class="row">
+<main role="main">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
       <div class="col-auto">
         <h1>Create An Account</h1>
         <div class="alert bg-danger text-white fade show" role="alert">
@@ -93,7 +93,7 @@
                 <button type="submit" class="btn btn-md btn-primary">Create
                   Account</button>
               </div>
-              <div class="col-md-6 pl-9">
+              <div class="col-auto justify-content-end p-0 d-flex ml-auto">
                 <a href="/login" class="btn btn-link font-weight-bold">
                   <i class="fas fa-arrow-left "></i>
                   Login
