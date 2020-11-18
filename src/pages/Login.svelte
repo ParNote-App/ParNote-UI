@@ -1,6 +1,6 @@
-<main role="main" class="px-9 mx-9">
-  <div class="container-fluid px-9 mx-9">
-    <div class="row">
+<main role="main">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
       <div class="col-auto">
         <h1>Login page</h1>
         <form>
@@ -46,15 +46,17 @@
                 </form>
               </div>
             </div>
-            <div class="container my-3">
-              <div class="col-auto text-center mt-7">
-                <form>
-                  <a
-                    href="/reset-password"
-                    class="btn btn-outline-primary"
-                  >Reset Password
-                  </a>
-                </form>
+            <div class="container-fluid my-3">
+              <div class="row justify-content-center">
+                <div class="col-auto text-center mt-3">
+                  <form>
+                    <a
+                      href="/reset-password"
+                      class="btn btn-outline-primary"
+                    >Reset Password
+                    </a>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
