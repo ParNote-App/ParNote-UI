@@ -2,17 +2,19 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1>Login page</h1>
+        <h1 class="text-center mb-4">Login</h1>
+
         <form>
           <div class="form-group mb-4">
-            <label for="usernameOrEmail" class="u-font-size-90">Username or
-              Email</label>
+            <label for="usernameOrEmail" class="u-font-size-90">
+              Username / E-mail
+            </label>
             <input
               type="text"
               class="form-control"
               id="usernameOrEmail"
               aria-describedby="emailHelp"
-              placeholder="Username or Email"
+              placeholder="Username / E-mail"
             />
           </div>
 
@@ -29,33 +31,25 @@
 
           <div class="container-fluid">
             <div class="row">
-              <div class="col-auto">
-                <form>
-                  <a href="/login" class="btn btn-primary btn-lg mt-3">Login
-                    <i class="fas fa-chevron-right pl-2"></i>
-                  </a>
-                </form>
+              <div class="col-auto pl-0">
+                <button type="submit" class="btn btn-primary btn-lg mt-3">Login
+                  <i class="fas fa-chevron-right pl-2"></i>
+                </button>
               </div>
-              <div class="col-auto">
-                <form>
-                  <a
-                    href="/register"
-                    class="btn btn-link btn-lg mt-3 pl-7"
-                  >Create Account
-                  </a>
-                </form>
+              <div class="col-auto pr-0">
+                <a href="/register" class="btn btn-link btn-lg mt-3 pl-7">Create
+                  Account
+                </a>
               </div>
             </div>
-            <div class="container-fluid my-3">
+            <div class="container-fluid mt-3">
               <div class="row justify-content-center">
                 <div class="col-auto text-center mt-3">
-                  <form>
-                    <a
-                      href="/forgotten-password"
-                      class="btn btn-outline-primary"
-                    >Reset Password
-                    </a>
-                  </form>
+                  <a
+                    href="/forgotten-password"
+                    class="btn btn-outline-primary"
+                  >Reset Password
+                  </a>
                 </div>
               </div>
             </div>
