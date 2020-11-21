@@ -19,6 +19,7 @@ let systemBuildStarted = false;
 const config = {
   port: 5000,
   "api-url": "http://localhost:8088/api/",
+  "recaptcha-site-key": "6LcxpucZAAAAAMArVVikW3dutT37_FMB8TYLe3gO"
 };
 
 try {
@@ -130,6 +131,7 @@ const plugins = [
 
   replace({
     "process.env.API_URL": JSON.stringify(production ? "" : config["api-url"]),
+    "process.env.RECAPTCHA_API_KEY": JSON.stringify(production ? "" : config["recaptcha-site-key"]),
   }),
 
   // In dev mode, call `npm run start` once
