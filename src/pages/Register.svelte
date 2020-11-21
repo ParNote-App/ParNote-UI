@@ -87,13 +87,13 @@
               >terms.</a></label>
           </div>
 
-          <div class="container-fluid pt-4">
+          <div class="container-fluid mt-4">
             <div class="row">
-              <div class="col-md-6">
-                <button type="submit" class="btn btn-md btn-primary">Create
+              <div class="col-6 pl-0">
+                <button type="submit" class="btn btn-primary">Create
                   Account</button>
               </div>
-              <div class="col-auto justify-content-end p-0 d-flex ml-auto">
+              <div class="col-6 justify-content-end d-flex pr-0">
                 <a href="/login" class="btn btn-link font-weight-bold">
                   <i class="fas fa-arrow-left "></i>
                   Login
