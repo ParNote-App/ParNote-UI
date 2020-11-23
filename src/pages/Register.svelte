@@ -1,8 +1,12 @@
+<script>
+  import Recaptcha from "../components/Recaptcha.svelte";
+</script>
+
 <main role="main">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-auto">
-        <h1>Create An Account</h1>
+      <div class="col-6">
+        <h1 class="text-center">Create An Account</h1>
         <div class="alert bg-danger text-white fade show" role="alert">
           <div class="d-flex">
             <div class="alert__icon mr-3">
@@ -71,14 +75,11 @@
           </div>
 
           <div class="custom-control custom-checkbox mb-2">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="termsBox"
-            />
+            <input type="checkbox" class="custom-control-input" id="termsBox" />
             <label class="custom-control-label u-font-size-90" for="termsBox">
               I accept
-              <a href="/terms-and-policy" class="font-weight-bold">terms and policies</a>.
+              <a href="/terms-and-policy" class="font-weight-bold">terms and
+                policies</a>.
             </label>
           </div>
 
@@ -94,6 +95,9 @@
                 </a>
               </div>
             </div>
+          </div>
+          <div class="mt-3">
+            <Recaptcha />
           </div>
         </form>
       </div>
