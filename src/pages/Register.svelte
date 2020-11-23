@@ -84,12 +84,12 @@
 
           <div class="container-fluid mt-4">
             <div class="row">
-              <div class="col-6 pl-0">
+              <div class="col-auto pl-0">
                 <button type="submit" class="btn btn-primary">Create Account</button>
               </div>
-              <div class="col-6 justify-content-end d-flex pr-0">
+              <div class="col-auto justify-content-end d-flex pr-0 ml-auto">
                 <a href="/login" class="btn btn-link font-weight-bold">
-                  <i class="fas fa-arrow-left "></i>
+                  <i class="fas fa-arrow-left mr-2"></i>
                   Login
                 </a>
               </div>
