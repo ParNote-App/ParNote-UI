@@ -29,15 +29,15 @@
             />
           </div>
 
-          <div class="container-fluid">
+          <div class="container-fluid mt-3">
             <div class="row">
               <div class="col-auto pl-0">
-                <button type="submit" class="btn btn-primary btn-lg mt-3">Login
-                  <i class="fas fa-chevron-right pl-2"></i>
+                <button type="submit" class="btn btn-primary btn-lg">Login
+                  <i class="fas fa-chevron-right ml-2"></i>
                 </button>
               </div>
               <div class="col-auto pr-0">
-                <a href="/register" class="btn btn-link btn-lg mt-3 pl-7">Create
+                <a href="/register" class="btn btn-link btn-lg">Create
                   Account
                 </a>
               </div>
