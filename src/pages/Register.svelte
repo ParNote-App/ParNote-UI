@@ -74,28 +74,22 @@
             <input
               type="checkbox"
               class="custom-control-input"
-              id="customCheck2"
-              checked=""
+              id="termsBox"
             />
-            <label
-              class="custom-control-label u-font-size-90"
-              for="customCheck2"
-            >I accept
-              <a
-                href="/terms-and-policy"
-                class="font-weight-bold"
-              >terms.</a></label>
+            <label class="custom-control-label u-font-size-90" for="termsBox">
+              I accept
+              <a href="/terms-and-policy" class="font-weight-bold">terms and policies</a>.
+            </label>
           </div>
 
-          <div class="container-fluid pt-4">
+          <div class="container-fluid mt-4">
             <div class="row">
-              <div class="col-md-6">
-                <button type="submit" class="btn btn-md btn-primary">Create
-                  Account</button>
+              <div class="col-auto pl-0">
+                <button type="submit" class="btn btn-primary">Create Account</button>
               </div>
-              <div class="col-auto justify-content-end p-0 d-flex ml-auto">
+              <div class="col-auto justify-content-end d-flex pr-0 ml-auto">
                 <a href="/login" class="btn btn-link font-weight-bold">
-                  <i class="fas fa-arrow-left "></i>
+                  <i class="fas fa-arrow-left mr-2"></i>
                   Login
                 </a>
               </div>
