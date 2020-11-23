@@ -1,5 +1,45 @@
 <script>
-  import Recaptcha from "../components/Recaptcha.svelte";
+  import { writable, get } from "svelte/store";
+
+  import Recaptcha, {
+    execute as executeRecaptcha,
+    reset as resetRecaptcha,
+  } from "../components/Recaptcha.svelte";
+  import ApiUtil from "../util/api.util";
+
+  const recaptchaID = writable(0);
+  const data = {
+    name: "",
+    surname: "",
+    username: "",
+    email: "",
+    password: "",
+    termsBox: false,
+    recaptcha: "",
+  };
+
+  function submit() {
+    resetRecaptcha(get(recaptchaID));
+    executeRecaptcha(get(recaptchaID));
+  }
+
+  function recaptchaCallback(event) {
+    const token = event.detail.token;
+
+    data.recaptcha = token;
+
+    register(token);
+  }
+
+  function register(token) {
+    ApiUtil.post("auth/register", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 </script>
 
 <main role="main">
@@ -29,7 +69,7 @@
             </div>
           </div>
         </div>
-        <form>
+        <form on:submit|preventDefault="{submit}">
           <div class="form-group mb-4">
             <label for="name" class="u-font-size-90">Name</label>
             <input
@@ -38,6 +78,7 @@
               id="name"
               aria-describedby="name"
               placeholder="Name"
+              bind:value="{data.name}"
             />
           </div>
 
@@ -49,6 +90,19 @@
               id="surname"
               aria-describedby="surname"
               placeholder="Surname"
+              bind:value="{data.surname}"
+            />
+          </div>
+
+          <div class="form-group mb-4">
+            <label for="username" class="u-font-size-90">Username</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              aria-describedby="username"
+              placeholder="Username"
+              bind:value="{data.username}"
             />
           </div>
 
@@ -60,6 +114,7 @@
               id="email"
               aria-describedby="emailHelp"
               placeholder="Email"
+              bind:value="{data.email}"
             />
           </div>
 
@@ -71,11 +126,17 @@
               id="password"
               aria-describedby="password"
               placeholder="Password"
+              bind:value="{data.password}"
             />
           </div>
 
           <div class="custom-control custom-checkbox mb-2">
-            <input type="checkbox" class="custom-control-input" id="termsBox" />
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="termsBox"
+              bind:value="{data.termsBox}"
+            />
             <label class="custom-control-label u-font-size-90" for="termsBox">
               I accept
               <a href="/terms-and-policy" class="font-weight-bold">terms and
@@ -97,7 +158,10 @@
             </div>
           </div>
           <div class="mt-3">
-            <Recaptcha />
+            <Recaptcha
+              recaptchaID="{recaptchaID}"
+              on:callback="{recaptchaCallback}"
+            />
           </div>
         </form>
       </div>
