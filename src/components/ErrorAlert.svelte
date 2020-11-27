@@ -22,7 +22,7 @@
     </div>
 
     <div class="align-self-center mr-3">
-      {error}
+      {$error}
     </div>
 
     <div class="ml-auto">
