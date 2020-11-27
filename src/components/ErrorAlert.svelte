@@ -1,11 +1,12 @@
 <script context="module">
   import jQuery from "jquery";
+  import {writable} from "svelte/store"
 
   const id = "errorAlert";
-  let error;
+  let error = writable("");
 
   export function show(errorCode) {
-    error = errorCode;
+    error.set(errorCode);
     jQuery("#" + id).fadeIn("slow");
   }
 
