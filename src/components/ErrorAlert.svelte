@@ -2,8 +2,10 @@
   import jQuery from "jquery";
 
   const id = "errorAlert";
+  let error;
 
-  export function show(error) {
+  export function show(errorCode) {
+    error = errorCode;
     jQuery("#" + id).fadeIn("slow");
   }
 </script>
@@ -15,7 +17,7 @@
     </div>
 
     <div class="align-self-center mr-3">
-      This is a primary alert — check it out!
+      {error}
     </div>
 
     <div class="ml-auto">
