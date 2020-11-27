@@ -2,9 +2,15 @@
   import jQuery from "jquery";
 
   const id = "errorAlert";
+  let error;
 
-  export function show(error) {
+  export function show(errorCode) {
+    error = errorCode;
     jQuery("#" + id).fadeIn("slow");
+  }
+
+  export function hide() {
+    jQuery("#" + id).fadeOut("fast");
   }
 </script>
 
@@ -15,15 +21,15 @@
     </div>
 
     <div class="align-self-center mr-3">
-      This is a primary alert — check it out!
+      {error}
     </div>
 
     <div class="ml-auto">
       <button
         type="button"
         class="alert__close alert__close--light"
-        data-dismiss="alert"
         aria-label="Close"
+        on:click={hide}
       >
         <span aria-hidden="true">×</span>
       </button>
