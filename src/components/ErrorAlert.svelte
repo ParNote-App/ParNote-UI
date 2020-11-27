@@ -8,6 +8,10 @@
     error = errorCode;
     jQuery("#" + id).fadeIn("slow");
   }
+
+  export function hide() {
+    jQuery("#" + id).fadeOut("fast");
+  }
 </script>
 
 <div id="{id}" class="alert bg-danger text-white display-none" role="alert">
@@ -24,8 +28,8 @@
       <button
         type="button"
         class="alert__close alert__close--light"
-        data-dismiss="alert"
         aria-label="Close"
+        on:click={hide}
       >
         <span aria-hidden="true">×</span>
       </button>
