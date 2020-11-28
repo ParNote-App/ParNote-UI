@@ -35,12 +35,17 @@
     dispatch("callback", { token: token });
   }
 
+  function dataErrorCallback() {
+    dispatch("errorCallback");
+  }
+
   onMount(() => {
     window.grecaptcha.ready(() => {
       list[id] = window.grecaptcha.render(recaptcha + id, {
         sitekey: process.env.RECAPTCHA_API_KEY,
         size: "invisible",
         callback: dataCallback,
+        "error-callback": dataErrorCallback
       });
     });
   });
