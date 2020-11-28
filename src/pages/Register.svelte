@@ -3,9 +3,18 @@
 
   import ApiUtil from "../util/api.util";
 
-  import Recaptcha, { execute as executeRecaptcha, reset as resetRecaptcha } from "../components/Recaptcha.svelte";
-  import ErrorAlert, { hide as hideError, show as showError } from "../components/ErrorAlert.svelte";
-  import SuccessAlert, { hide as hideSuccess, show as showSuccess } from "../components/SuccessAlert.svelte";
+  import Recaptcha, {
+    execute as executeRecaptcha,
+    reset as resetRecaptcha,
+  } from "../components/Recaptcha.svelte";
+  import ErrorAlert, {
+    hide as hideError,
+    show as showError,
+  } from "../components/ErrorAlert.svelte";
+  import SuccessAlert, {
+    hide as hideSuccess,
+    show as showSuccess,
+  } from "../components/SuccessAlert.svelte";
 
   const recaptchaID = writable(0);
   const data = {
@@ -17,6 +26,8 @@
     termsBox: false,
     recaptcha: "",
   };
+
+  let buttonsLoading = false;
 
   function submit() {
     hideError();
@@ -32,18 +43,24 @@
   }
 
   function register() {
+    buttonsLoading = true;
+
     ApiUtil.post("auth/register", data)
       .then((response) => {
         if (response.data.result === "ok") {
-          showSuccess("REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL")
+          showSuccess("REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL");
         } else {
           const errorCode = response.data.error;
 
           showError(errorCode);
         }
+
+        buttonsLoading = false;
       })
       .catch((error) => {
         console.log(error);
+
+        buttonsLoading = false;
       });
   }
 </script>
@@ -53,7 +70,7 @@
     <div class="row justify-content-center">
       <div class="col-6">
         <h1 class="text-center">Create An Account</h1>
-        <SuccessAlert/>
+        <SuccessAlert />
         <ErrorAlert />
         <form on:submit|preventDefault="{submit}">
           <div class="form-group mb-4">
@@ -133,10 +150,20 @@
           <div class="container-fluid mt-4">
             <div class="row">
               <div class="col-auto pl-0">
-                <button type="submit" class="btn btn-primary">Create Account</button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  class:disabled="{buttonsLoading}"
+                  disabled="{buttonsLoading}"
+                >Create Account</button>
               </div>
               <div class="col-auto justify-content-end d-flex pr-0 ml-auto">
-                <a href="/login" class="btn btn-link font-weight-bold">
+                <a
+                  href="/login"
+                  class="btn btn-link font-weight-bold"
+                  class:disabled="{buttonsLoading}"
+                  disabled="{buttonsLoading}"
+                >
                   <i class="fas fa-arrow-left mr-2"></i>
                   Login
                 </a>
