@@ -1,7 +1,7 @@
 <script>
   import { get, writable } from "svelte/store";
 
-  import ApiUtil from "../util/api.util";
+  import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
 
   import Recaptcha, {
     execute as executeRecaptcha,
@@ -30,6 +30,8 @@
   let buttonsLoading = false;
 
   function submit() {
+    buttonsLoading = true;
+
     hideError();
     hideSuccess();
     resetRecaptcha(get(recaptchaID));
@@ -42,9 +44,16 @@
     register();
   }
 
-  function register() {
-    buttonsLoading = true;
+  function recaptchaErrorCallback() {
+    hideSuccess();
+    hideError();
 
+    buttonsLoading = false;
+
+    showError(NETWORK_ERROR);
+  }
+
+  function register() {
     ApiUtil.post("auth/register", data)
       .then((response) => {
         if (response.data.result === "ok") {
@@ -58,7 +67,7 @@
         buttonsLoading = false;
       })
       .catch((error) => {
-        console.log(error);
+        showError(NETWORK_ERROR);
 
         buttonsLoading = false;
       });
@@ -174,6 +183,7 @@
             <Recaptcha
               recaptchaID="{recaptchaID}"
               on:callback="{recaptchaCallback}"
+              on:errorCallback="{recaptchaErrorCallback}"
             />
           </div>
         </form>
