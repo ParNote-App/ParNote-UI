@@ -1,11 +1,11 @@
 <script>
-  import { writable, get } from "svelte/store";
+  import { get, writable } from "svelte/store";
 
-  import Recaptcha, {
-    execute as executeRecaptcha,
-    reset as resetRecaptcha,
-  } from "../components/Recaptcha.svelte";
   import ApiUtil from "../util/api.util";
+
+  import Recaptcha, { execute as executeRecaptcha, reset as resetRecaptcha } from "../components/Recaptcha.svelte";
+  import ErrorAlert, { hide as hideError, show as showError } from "../components/ErrorAlert.svelte";
+  import SuccessAlert, { hide as hideSuccess, show as showSuccess } from "../components/SuccessAlert.svelte";
 
   const recaptchaID = writable(0);
   const data = {
@@ -19,22 +19,28 @@
   };
 
   function submit() {
+    hideError();
+    hideSuccess();
     resetRecaptcha(get(recaptchaID));
     executeRecaptcha(get(recaptchaID));
   }
 
   function recaptchaCallback(event) {
-    const token = event.detail.token;
+    data.recaptcha = event.detail.token;
 
-    data.recaptcha = token;
-
-    register(token);
+    register();
   }
 
-  function register(token) {
+  function register() {
     ApiUtil.post("auth/register", data)
       .then((response) => {
-        console.log(response);
+        if (response.data.result === "ok") {
+          showSuccess("REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL")
+        } else {
+          const errorCode = response.data.error;
+
+          showError(errorCode);
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -47,28 +53,8 @@
     <div class="row justify-content-center">
       <div class="col-6">
         <h1 class="text-center">Create An Account</h1>
-        <div class="alert bg-danger text-white fade show" role="alert">
-          <div class="d-flex">
-            <div class="alert__icon mr-3">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
-
-            <div class="align-self-center mr-3">
-              This is a primary alert — check it out!
-            </div>
-
-            <div class="ml-auto">
-              <button
-                type="button"
-                class="alert__close alert__close--light"
-                data-dismiss="alert"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <SuccessAlert/>
+        <ErrorAlert />
         <form on:submit|preventDefault="{submit}">
           <div class="form-group mb-4">
             <label for="name" class="u-font-size-90">Name</label>
@@ -135,7 +121,7 @@
               type="checkbox"
               class="custom-control-input"
               id="termsBox"
-              bind:value="{data.termsBox}"
+              bind:checked="{data.termsBox}"
             />
             <label class="custom-control-label u-font-size-90" for="termsBox">
               I accept
