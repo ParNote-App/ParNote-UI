@@ -1,16 +1,10 @@
 <main role="main">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-auto">
-        <h1 class="text-center"><strong>Verify your email</strong></h1>
-        <h2 class="text-center">
-          You will need to verify your email to complete registration
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Verify</button>
-          </div>
-        </div>
+      <div class="col-8 text-center">
+        <h1><strong>Verify E-Mail</strong></h1>
+        <h4>To login your account please verify your E-Mail address.</h4>
+        <button type="submit" class="btn btn-primary btn-lg m-3">Verify My E-Mail</button>
       </div>
     </div>
   </div>
