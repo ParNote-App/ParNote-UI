@@ -23,8 +23,6 @@
     recaptcha: "",
   };
 
-  console.log(token)
-
   let buttonsLoading = false;
 
   function submit() {
