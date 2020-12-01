@@ -21,8 +21,8 @@ export default {
     "/activate?token": {
       component: () => import("./pages/ActivateEmail.svelte"),
     },
-    "/forgotten-password": {
-      component: () => import("./pages/ForgottenPassword.svelte"),
+    "/forgot-password": {
+      component: () => import("./pages/ForgotPassword.svelte"),
     },
     "*": {
       component: () => import("./pages/Error404.svelte"),
