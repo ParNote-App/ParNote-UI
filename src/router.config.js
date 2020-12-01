@@ -15,7 +15,7 @@ export default {
     "/terms-and-policy": {
       component: () => import("./pages/TermsAndPolicy.svelte"),
     },
-    "/reset-password": {
+    "/reset-password?token": {
       component: () => import("./pages/ResetPassword.svelte"),
     },
     "/activate?token": {

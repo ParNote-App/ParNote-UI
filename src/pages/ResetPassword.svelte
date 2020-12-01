@@ -1,57 +1,132 @@
+<script>
+  import { get, writable } from "svelte/store";
+
+  import SuccessAlert, {
+    hide as hideSuccess,
+    show as showSuccess,
+  } from "../components/SuccessAlert.svelte";
+  import ErrorAlert, {
+    hide as hideError,
+    show as showError,
+  } from "../components/ErrorAlert.svelte";
+
+  import Recaptcha, {
+    execute as executeRecaptcha,
+    reset as resetRecaptcha,
+  } from "../components/Recaptcha.svelte";
+
+  import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
+
+  export let token = null;
+
+  const recaptchaID = writable(0);
+  const data = {
+    newPassword: "",
+    newPasswordRepeat: "",
+    token: token,
+    recaptcha: "",
+  };
+
+  let buttonsLoading = false;
+
+  function submit() {
+    buttonsLoading = true;
+
+    hideError();
+    hideSuccess();
+    resetRecaptcha(get(recaptchaID));
+    executeRecaptcha(get(recaptchaID));
+  }
+
+  function recaptchaCallback(event) {
+    data.recaptcha = event.detail.token;
+
+    resetPassword();
+  }
+
+  function recaptchaErrorCallback() {
+    hideSuccess();
+    hideError();
+
+    buttonsLoading = false;
+
+    showError(NETWORK_ERROR);
+  }
+
+  function resetPassword() {
+    ApiUtil.post("auth/resetPassword", data)
+      .then((response) => {
+        if (response.data.result === "ok") {
+          showSuccess("PASSWORD_CHANGED_SUCCESSFULLY");
+        } else {
+          const errorCode = response.data.error;
+
+          showError(errorCode);
+
+          buttonsLoading = false;
+        }
+      })
+      .catch(() => {
+        showError(NETWORK_ERROR);
+
+        buttonsLoading = false;
+      });
+  }
+</script>
+
 <main role="main">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1 class="text-center mx-auto">Reset Password</h1>
-
-        <div class="alert bg-danger text-white fade show" role="alert">
-          <div class="d-flex">
-            <div class="alert__icon mr-3">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
-
-            <div class="align-self-center mr-3">
-              This is a primary alert — check it out!
-            </div>
-
-            <div class="ml-auto">
-              <button
-                type="button"
-                class="alert__close alert__close--light"
-                data-dismiss="alert"
-                aria-label="Close"
-              >
-                <span aria-hidden="true">×</span>
-              </button>
-            </div>
+        <h1 class="text-center">Reset Password</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <SuccessAlert />
+        <ErrorAlert />
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-5">
+        <form on:submit|preventDefault="{submit}">
+          <div class="form-group mt-4">
+            <label for="newPassword" class="u-font-size-90">New Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="newPassword"
+              aria-describedby="newPassword"
+              bind:value="{data.newPassword}"
+            />
           </div>
-        </div>
 
-        <div class="form-group mb-4">
-          <label for="newPassword" class="u-font-size-90">New Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="newPassword"
-            aria-describedby="passwordHelp"
-            placeholder="Enter new password"
-          />
-        </div>
-        <div class="form-group mb-4">
-          <label for="newPasswordRepeat" class="u-font-size-90">New Password
-            Repeat</label>
-          <input
-            type="password"
-            class="form-control"
-            id="newPasswordRepeat"
-            aria-describedby="passwordHelp"
-            placeholder="Repeat new password"
-          />
-        </div>
-        <div class="d-flex">
-          <button type="submit" class="btn btn-primary mx-auto">Reset Password
+          <div class="form-group mt-4">
+            <label for="newPasswordRepeat" class="u-font-size-90">New Password
+              Repeat</label>
+            <input
+              type="password"
+              class="form-control"
+              id="newPasswordRepeat"
+              aria-describedby="newPasswordRepeat"
+              bind:value="{data.newPasswordRepeat}"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-lg btn-primary d-block mx-auto mt-4"
+            class:disabled="{buttonsLoading}"
+            disabled="{buttonsLoading}"
+          >Reset Password
           </button>
-        </div>
+
+          <Recaptcha
+            recaptchaID="{recaptchaID}"
+            on:callback="{recaptchaCallback}"
+            on:errorCallback="{recaptchaErrorCallback}"
+          />
+        </form>
       </div>
     </div>
   </div>
