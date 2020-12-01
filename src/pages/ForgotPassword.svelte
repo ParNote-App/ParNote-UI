@@ -1,11 +1,6 @@
 <script>
   import { get, writable } from "svelte/store";
 
-  import Recaptcha, {
-    execute as executeRecaptcha,
-    reset as resetRecaptcha,
-  } from "../components/Recaptcha.svelte";
-  import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
   import SuccessAlert, {
     hide as hideSuccess,
     show as showSuccess,
@@ -15,11 +10,19 @@
     show as showError,
   } from "../components/ErrorAlert.svelte";
 
+  import Recaptcha, {
+    execute as executeRecaptcha,
+    reset as resetRecaptcha,
+  } from "../components/Recaptcha.svelte";
+
+  import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
+
   export let token = null;
 
   const recaptchaID = writable(0);
   const data = {
     token: token,
+    usernameOrEmail: "",
     recaptcha: "",
   };
 
@@ -37,7 +40,7 @@
   function recaptchaCallback(event) {
     data.recaptcha = event.detail.token;
 
-    verifyEmail();
+    resetPassword();
   }
 
   function recaptchaErrorCallback() {
@@ -49,17 +52,18 @@
     showError(NETWORK_ERROR);
   }
 
-  function verifyEmail() {
-    ApiUtil.post("auth/emailVerification", data)
+  function resetPassword() {
+    ApiUtil.post("auth/forgotPassword", data)
       .then((response) => {
         if (response.data.result === "ok") {
-          showSuccess("EMAIL_VERIFIED_SUCCESSFULLY");
+          showSuccess("EMAIL_SENT_SUCCESSFULLY");
         } else {
           const errorCode = response.data.error;
 
           showError(errorCode);
-          buttonsLoading = false;
         }
+
+        buttonsLoading = false;
       })
       .catch(() => {
         showError(NETWORK_ERROR);
@@ -70,23 +74,41 @@
 </script>
 
 <main role="main">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row justify-content-center">
-      <div class="col-8 text-center">
-        <h1><strong>Verify E-Mail</strong></h1>
-
+      <div class="col-auto">
+        <h1 class="text-center">Reset Password</h1>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-6">
         <SuccessAlert />
         <ErrorAlert />
-
-        <h4>To login your account please verify your E-Mail address.</h4>
-
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-5">
         <form on:submit|preventDefault="{submit}">
+          <div class="form-group mb-4 ">
+            <label for="usernameOrEmail" class="u-font-size-90">Username / E-mail</label>
+            <input
+              type="text"
+              class="form-control"
+              id="usernameOrEmail"
+              aria-describedby="usernameOrEmail"
+              bind:value="{data.usernameOrEmail}"
+            />
+          </div>
+
           <button
             type="submit"
-            class="btn btn-primary btn-lg m-3"
+            class="btn btn-lg btn-primary d-block mx-auto"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
-          >Verify My E-Mail</button>
+          >Reset Password
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
           <Recaptcha
             recaptchaID="{recaptchaID}"
             on:callback="{recaptchaCallback}"

@@ -3,10 +3,15 @@
 @import "kit/styles";
 @import "node_modules/bootstrap/scss/bootstrap";
 
-html,body {
-  height:100%;
+html,
+body {
+  height: 100%;
 }
 
 .bg-light-primary {
-  background-color: #E0EAFF;
+  background-color: #e0eaff;
+}
+
+.display-none {
+  display: none;
 }
