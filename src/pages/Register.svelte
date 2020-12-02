@@ -89,7 +89,6 @@
               class="form-control"
               id="name"
               aria-describedby="name"
-              placeholder="Name"
               bind:value="{data.name}"
             />
           </div>
@@ -101,7 +100,6 @@
               class="form-control"
               id="surname"
               aria-describedby="surname"
-              placeholder="Surname"
               bind:value="{data.surname}"
             />
           </div>
@@ -113,7 +111,6 @@
               class="form-control"
               id="username"
               aria-describedby="username"
-              placeholder="Username"
               bind:value="{data.username}"
             />
           </div>
@@ -125,7 +122,6 @@
               class="form-control"
               id="email"
               aria-describedby="emailHelp"
-              placeholder="Email"
               bind:value="{data.email}"
             />
           </div>
@@ -137,7 +133,6 @@
               class="form-control"
               id="password"
               aria-describedby="password"
-              placeholder="Password"
               bind:value="{data.password}"
             />
           </div>
