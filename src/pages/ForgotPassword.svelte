@@ -21,9 +21,8 @@
 
   const recaptchaID = writable(0);
   const data = {
-    newPassword: "",
-    newPasswordRepeat: "",
     token: token,
+    usernameOrEmail: "",
     recaptcha: "",
   };
 
@@ -54,17 +53,17 @@
   }
 
   function resetPassword() {
-    ApiUtil.post("auth/resetPassword", data)
+    ApiUtil.post("auth/forgotPassword", data)
       .then((response) => {
         if (response.data.result === "ok") {
-          showSuccess("PASSWORD_CHANGED_SUCCESSFULLY");
+          showSuccess("EMAIL_SENT_SUCCESSFULLY");
         } else {
           const errorCode = response.data.error;
 
           showError(errorCode);
-
-          buttonsLoading = false;
         }
+
+        buttonsLoading = false;
       })
       .catch(() => {
         showError(NETWORK_ERROR);
@@ -90,35 +89,24 @@
     <div class="row justify-content-center">
       <div class="col-5">
         <form on:submit|preventDefault="{submit}">
-          <div class="form-group mt-4">
-            <label for="newPassword" class="u-font-size-90">New Password</label>
+          <div class="form-group mb-4 ">
+            <label for="usernameOrEmail" class="u-font-size-90">Username / E-mail</label>
             <input
-              type="password"
+              type="text"
               class="form-control"
-              id="newPassword"
-              aria-describedby="newPassword"
-              bind:value="{data.newPassword}"
-            />
-          </div>
-
-          <div class="form-group mt-4">
-            <label for="newPasswordRepeat" class="u-font-size-90">New Password
-              Repeat</label>
-            <input
-              type="password"
-              class="form-control"
-              id="newPasswordRepeat"
-              aria-describedby="newPasswordRepeat"
-              bind:value="{data.newPasswordRepeat}"
+              id="usernameOrEmail"
+              aria-describedby="usernameOrEmail"
+              bind:value="{data.usernameOrEmail}"
             />
           </div>
 
           <button
             type="submit"
-            class="btn btn-lg btn-primary d-block mx-auto mt-4"
+            class="btn btn-lg btn-primary d-block mx-auto"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
           >Reset Password
+            <i class="fas fa-chevron-right"></i>
           </button>
 
           <Recaptcha
