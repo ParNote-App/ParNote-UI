@@ -90,8 +90,7 @@
               type="text"
               class="form-control"
               id="usernameOrEmail"
-              aria-describedby="emailHelp"
-              placeholder="Username / E-mail"
+              aria-describedby="usernameOrEmail"
               bind:value="{data.usernameOrEmail}"
             />
           </div>
