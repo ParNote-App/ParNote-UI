@@ -146,7 +146,7 @@
               <div class="row justify-content-center">
                 <div class="col-auto text-center mt-3">
                   <a
-                    href="/forgotten-password"
+                    href="/forgot-password"
                     class="btn btn-outline-primary"
                     class:disabled="{buttonsLoading}"
                     disabled="{buttonsLoading}"
