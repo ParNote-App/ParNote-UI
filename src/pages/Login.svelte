@@ -102,7 +102,6 @@
               class="form-control"
               id="password"
               aria-describedby="password"
-              placeholder="Password"
               bind:value="{data.password}"
             />
           </div>
