@@ -15,7 +15,7 @@
   }
 </script>
 
-<div id="{id}" class="alert bg-danger text-white display-none" role="alert">
+<div id="{id}" class="alert border border-danger text-danger display-none" role="alert">
   <div class="d-flex">
     <div class="alert__icon mr-3">
       <i class="fas fa-exclamation-circle"></i>
@@ -32,7 +32,7 @@
         aria-label="Close"
         on:click={hide}
       >
-        <span aria-hidden="true">×</span>
+        <span aria-hidden="true" class="text-danger">×</span>
       </button>
     </div>
   </div>

@@ -83,30 +83,36 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-6">
-        <h1 class="text-center">Create An Account</h1>
+        <h2 class="text-center mb-4">Create an Account</h2>
         <SuccessAlert />
         <ErrorAlert />
         <form on:submit|preventDefault="{submit}">
-          <div class="form-group mb-4">
-            <label for="name" class="u-font-size-90">Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              aria-describedby="name"
-              bind:value="{data.name}"
-            />
-          </div>
 
-          <div class="form-group mb-4">
-            <label for="surname" class="u-font-size-90">Surname</label>
-            <input
-              type="text"
-              class="form-control"
-              id="surname"
-              aria-describedby="surname"
-              bind:value="{data.surname}"
-            />
+          <div class="row">
+            <div class="col-6">
+              <div class="form-group mb-4">
+                <label for="name" class="u-font-size-90">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="name"
+                  bind:value="{data.name}"
+                />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="form-group mb-4">
+                <label for="surname" class="u-font-size-90">Surname</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="surname"
+                  aria-describedby="surname"
+                  bind:value="{data.surname}"
+                />
+              </div>
+            </div>
           </div>
 
           <div class="form-group mb-4">

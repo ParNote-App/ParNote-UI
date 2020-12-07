@@ -78,7 +78,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1 class="text-center">Reset Password</h1>
+        <h2 class="text-center mb-4">Reset Password</h2>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -103,11 +103,11 @@
 
           <button
             type="submit"
-            class="btn btn-lg btn-primary d-block mx-auto"
+            class="btn btn-primary d-block mx-auto"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
           >Reset Password
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right ml-2"></i>
           </button>
 
           <Recaptcha
