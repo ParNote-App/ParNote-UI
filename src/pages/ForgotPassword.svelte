@@ -16,6 +16,7 @@
   } from "../components/Recaptcha.svelte";
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
+  import { convertLocale } from "../util/language.util";
 
   export let token = null;
 
@@ -24,6 +25,7 @@
     token: token,
     usernameOrEmail: "",
     recaptcha: "",
+    lang: "EN"
   };
 
   let buttonsLoading = false;
@@ -53,6 +55,8 @@
   }
 
   function resetPassword() {
+    data.lang = convertLocale();
+
     ApiUtil.post("auth/forgotPassword", data)
       .then((response) => {
         if (response.data.result === "ok") {
