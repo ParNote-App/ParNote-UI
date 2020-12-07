@@ -18,11 +18,8 @@
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
   import { convertLocale } from "../util/language.util";
 
-  export let token = null;
-
   const recaptchaID = writable(0);
   const data = {
-    token: token,
     usernameOrEmail: "",
     recaptcha: "",
     lang: "EN"
