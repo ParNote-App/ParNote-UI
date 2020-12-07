@@ -16,6 +16,7 @@
   } from "../components/Recaptcha.svelte";
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
+  import { convertLocale } from "../util/language.util";
 
   const recaptchaID = writable(0);
   const data = {
@@ -23,6 +24,7 @@
     password: "",
     rememberMe: false,
     recaptcha: "",
+    lang: "EN"
   };
 
   let buttonsLoading = false;
@@ -52,6 +54,8 @@
   }
 
   function login() {
+    data.lang = convertLocale();
+
     ApiUtil.post("auth/login", data)
       .then((response) => {
         if (response.data.result === "ok") {
