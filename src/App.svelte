@@ -4,6 +4,7 @@
 
 <script>
   import Main from "./components/Main.svelte";
+  import "./util/language.util";
 </script>
 
-<Main/>
+<Main />

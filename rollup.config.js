@@ -9,6 +9,7 @@ import { terser } from "rollup-plugin-terser";
 import babel from "rollup-plugin-babel";
 import rmdir from "rimraf";
 import css from "rollup-plugin-css-only";
+import json from "@rollup/plugin-json";
 
 rmdir("public/assets", function (error) {});
 
@@ -82,7 +83,7 @@ const plugins = [
       if (!cssExported) {
         const cssFileName = "bundle.css",
           cssOutput = "public/assets/css/";
-          // cssMapFileName = cssFileName + ".map";
+        // cssMapFileName = cssFileName + ".map";
 
         if (!fs.existsSync(cssOutput)) fs.mkdirSync(cssOutput);
 
@@ -111,6 +112,8 @@ const plugins = [
       production ? "production" : "development"
     ),
   }),
+
+  json(),
 
   replace({
     "process.env.API_URL": JSON.stringify(production ? "" : config["api-url"]),
