@@ -80,7 +80,7 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1 class="text-center mb-4">Login</h1>
+        <h2 class="text-center mb-4">Login</h2>
 
         <SuccessAlert />
         <ErrorAlert />
@@ -127,7 +127,7 @@
               <div class="col-auto pl-0">
                 <button
                   type="submit"
-                  class="btn btn-primary btn-lg"
+                  class="btn btn-primary"
                   class:disabled="{buttonsLoading}"
                   disabled="{buttonsLoading}"
                 >Login
@@ -137,22 +137,23 @@
               <div class="col-auto pr-0">
                 <a
                   href="/register"
-                  class="btn btn-link btn-lg"
+                  class="btn btn-link"
                   class:disabled="{buttonsLoading}"
                   disabled="{buttonsLoading}"
                 >Create Account
                 </a>
               </div>
             </div>
+            <hr>
             <div class="container-fluid mt-3">
               <div class="row justify-content-center">
                 <div class="col-auto text-center mt-3">
                   <a
                     href="/forgot-password"
-                    class="btn btn-outline-primary"
+                    class="btn btn-outline-primary btn-sm"
                     class:disabled="{buttonsLoading}"
                     disabled="{buttonsLoading}"
-                  >Reset Password
+                  >Forget Password?
                   </a>
                 </div>
               </div>
