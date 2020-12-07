@@ -3,6 +3,8 @@
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
 
+  import { convertNavigation } from "../util/language.util"
+
   import Recaptcha, {
     execute as executeRecaptcha,
     reset as resetRecaptcha,
@@ -25,6 +27,7 @@
     password: "",
     termsBox: false,
     recaptcha: "",
+    lang: "EN",
   };
 
   let buttonsLoading = false;
@@ -54,6 +57,8 @@
   }
 
   function register() {
+    data.lang = convertNavigation();
+
     ApiUtil.post("auth/register", data)
       .then((response) => {
         if (response.data.result === "ok") {
