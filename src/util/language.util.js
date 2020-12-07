@@ -19,7 +19,7 @@ Object.keys(languages).forEach((lang) => {
   addMessages(lang, languages[lang]);
 });
 
-export function convertNavigation(currentLocale = get(locale)) {
+export function convertLocale(currentLocale = get(locale)) {
   let lang = "en";
 
   Object.keys(languages).forEach((langKey) => {
@@ -31,5 +31,5 @@ export function convertNavigation(currentLocale = get(locale)) {
 
 init({
   fallbackLocale: "en",
-  initialLocale: convertNavigation(getLocaleFromNavigator()),
+  initialLocale: convertLocale(getLocaleFromNavigator()),
 });

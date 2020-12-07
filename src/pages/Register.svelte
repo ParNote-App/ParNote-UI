@@ -3,7 +3,7 @@
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
 
-  import { convertNavigation } from "../util/language.util"
+  import { convertLocale } from "../util/language.util"
 
   import Recaptcha, {
     execute as executeRecaptcha,
@@ -57,7 +57,7 @@
   }
 
   function register() {
-    data.lang = convertNavigation();
+    data.lang = convertLocale();
 
     ApiUtil.post("auth/register", data)
       .then((response) => {
