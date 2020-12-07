@@ -6,9 +6,11 @@
   import RightHeader from "./RightHeader.svelte";
   import LeftFooter from "./LeftFooter.svelte";
   import RightFooter from "./RightFooter.svelte";
+
+  export let hidden;
 </script>
 
-<div class="container-fluid h-100">
+<div class="container-fluid h-100" {hidden}>
   <div class="row h-100">
     <div class="col col-lg d-flex h-100 container flex-column">
       <div class="mb-auto">

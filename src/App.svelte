@@ -3,8 +3,17 @@
 </style>
 
 <script>
-  import Main from "./components/Main.svelte";
   import "./util/language.util";
+  import Splash from "./components/Splash.svelte";
+
+  const showSplash = false;
 </script>
 
-<Main />
+{#if showSplash}
+  <Splash />
+{/if}
+
+<!-- Main Contents Hidden -->
+{#await import('./components/Main.svelte') then MainComponent}
+  <svelte:component this="{MainComponent.default}" hidden="{showSplash}" />
+{/await}
