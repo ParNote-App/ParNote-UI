@@ -90,7 +90,7 @@ const plugins = [
         fs.writeFileSync(cssOutput + cssFileName, styles);
         // fs.writeFileSync(cssOutput + cssMapFileName, styleNodes);
 
-        cssExported = true;
+        if (production) cssExported = true;
       }
     },
   }),
