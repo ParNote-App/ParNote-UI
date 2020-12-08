@@ -7,7 +7,7 @@
   import RouterConfigLoggedIn from "../router.config.loggedIn";
 
   import Header from "./Header.svelte";
-  import RightFooter from "./RightFooter.svelte";
+  import Footer from "./Footer.svelte";
 
   export let hidden;
 </script>
@@ -25,6 +25,8 @@
     <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
   </div>
 </div>
+<Footer />
+
 {/if}
 {#if $loginStatus === LoginStates.LOGGED_IN}
   <Router routerConfig="{RouterConfigLoggedIn}" />
