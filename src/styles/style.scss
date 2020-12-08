@@ -31,22 +31,22 @@ body {
 }
 
 .nav-login-colors-link {
+  color: $light !important;
   @include media-breakpoint-down(md) {
     color: $primary !important;
-    &:hover {
-      color: $light !important;
-    }
   }
 }
-
 .nav-login-colors-btn {
   @include media-breakpoint-down(md) {
     color: $primary;
     border-color: $primary;
-    &:hover {
+    background: transparent;
+    &:hover,
+    &:focus,
+    &:active {
       color: $light;
       border-color: $primary;
-      background: $primary;
+      background: $primary !important;
     }
   }
 }

@@ -22,7 +22,7 @@
     >
       <Router routerConfig="{RouterConfig}" />
     </div>
-    <div class="col-6 h-100 bg-primary d-md-flex d-none"></div>
+    <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
   </div>
 </div>
 {/if}

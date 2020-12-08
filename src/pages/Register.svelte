@@ -3,7 +3,7 @@
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
 
-  import { convertLocale } from "../util/language.util"
+  import { convertLocale } from "../util/language.util";
 
   import Recaptcha, {
     execute as executeRecaptcha,
@@ -81,7 +81,6 @@
 
 <h2 class="text-center mb-4">Create an Account</h2>
 <form class="homepage-form" on:submit|preventDefault="{submit}">
-  
   <SuccessAlert />
   <ErrorAlert />
 
@@ -154,8 +153,7 @@
     />
     <label class="custom-control-label u-font-size-90" for="termsBox">
       I accept
-      <a href="/terms-and-policy" class="font-weight-bold">terms and
-        policies</a>.
+      <a href="/terms-and-policy" class="font-weight-bold">terms and policies</a>.
     </label>
   </div>
 
@@ -176,7 +174,6 @@
           class:disabled="{buttonsLoading}"
           disabled="{buttonsLoading}"
         >
-          <i class="fas fa-arrow-left mr-2"></i>
           Login
         </a>
       </div>

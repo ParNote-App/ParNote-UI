@@ -19,7 +19,7 @@
   <ul class="navbar-nav flex-row ml-auto">
     <li class="nav-item dropdown">
       <a
-        class="nav-link text-light nav-login-colors-link"
+        class="nav-link nav-login-colors-link"
         href="#"
         id="navbarDropdown"
         role="button"
@@ -36,7 +36,7 @@
       >
         {#each $locales as locale}
           <a
-            class="dropdown-item text-primary"
+            class="dropdown-item"
             href="javascript:void(0);"
             class:font-weight-bold="{$currentLocale
               .toLowerCase()
