@@ -1,4 +1,4 @@
-<footer class="mt-auto mb-3">
+<footer class="mt-auto pb-3 fixed-bottom">
   <nav class="navbar navbar-expand pl-5">
     <ul class="navbar-nav pl-2">
       <li class="nav-item ml-0">
