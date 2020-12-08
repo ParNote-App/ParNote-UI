@@ -5,10 +5,6 @@
     hide as hideError,
     show as showError,
   } from "../components/ErrorAlert.svelte";
-  import SuccessAlert, {
-    hide as hideSuccess,
-    show as showSuccess,
-  } from "../components/SuccessAlert.svelte";
 
   import Recaptcha, {
     execute as executeRecaptcha,
@@ -17,6 +13,9 @@
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
   import { convertLocale } from "../util/language.util";
+  import { setLoggedIn } from "../util/login.util";
+
+  import {route} from "routve"
 
   const recaptchaID = writable(0);
   const data = {
@@ -33,7 +32,6 @@
     buttonsLoading = true;
 
     hideError();
-    hideSuccess();
     resetRecaptcha(get(recaptchaID));
     executeRecaptcha(get(recaptchaID));
   }
@@ -45,7 +43,6 @@
   }
 
   function recaptchaErrorCallback() {
-    hideSuccess();
     hideError();
 
     buttonsLoading = false;
@@ -59,7 +56,8 @@
     ApiUtil.post("auth/login", data)
       .then((response) => {
         if (response.data.result === "ok") {
-          showSuccess("LOGIN_SUCCESS");
+          setLoggedIn();
+          window.location="/"
         } else {
           const errorCode = response.data.error;
 
@@ -79,7 +77,6 @@
 <h2 class="text-center mb-4">Login</h2>
 
 <form class="homepage-form" on:submit|preventDefault="{submit}">
-  <SuccessAlert />
   <ErrorAlert />
 
   <div class="form-group mb-4">
