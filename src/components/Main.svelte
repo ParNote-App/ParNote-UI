@@ -3,7 +3,7 @@
   import RouterConfig from "../router.config";
 
   import Header from "./Header.svelte";
-  import RightFooter from "./RightFooter.svelte";
+  import Footer from "./Footer.svelte";
 
   export let hidden;
 </script>
@@ -20,3 +20,5 @@
     <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
   </div>
 </div>
+
+<Footer />
