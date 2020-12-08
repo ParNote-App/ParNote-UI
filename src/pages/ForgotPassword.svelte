@@ -22,7 +22,7 @@
   const data = {
     usernameOrEmail: "",
     recaptcha: "",
-    lang: "EN"
+    lang: "EN",
   };
 
   let buttonsLoading = false;
@@ -74,49 +74,34 @@
   }
 </script>
 
-<main role="main">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <h2 class="text-center mb-4">Reset Password</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-6">
-        <SuccessAlert />
-        <ErrorAlert />
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-5">
-        <form on:submit|preventDefault="{submit}">
-          <div class="form-group mb-4 ">
-            <label for="usernameOrEmail" class="u-font-size-90">Username / E-mail</label>
-            <input
-              type="text"
-              class="form-control"
-              id="usernameOrEmail"
-              aria-describedby="usernameOrEmail"
-              bind:value="{data.usernameOrEmail}"
-            />
-          </div>
+<h2 class="text-center mb-4">Reset Password</h2>
 
-          <button
-            type="submit"
-            class="btn btn-primary d-block mx-auto"
-            class:disabled="{buttonsLoading}"
-            disabled="{buttonsLoading}"
-          >Reset Password
-            <i class="fas fa-chevron-right ml-2"></i>
-          </button>
-
-          <Recaptcha
-            recaptchaID="{recaptchaID}"
-            on:callback="{recaptchaCallback}"
-            on:errorCallback="{recaptchaErrorCallback}"
-          />
-        </form>
-      </div>
-    </div>
+<form class="homepage-form" on:submit|preventDefault="{submit}">
+  <SuccessAlert />
+  <ErrorAlert />
+  <div class="form-group mb-4 ">
+    <label for="usernameOrEmail" class="u-font-size-90">Username / E-mail</label>
+    <input
+      type="text"
+      class="form-control"
+      id="usernameOrEmail"
+      aria-describedby="usernameOrEmail"
+      bind:value="{data.usernameOrEmail}"
+    />
   </div>
-</main>
+
+  <button
+    type="submit"
+    class="btn btn-primary d-block mx-auto"
+    class:disabled="{buttonsLoading}"
+    disabled="{buttonsLoading}"
+  >Reset Password
+    <i class="fas fa-chevron-right ml-2"></i>
+  </button>
+
+  <Recaptcha
+    recaptchaID="{recaptchaID}"
+    on:callback="{recaptchaCallback}"
+    on:errorCallback="{recaptchaErrorCallback}"
+  />
+</form>

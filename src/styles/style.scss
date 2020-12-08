@@ -15,3 +15,38 @@ body {
 .display-none {
   display: none;
 }
+
+// Browser page height - navbar, footer height = value
+// .navbar-space {
+//   height: calc(100vh - 58px);
+
+//   padding-top: 50px;
+// }
+
+.homepage-form {
+  display: block;
+  width: 300px;
+  height: auto;
+  margin: auto;
+}
+
+.nav-login-colors-link {
+  @include media-breakpoint-down(md) {
+    color: $primary !important;
+    &:hover {
+      color: $light !important;
+    }
+  }
+}
+
+.nav-login-colors-btn {
+  @include media-breakpoint-down(md) {
+    color: $primary;
+    border-color: $primary;
+    &:hover {
+      color: $light;
+      border-color: $primary;
+      background: $primary;
+    }
+  }
+}

@@ -2,28 +2,21 @@
   import Router from "routve";
   import RouterConfig from "../router.config";
 
-  import LeftHeader from "./LeftHeader.svelte";
-  import RightHeader from "./RightHeader.svelte";
-  import LeftFooter from "./LeftFooter.svelte";
+  import Header from "./Header.svelte";
   import RightFooter from "./RightFooter.svelte";
 
   export let hidden;
 </script>
 
-<div class="container-fluid h-100" {hidden}>
+<Header />
+
+<div class="container-fluid h-100">
   <div class="row h-100">
-    <div class="col col-lg d-flex h-100 container flex-column">
-      <div class="mb-auto">
-        <LeftHeader />
-      </div>
-
+    <div
+      class="col-lg-6 col-12 h-100 d-flex h-100 flex-column justify-content-center"
+    >
       <Router routerConfig="{RouterConfig}" />
-
-      <LeftFooter />
     </div>
-    <div class="col col-lg bg-light-primary d-flex h-100 container flex-column">
-      <RightHeader />
-      <RightFooter />
-    </div>
+    <div class="col-6 h-100 bg-primary d-md-flex d-none"></div>
   </div>
 </div>

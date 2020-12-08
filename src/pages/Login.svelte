@@ -24,7 +24,7 @@
     password: "",
     rememberMe: false,
     recaptcha: "",
-    lang: "EN"
+    lang: "EN",
   };
 
   let buttonsLoading = false;
@@ -76,96 +76,88 @@
   }
 </script>
 
-<main role="main">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <h2 class="text-center mb-4">Login</h2>
+<h2 class="text-center mb-4">Login</h2>
 
-        <SuccessAlert />
-        <ErrorAlert />
+<form class="homepage-form" on:submit|preventDefault="{submit}">
+  <SuccessAlert />
+  <ErrorAlert />
 
-        <form on:submit|preventDefault="{submit}">
-          <div class="form-group mb-4">
-            <label for="usernameOrEmail" class="u-font-size-90">
-              Username / E-mail
-            </label>
-            <input
-              type="text"
-              class="form-control"
-              id="usernameOrEmail"
-              aria-describedby="usernameOrEmail"
-              bind:value="{data.usernameOrEmail}"
-            />
-          </div>
+  <div class="form-group mb-4">
+    <label for="usernameOrEmail" class="u-font-size-90">
+      Username / E-mail
+    </label>
+    <input
+      type="text"
+      class="form-control"
+      id="usernameOrEmail"
+      aria-describedby="usernameOrEmail"
+      bind:value="{data.usernameOrEmail}"
+    />
+  </div>
 
-          <div class="form-group mb-4">
-            <label for="password" class="u-font-size-90">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              aria-describedby="password"
-              bind:value="{data.password}"
-            />
-          </div>
+  <div class="form-group mb-4">
+    <label for="password" class="u-font-size-90">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      aria-describedby="password"
+      bind:value="{data.password}"
+    />
+  </div>
 
-          <div class="custom-control custom-checkbox mb-2">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="termsBox"
-              bind:checked="{data.rememberMe}"
-            />
-            <label class="custom-control-label u-font-size-90" for="termsBox">
-              Remember Me
-            </label>
-          </div>
+  <div class="custom-control custom-checkbox mb-2">
+    <input
+      type="checkbox"
+      class="custom-control-input"
+      id="termsBox"
+      bind:checked="{data.rememberMe}"
+    />
+    <label class="custom-control-label u-font-size-90" for="termsBox">
+      Remember Me
+    </label>
+  </div>
 
-          <div class="container-fluid mt-3">
-            <div class="row">
-              <div class="col-auto pl-0">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  class:disabled="{buttonsLoading}"
-                  disabled="{buttonsLoading}"
-                >Login
-                  <i class="fas fa-chevron-right ml-2"></i>
-                </button>
-              </div>
-              <div class="col-auto pr-0">
-                <a
-                  href="/register"
-                  class="btn btn-link"
-                  class:disabled="{buttonsLoading}"
-                  disabled="{buttonsLoading}"
-                >Create Account
-                </a>
-              </div>
-            </div>
-            <hr>
-            <div class="container-fluid mt-3">
-              <div class="row justify-content-center">
-                <div class="col-auto text-center mt-3">
-                  <a
-                    href="/forgot-password"
-                    class="btn btn-outline-primary btn-sm"
-                    class:disabled="{buttonsLoading}"
-                    disabled="{buttonsLoading}"
-                  >Forget Password?
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <Recaptcha
-            recaptchaID="{recaptchaID}"
-            on:callback="{recaptchaCallback}"
-            on:errorCallback="{recaptchaErrorCallback}"
-          />
-        </form>
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-auto pl-0">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          class:disabled="{buttonsLoading}"
+          disabled="{buttonsLoading}"
+        >Login
+          <i class="fas fa-chevron-right ml-2"></i>
+        </button>
+      </div>
+      <div class="col-auto pr-0">
+        <a
+          href="/register"
+          class="btn btn-link"
+          class:disabled="{buttonsLoading}"
+          disabled="{buttonsLoading}"
+        >Create Account
+        </a>
+      </div>
+    </div>
+    <hr />
+    <div class="container-fluid mt-3">
+      <div class="row justify-content-center">
+        <div class="col-auto text-center mt-3">
+          <a
+            href="/forgot-password"
+            class="btn btn-outline-primary btn-sm"
+            class:disabled="{buttonsLoading}"
+            disabled="{buttonsLoading}"
+          >Forget Password?
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</main>
+  <Recaptcha
+    recaptchaID="{recaptchaID}"
+    on:callback="{recaptchaCallback}"
+    on:errorCallback="{recaptchaErrorCallback}"
+  />
+</form>
