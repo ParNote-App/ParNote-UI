@@ -16,6 +16,6 @@
       </li>
     </ul>
 
-    <div class="navbar-nav flex-row ml-auto">© 2020</div>
+    <div class="navbar-nav flex-row ml-auto nav-login-colors-link">ParNote © 2020</div>
   </nav>
 </footer>
