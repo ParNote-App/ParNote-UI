@@ -142,8 +142,8 @@
               >
                 <img
                   src="https://www.gravatar.com/avatar/{getMd5Hash($userData.email)}"
-                  alt="Username"
-                  title="Username"
+                  alt="{$userData.username}"
+                  title="{$userData.username}"
                   width="32"
                   height="32"
                   class="border rounded-circle"
