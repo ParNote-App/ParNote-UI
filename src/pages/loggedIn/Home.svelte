@@ -34,6 +34,42 @@
         });
     })();
   });
+
+  function getCountOfNormalNotes(notes) {
+    let count = 0;
+
+    notes.forEach((note) => {
+      if (note.status === 1) {
+        count += 1;
+      }
+    });
+
+    return count;
+  }
+
+  function getCountOfArchivedNotes(notes) {
+    let count = 0;
+
+    notes.forEach((note) => {
+      if (note.status === 2) {
+        count += 1;
+      }
+    });
+
+    return count;
+  }
+
+  function getCountOfTrashNotes(notes) {
+    let count = 0;
+
+    notes.forEach((note) => {
+      if (note.status === 3) {
+        count += 1;
+      }
+    });
+
+    return count;
+  }
 </script>
 
 <ul class="nav nav-tabs pt-3" id="pills-tab" role="tablist">
@@ -91,7 +127,7 @@
     <div class="container">
       <!-- Note Layout Starts Here -->
 
-      {#if notes.length > 1}
+      {#if getCountOfNormalNotes(notes) > 1}
         <div class="card-columns">
           <a
             href="javascript:void(0);"
