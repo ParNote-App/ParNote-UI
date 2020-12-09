@@ -3,7 +3,7 @@
   import { writable, get } from "svelte/store";
 
   const modalID = "noteModal";
-  const note = writable({});
+  const note = writable({id: -1, title: "", text: "", status: 0});
 
   let callback = (note, dismiss) => {};
 
@@ -125,8 +125,8 @@
           <button
             type="submit"
             class="btn btn-primary"
-            class:disabled="{buttonsLoading}"
-            disabled="{buttonsLoading}"
+            class:disabled="{buttonsLoading || $note.title.length === 0 || $note.text.length === 0}"
+            disabled="{buttonsLoading || $note.title.length === 0 || $note.text.length === 0}"
           >
             Save
           </button>
