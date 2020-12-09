@@ -153,7 +153,8 @@
                 class="dropdown-menu dropdown-menu-right shadow-sm"
                 aria-labelledby="userMenu"
               >
-                <h6 class="dropdown-header mb-1">{capitalizeFirstLetter($userData.name)} {capitalizeFirstLetter($userData.surname)}</h6>
+                <h6 class="dropdown-header mb-0">{capitalizeFirstLetter($userData.name)} {capitalizeFirstLetter($userData.surname)}</h6>
+                <h8 class="dropdown-header mb-1">@{$userData.username}</h8>
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
                   ></i>
