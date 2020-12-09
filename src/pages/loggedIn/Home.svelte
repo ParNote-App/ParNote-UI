@@ -1,7 +1,10 @@
 <script>
+  import {onMount} from "svelte"
   import { isPageInitialized } from "../../Store";
 
-  isPageInitialized.set(true);
+  onMount(() => {
+    isPageInitialized.set(true);
+  })
 </script>
 
 <div class="d-flex flex-column min-vh-100">

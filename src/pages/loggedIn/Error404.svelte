@@ -1,7 +1,10 @@
 <script>
-  import {isPageInitialized} from "../../Store"
+  import {onMount} from "svelte"
+  import { isPageInitialized } from "../../Store";
 
-  isPageInitialized.set(true)
+  onMount(() => {
+    isPageInitialized.set(true);
+  })
 </script>
 
 <h1>Error 404 page!</h1>

@@ -1,7 +1,10 @@
 <script>
+  import {onMount} from "svelte"
   import { isPageInitialized } from "../../Store";
 
-  isPageInitialized.set(true);
+  onMount(() => {
+    isPageInitialized.set(true);
+  })
 </script>
 
 Settings page

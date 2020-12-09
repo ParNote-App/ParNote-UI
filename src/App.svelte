@@ -4,7 +4,7 @@
 
 <script>
   import { onDestroy } from "svelte";
-  import { isPageLoading, beforeRouteEnter } from "routve";
+  import { beforeRouteEnter } from "routve";
 
   import "./util/language.util";
   import Splash from "./components/Splash.svelte";
@@ -26,12 +26,7 @@
     next();
   });
 
-  function showSplash(
-    showSplashAlways,
-    loginStatus,
-    isPageLoading,
-    isPageInitialized
-  ) {
+  function showSplash(showSplashAlways, loginStatus, isPageInitialized) {
     return (
       showSplashAlways ||
       loginStatus === LoginStates.LOADING ||
@@ -42,7 +37,7 @@
   onDestroy(beforeRouteEnterUnsubscribe);
 </script>
 
-{#if showSplash(showSplashAlways, $loginStatus, $isPageLoading, $isPageInitialized)}
+{#if showSplash(showSplashAlways, $loginStatus, $isPageInitialized)}
   <Splash />
 {/if}
 
@@ -50,6 +45,6 @@
 {#await import('./components/Main.svelte') then MainComponent}
   <svelte:component
     this="{MainComponent.default}"
-    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageLoading, $isPageInitialized)}"
+    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageInitialized)}"
   />
 {/await}
