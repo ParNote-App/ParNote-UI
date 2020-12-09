@@ -18,7 +18,11 @@
     newPassword: "",
     newPasswordRepeat: "",
   };
-  let changePasswordButtonLoading = false;
+  let buttonsLoading = false;
+
+  let deleteAccountData = {
+    confirm: false,
+  };
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,13 +36,13 @@
     hideError();
     hideSuccess();
 
-    changePasswordButtonLoading = true;
+    buttonsLoading = true;
 
     (function change() {
       ApiUtil.post("user/settings/changePassword", changePasswordData)
         .then((response) => {
           if (response.data.result === "ok") {
-            changePasswordButtonLoading = false;
+            buttonsLoading = false;
 
             changePasswordData.currentPassword = "";
             changePasswordData.newPassword = "";
@@ -46,7 +50,7 @@
 
             showSuccess("SUCCESSFULLY_CHANGED_PASSWORD");
           } else if (response.data.result === "error") {
-            changePasswordButtonLoading = false;
+            buttonsLoading = false;
 
             showError(response.data.error);
           } else
@@ -57,6 +61,34 @@
         .catch(() => {
           setTimeout(() => {
             change();
+          }, 500);
+        });
+    })();
+  }
+
+  function deleteAccount() {
+    hideError();
+    hideSuccess();
+
+    buttonsLoading = true;
+
+    (function deleteAcc() {
+      ApiUtil.post("user/settings/deleteAccount", deleteAccountData)
+        .then((response) => {
+          if (response.data.result === "ok") {
+            window.location = "/";
+          } else if (response.data.result === "error") {
+            buttonsLoading = false;
+
+            showError(response.data.error);
+          } else
+            setTimeout(() => {
+              deleteAcc();
+            }, 500);
+        })
+        .catch(() => {
+          setTimeout(() => {
+            deleteAcc();
           }, 500);
         });
     })();
@@ -120,8 +152,8 @@
               <button
                 type="submit"
                 class="btn btn-primary"
-                class:disabled="{changePasswordButtonLoading}"
-                disabled="{changePasswordButtonLoading}"
+                class:disabled="{buttonsLoading}"
+                disabled="{buttonsLoading}"
               >Save</button>
             </div>
           </form>
@@ -134,7 +166,7 @@
 
           <!-- Title Here -->
 
-          <form action="">
+          <form>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="oldEmail">Email</label>
@@ -151,7 +183,7 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="btn btn-primary" type="submit">Save</div>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </form>
         </div>
@@ -165,13 +197,14 @@
 
           <!-- Title Here -->
 
-          <form action="">
+          <form on:submit|preventDefault="{deleteAccount}">
             <div class="form-group col-md-6">
               <div class="custom-control custom-checkbox">
                 <input
                   type="checkbox"
                   class="custom-control-input"
                   id="deleteAccount"
+                  bind:checked="{deleteAccountData.confirm}"
                 />
                 <label class="custom-control-label" for="deleteAccount">Delete
                   my account and all data
@@ -179,7 +212,12 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="btn btn-outline-danger" type="submit">Confirm</div>
+              <button
+                type="submit"
+                class="btn btn-outline-danger"
+                class:disabled="{buttonsLoading}"
+                disabled="{buttonsLoading}"
+              >Confirm</button>
             </div>
           </form>
         </div>
