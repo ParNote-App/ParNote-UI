@@ -3,7 +3,7 @@
 </style>
 
 <script>
-  import { onDestroy } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import { beforeRouteEnter } from "routve";
 
   import "./util/language.util";
@@ -15,6 +15,7 @@
 
   let showSplashAlways = false;
   let beforeRoutePath = null;
+  let waitAnimation = true;
 
   checkLogin();
 
@@ -26,18 +27,25 @@
     next();
   });
 
-  function showSplash(showSplashAlways, loginStatus, isPageInitialized) {
+  function showSplash(showSplashAlways, loginStatus, isPageInitialized, waitAnimation) {
     return (
       showSplashAlways ||
       loginStatus === LoginStates.LOADING ||
-      (loginStatus === LoginStates.LOGGED_IN && !isPageInitialized)
+      (loginStatus === LoginStates.LOGGED_IN && !isPageInitialized) ||
+      waitAnimation
     );
   }
+
+  onMount(async () => {
+    setTimeout(function () {
+      waitAnimation = false;
+    }, 1500);
+  });
 
   onDestroy(beforeRouteEnterUnsubscribe);
 </script>
 
-{#if showSplash(showSplashAlways, $loginStatus, $isPageInitialized)}
+{#if showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation)}
   <Splash />
 {/if}
 
@@ -45,6 +53,6 @@
 {#await import('./components/Main.svelte') then MainComponent}
   <svelte:component
     this="{MainComponent.default}"
-    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageInitialized)}"
+    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation)}"
   />
 {/await}
