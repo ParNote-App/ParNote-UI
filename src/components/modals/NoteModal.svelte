@@ -3,7 +3,7 @@
   import { writable, get } from "svelte/store";
 
   const modalID = "noteModal";
-  const note = writable({id: -1, title: "", text: "", status: 0});
+  const note = writable({ id: -1, title: "", text: "", status: 0 });
 
   let callback = (note, dismiss) => {};
 
@@ -34,6 +34,46 @@
       id: get(note).id,
       title: get(note).title,
       text: get(note).text,
+    })
+      .then((response) => {
+        if (response.data.result === "ok") {
+          callback(get(note), () => {
+            dismiss();
+
+            buttonsLoading = false;
+          });
+        } else location.reload();
+      })
+      .catch(() => {
+        location.reload();
+      });
+  }
+
+  function moveTrash() {
+    buttonsLoading = true;
+
+    ApiUtil.post("user/moveNoteTrash", {
+      id: get(note).id,
+    })
+      .then((response) => {
+        if (response.data.result === "ok") {
+          callback(get(note), () => {
+            dismiss();
+
+            buttonsLoading = false;
+          });
+        } else location.reload();
+      })
+      .catch(() => {
+        location.reload();
+      });
+  }
+
+  function moveArchive() {
+    buttonsLoading = true;
+
+    ApiUtil.post("user/moveNoteArchive", {
+      id: get(note).id,
     })
       .then((response) => {
         if (response.data.result === "ok") {
@@ -94,6 +134,7 @@
               class="btn btn-link text-danger"
               class:disabled="{buttonsLoading}"
               disabled="{buttonsLoading}"
+              on:click="{moveTrash}"
             >
               <i class="far fa-trash-alt mr-2"></i>
               Çöp
@@ -116,6 +157,7 @@
               class="btn btn-link text-primary"
               class:disabled="{buttonsLoading}"
               disabled="{buttonsLoading}"
+              on:click="{moveArchive}"
             >
               <i class="fas fa-archive mr-2"></i>
               Arşiv
