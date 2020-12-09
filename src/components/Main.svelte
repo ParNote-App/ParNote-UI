@@ -1,7 +1,12 @@
 <script>
   import Router from "routve";
 
-  import { loginStatus, LoginStates, setLogout } from "../util/login.util";
+  import {
+    checkLogin,
+    loginStatus,
+    LoginStates,
+    setLogout,
+  } from "../util/login.util";
   import ApiUtil from "../util/api.util";
 
   import RouterConfig from "../router.config";
@@ -11,7 +16,11 @@
   import Footer from "./Footer.svelte";
   import PageLoading from "./PageLoading.svelte";
 
-  import { isPageInitialized } from "../Store";
+  import {
+    isPageInitialized,
+    isBasicDataInitialized,
+    userData,
+  } from "../Store";
 
   const showLoadingAlways = false;
 
@@ -32,6 +41,43 @@
         window.location = "/";
       });
   }
+
+  function getBasicLoggedInData() {
+    (function getData() {
+      ApiUtil.post("loggedIn/initialData")
+        .then((response) => {
+          if (response.data.result === "ok") {
+            userData.update((userData) => {
+              userData.name = response.data.name;
+              userData.surname = response.data.surname;
+              userData.username = response.data.username;
+              userData.email = response.data.email;
+
+              return userData;
+            });
+
+            isBasicDataInitialized.set(true);
+          } else {
+            setTimeout(() => {
+              getData();
+            }, 500);
+          }
+        })
+        .catch(() => {
+          setTimeout(() => {
+            getData();
+          }, 500);
+        });
+    })();
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  checkLogin(() => {
+    getBasicLoggedInData();
+  });
 
   export let hidden;
 </script>
@@ -102,7 +148,7 @@
                 class="dropdown-menu dropdown-menu-right shadow-sm"
                 aria-labelledby="userMenu"
               >
-                <h6 class="dropdown-header mb-1">Username</h6>
+                <h6 class="dropdown-header mb-1">{capitalizeFirstLetter($userData.name)} {capitalizeFirstLetter($userData.surname)}</h6>
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
                   ></i>

@@ -21,15 +21,18 @@ export function setLogout() {
   loginStatus.set(LoginStates.LOGGED_OUT);
 }
 
-export function checkLogin() {
+export function checkLogin(handler) {
   if (!LoginSessionStorageUtil.isSessionSaved()) {
     setLogout();
   } else {
     (function check() {
       ApiUtil.post("auth/checkLoggedIn", {})
         .then((response) => {
-          if (response.data.result === "ok") setLoggedIn();
-          else if (response.data.error === "NOT_LOGGED_IN") setLogout();
+          if (response.data.result === "ok") {
+            setLoggedIn();
+
+            handler();
+          } else if (response.data.error === "NOT_LOGGED_IN") setLogout();
           else {
             setTimeout(() => {
               check();
