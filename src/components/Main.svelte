@@ -133,7 +133,7 @@
 
             <div class="dropdown">
               <a
-                href="/"
+                href="javascript:void(0);"
                 class="nav-item ml-auto"
                 id="userMenu"
                 data-toggle="dropdown"
