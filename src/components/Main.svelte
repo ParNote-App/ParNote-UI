@@ -1,5 +1,6 @@
 <script>
   import Router from "routve";
+  import md5 from "md5"
 
   import {
     checkLogin,
@@ -79,6 +80,10 @@
     getBasicLoggedInData();
   });
 
+  function getMd5Hash(text) {
+    return md5(text.toLowerCase())
+  }
+
   export let hidden;
 </script>
 
@@ -136,7 +141,7 @@
                 aria-expanded="false"
               >
                 <img
-                  src="https://www.gravatar.com/avatar/00000000000000000000000000000000"
+                  src="https://www.gravatar.com/avatar/{getMd5Hash($userData.email)}"
                   alt="Username"
                   title="Username"
                   width="32"
