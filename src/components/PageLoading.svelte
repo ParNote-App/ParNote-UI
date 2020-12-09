@@ -1,7 +1,5 @@
 <script>
   import { fade } from "svelte/transition";
-
-  export let show;
 </script>
 
 <div
