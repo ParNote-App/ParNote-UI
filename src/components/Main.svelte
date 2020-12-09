@@ -20,16 +20,16 @@
   }
 
   function logout() {
-    loginStatus.set(LoginStates.LOADING)
+    loginStatus.set(LoginStates.LOADING);
 
     ApiUtil.post("auth/logout")
       .then(() => {
         setLogout();
-        window.location = "/"
+        window.location = "/";
       })
       .catch(() => {
         setLogout();
-        window.location = "/"
+        window.location = "/";
       });
   }
 
@@ -70,11 +70,16 @@
               />
             </a>
 
+            <button type="button" class="btn btn-link mr-2">
+              <i class="fa fa-plus"></i>
+              <span class="ml-2 d-md-inline d-none">New Note</span>
+            </button>
             <input
               class="form-control border-0 bg-light rounded text-center text-primary search-input"
               type="search"
               placeholder="Find a note..."
             />
+
             <div class="dropdown">
               <a
                 href="/"
