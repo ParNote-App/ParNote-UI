@@ -1,6 +1,10 @@
 <script>
   import { onMount } from "svelte";
+
   import { isPageInitialized } from "../../Store";
+
+  import NoteModal from "../../components/modals/NoteModal.svelte";
+
 
   onMount(() => {
     isPageInitialized.set(true);
@@ -123,3 +127,5 @@
     </p>
   </div>
 </div>
+
+<NoteModal/>
