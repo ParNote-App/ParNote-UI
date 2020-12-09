@@ -8,6 +8,7 @@ export const LoginStates = {
   LOGGED_OUT: "LOGGED_OUT",
   LOADING: "LOADING",
 };
+
 export const loginStatus = writable(LoginStates.LOADING);
 
 export function setLoggedIn() {

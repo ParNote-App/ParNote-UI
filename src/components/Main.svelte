@@ -1,7 +1,8 @@
 <script>
   import Router from "routve";
 
-  import { loginStatus, LoginStates } from "../util/login.util";
+  import { loginStatus, LoginStates, setLogout } from "../util/login.util";
+  import ApiUtil from "../util/api.util";
 
   import RouterConfig from "../router.config";
   import RouterConfigLoggedIn from "../router.config.loggedIn";
@@ -16,6 +17,20 @@
 
   function showLoading(showLoadingAlways, isPageInitialized) {
     return showLoadingAlways || !isPageInitialized;
+  }
+
+  function logout() {
+    loginStatus.set(LoginStates.LOADING)
+
+    ApiUtil.post("auth/logout")
+      .then(() => {
+        setLogout();
+        window.location = "/"
+      })
+      .catch(() => {
+        setLogout();
+        window.location = "/"
+      });
   }
 
   export let hidden;
@@ -87,7 +102,11 @@
                     class="fas fa-cog mr-2"
                   ></i>
                   Ayarlar</a>
-                <a class="dropdown-item text-danger" href="/logout">
+                <a
+                  class="dropdown-item text-danger"
+                  href="javascript:void(0);"
+                  on:click="{() => logout()}"
+                >
                   <i class="fas fa-sign-out-alt mr-2"></i>
                   Çıkış</a>
               </div>
