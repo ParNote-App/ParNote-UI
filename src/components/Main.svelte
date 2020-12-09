@@ -111,7 +111,7 @@
 
       <footer>
         <div class="container d-flex">
-          <a href="/TermsAndPolicy">Terms & Policy</a>
+          <a href="/terms-and-policy">Terms & Policy</a>
           <p class="ml-auto">&copy; Parnote - 2020</p>
         </div>
       </footer>
