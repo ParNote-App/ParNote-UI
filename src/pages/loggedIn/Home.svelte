@@ -212,12 +212,42 @@
     role="tabpanel"
     aria-labelledby="pills-contact-tab-1"
   >
-    <p>
-      Stream UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT
-      license. The UI Kit comes with 5 beautiful complete pages and includes
-      over 20 reusable and customizable UI Blocks. It’s lightweight and only
-      ~17kb when minified.
-    </p>
+    <div class="container">
+      <!-- Note Layout Starts Here -->
+
+      {#if getCountOfTrashNotes(notes) > 1}
+        <div class="card-columns">
+          <a
+            href="javascript:void(0);"
+            class="text-dark"
+            data-toggle="modal"
+            data-target="#noteModal"
+          >
+            <div class="card note-card">
+              <div class="card-body">
+                <h5 class="card-title font-weight-bolder">Note title</h5>
+                <p class="card-text">
+                  Note content here lorem impsum dolor sit amet. Bla bla bla
+                </p>
+                <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      {:else}
+        <div class="text-center py-4">
+          <h4 class="font-weight-bolder">Not yok.</h4>
+          <p>Not bulanamadı.</p>
+          <br />
+          <a class="btn btn-outline-primary" href="javascript:void(0);"><i
+            class="fas fa-plus mr-1"
+          ></i>
+            Yeni Not</a>
+        </div>
+      {/if}
+    </div>
   </div>
 </div>
 
