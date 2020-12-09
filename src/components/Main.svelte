@@ -22,6 +22,7 @@
     isPageInitialized,
     isBasicDataInitialized,
     userData,
+    forceNotLoggedInView
   } from "../Store";
 
   import { show as showNoteModal } from "./modals/NoteModal.svelte";
@@ -94,7 +95,7 @@
   export let hidden;
 </script>
 
-{#if $loginStatus === LoginStates.LOGGED_OUT}
+{#if $loginStatus === LoginStates.LOGGED_OUT || $forceNotLoggedInView}
   <Header />
 
   <div class="container-fluid h-100">
@@ -109,7 +110,7 @@
   </div>
   <Footer />
 {/if}
-{#if $loginStatus === LoginStates.LOGGED_IN}
+{#if $loginStatus === LoginStates.LOGGED_IN && !$forceNotLoggedInView}
   <div hidden="{hidden}">
     <div class="d-flex flex-column min-vh-100">
       <nav class="navbar py-3">
@@ -229,7 +230,7 @@
 
       <footer>
         <div class="container d-flex">
-          <a href="/terms-and-policy">Terms & Policy</a>
+          <a href="/terms-and-policy" target="_blank">Terms & Policy</a>
           <p class="ml-auto">ParNote &copy; 2020</p>
         </div>
       </footer>

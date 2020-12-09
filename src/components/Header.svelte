@@ -1,10 +1,17 @@
 <script>
   import { _, locales, locale as currentLocale } from "svelte-i18n";
+
+  import { loginStatus, LoginStates } from "../util/login.util";
 </script>
 
 <nav class="navbar navbar-expand-md navbar-light bg-transparent py-3 fixed-top">
   <div class="nav-item mr-3">
-    <a href="/"> <img src="/assets/img/logo.svg" alt="Parnote Logo" /> </a>
+    <a
+      href="{$loginStatus === LoginStates.LOGGED_OUT ? '/' : 'javascript:void(0);'}"
+      on:click="{() => ($loginStatus === LoginStates.LOGGED_OUT ? void 0 : (window.location = '/'))}"
+    >
+      <img src="/assets/img/logo.svg" alt="ParNote Logo" />
+    </a>
   </div>
 
   <a
@@ -45,14 +52,18 @@
       </div>
     </li>
     <li class="nav-item ml-3">
-      <a
-        role="button"
-        href="/login"
-        class="btn btn-outline-light d-flex align-items-center nav-login-colors-btn"
-      ><i class="far fa-user fa-xs mr-2"></i>
-        Login
-        <i class="fas fa-chevron-right fa-xs ml-2"></i>
-      </a>
+      {#if $loginStatus !== LoginStates.LOGGED_IN}
+        <a
+          role="button"
+          href="/login"
+          class="btn btn-outline-light d-flex align-items-center nav-login-colors-btn"
+          class:disabled="{$loginStatus === LoginStates.LOADING}"
+          disabled="{$loginStatus === LoginStates.LOADING}"
+        ><i class="far fa-user fa-xs mr-2"></i>
+          Login
+          <i class="fas fa-chevron-right fa-xs ml-2"></i>
+        </a>
+      {/if}
     </li>
   </ul>
 </nav>

@@ -5,18 +5,26 @@
 <script>
   import { onDestroy, onMount } from "svelte";
   import { beforeRouteEnter } from "routve";
+  import { get } from "svelte/store";
 
   import "./util/language.util";
   import Splash from "./components/Splash.svelte";
 
-  import {LoginStates, loginStatus } from "./util/login.util";
+  import { LoginStates, loginStatus } from "./util/login.util";
 
-  import { isPageInitialized, isBasicDataInitialized } from "./Store";
+  import {
+    isPageInitialized,
+    isBasicDataInitialized,
+    forceNotLoggedInView,
+  } from "./Store";
 
   let showSplashAlways = false;
   let beforeRoutePath = null;
   let waitAnimation = true;
   let splashShowed = false;
+
+  if (window.location.pathname === "/terms-and-policy") forceNotLoggedInView.set(true);
+  if (window.location.pathname === "/about") forceNotLoggedInView.set(true);
 
   const beforeRouteEnterUnsubscribe = beforeRouteEnter((context, next) => {
     if (beforeRoutePath !== context.pathname) isPageInitialized.set(false);
@@ -31,15 +39,18 @@
     loginStatus,
     isPageInitialized,
     waitAnimation,
-    isBasicDataInitialized
+    isBasicDataInitialized,
+    forceNotLoggedInView
   ) {
     let showSplash =
-      showSplashAlways ||
-      loginStatus === LoginStates.LOADING ||
-      (loginStatus === LoginStates.LOGGED_IN && (!isPageInitialized || !isBasicDataInitialized)) ||
-      ((loginStatus === LoginStates.LOADING ||
-        loginStatus === LoginStates.LOGGED_IN) &&
-        waitAnimation);
+      !forceNotLoggedInView &&
+      (showSplashAlways ||
+        loginStatus === LoginStates.LOADING ||
+        (loginStatus === LoginStates.LOGGED_IN &&
+          (!isPageInitialized || !isBasicDataInitialized)) ||
+        ((loginStatus === LoginStates.LOADING ||
+          loginStatus === LoginStates.LOGGED_IN) &&
+          waitAnimation));
 
     if (splashShowed) showSplash = false;
     else if (!waitAnimation) splashShowed = true;
@@ -56,7 +67,7 @@
   onDestroy(beforeRouteEnterUnsubscribe);
 </script>
 
-{#if showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation, $isBasicDataInitialized)}
+{#if showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation, $isBasicDataInitialized, $forceNotLoggedInView)}
   <Splash />
 {/if}
 
@@ -64,6 +75,6 @@
 {#await import('./components/Main.svelte') then MainComponent}
   <svelte:component
     this="{MainComponent.default}"
-    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation, $isBasicDataInitialized)}"
+    hidden="{showSplash(showSplashAlways, $loginStatus, $isPageInitialized, waitAnimation, $isBasicDataInitialized, $forceNotLoggedInView)}"
   />
 {/await}
