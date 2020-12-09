@@ -204,24 +204,25 @@
 
       {#if getCountOfArchivedNotes(notes) > 0}
         <div class="card-columns">
-          <a
-            href="javascript:void(0);"
-            class="text-dark"
-            data-toggle="modal"
-            data-target="#noteModal"
-          >
-            <div class="card note-card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bolder">Note title</h5>
-                <p class="card-text">
-                  Note content here lorem impsum dolor sit amet. Bla bla bla
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </a>
+          {#each notes as note, index (note)}
+            {#if note.status === 2}
+              <a
+                href="javascript:void(0);"
+                class="text-dark"
+                on:click="{() => showNoteModal(note)}"
+              >
+                <div class="card note-card" in:fade>
+                  <div class="card-body">
+                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
+                    <p class="card-text">{note.text}</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            {/if}
+          {/each}
         </div>
       {:else}
         <div class="text-center py-4">
@@ -261,24 +262,25 @@
 
       {#if getCountOfTrashNotes(notes) > 0}
         <div class="card-columns">
-          <a
-            href="javascript:void(0);"
-            class="text-dark"
-            data-toggle="modal"
-            data-target="#noteModal"
-          >
-            <div class="card note-card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bolder">Note title</h5>
-                <p class="card-text">
-                  Note content here lorem impsum dolor sit amet. Bla bla bla
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </a>
+          {#each notes as note, index (note)}
+            {#if note.status === 3}
+              <a
+                href="javascript:void(0);"
+                class="text-dark"
+                on:click="{() => showNoteModal(note)}"
+              >
+                <div class="card note-card" in:fade>
+                  <div class="card-body">
+                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
+                    <p class="card-text">{note.text}</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            {/if}
+          {/each}
         </div>
       {:else}
         <div class="text-center py-4">
