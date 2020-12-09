@@ -36,7 +36,7 @@
       >
         {#each $locales as locale}
           <a
-            class="dropdown-item"
+            class="dropdown-item text-primary"
             href="javascript:void(0);"
             class:font-weight-bold="{$currentLocale
               .toLowerCase()
