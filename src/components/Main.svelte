@@ -12,23 +12,23 @@
   export let hidden;
 </script>
 
-<div hidden="{hidden}">
-  {#if $loginStatus === LoginStates.LOGGED_OUT}
-    <Header />
+{#if $loginStatus === LoginStates.LOGGED_OUT}
+  <Header />
 
-    <div class="container-fluid h-100">
-      <div class="row h-100">
-        <div
-          class="col-lg-6 col-12 h-100 d-flex h-100 flex-column justify-content-center"
-        >
-          <Router routerConfig="{RouterConfig}" />
-        </div>
-        <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+      <div
+        class="col-lg-6 col-12 h-100 d-flex h-100 flex-column justify-content-center"
+      >
+        <Router routerConfig="{RouterConfig}" />
       </div>
+      <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
     </div>
-    <Footer />
-  {/if}
-  {#if $loginStatus === LoginStates.LOGGED_IN}
+  </div>
+  <Footer />
+{/if}
+{#if $loginStatus === LoginStates.LOGGED_IN}
+  <div hidden="{hidden}">
     <Router routerConfig="{RouterConfigLoggedIn}" />
-  {/if}
-</div>
+  </div>
+{/if}
