@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import jQuery from "jquery";
 
   import { isPageInitialized } from "../../Store";
 
@@ -25,7 +26,6 @@
           isPageInitialized.set(true);
           handler();
         } else {
-          console.log(response.data);
           setTimeout(() => {
             getData(handler);
           }, 500);
@@ -81,6 +81,7 @@
   setNoteModalSuccessCallback((note, dismiss) => {
     getData(() => {
       dismiss();
+      jQuery("#pills-tab li:nth-child(1) a").tab("show");
     });
   });
 </script>
@@ -183,8 +184,7 @@
         <button
           type="button"
           class="btn btn-outline-primary"
-          href="javascript:void(0);"
-          on:click="{showNoteModal}"
+          on:click="{() => showNoteModal()}"
         >
           <i class="fas fa-plus mr-1"></i>
           Yeni Not
@@ -228,15 +228,14 @@
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <button
+          <a
             type="button"
             class="btn btn-outline-primary"
-            href="javascript:void(0);"
-            on:click="{showNoteModal}"
+            on:click="{() => showNoteModal()}"
           >
             <i class="fas fa-plus mr-1"></i>
             Yeni Not
-          </button>
+          </a>
         </div>
       {/if}
     </div>
@@ -286,15 +285,14 @@
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <button
+          <a
             type="button"
             class="btn btn-outline-primary"
-            href="javascript:void(0);"
-            on:click="{showNoteModal}"
+            on:click="{() => showNoteModal()}"
           >
             <i class="fas fa-plus mr-1"></i>
             Yeni Not
-          </button>
+          </a>
         </div>
       {/if}
     </div>
