@@ -3,19 +3,20 @@
 </style>
 
 <script>
-  import { onMount, onDestroy } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { beforeRouteEnter } from "routve";
 
   import "./util/language.util";
   import Splash from "./components/Splash.svelte";
 
-  import { checkLogin, loginStatus, LoginStates } from "./util/login.util";
+  import { checkLogin, LoginStates, loginStatus } from "./util/login.util";
 
   import { isPageInitialized } from "./Store";
 
   let showSplashAlways = false;
   let beforeRoutePath = null;
   let waitAnimation = true;
+  let splashShowed = false;
 
   checkLogin();
 
@@ -27,13 +28,22 @@
     next();
   });
 
-  function showSplash(showSplashAlways, loginStatus, isPageInitialized, waitAnimation) {
-    return (
+  function showSplash(
+    showSplashAlways,
+    loginStatus,
+    isPageInitialized,
+    waitAnimation
+  ) {
+    let showSplash =
       showSplashAlways ||
       loginStatus === LoginStates.LOADING ||
       (loginStatus === LoginStates.LOGGED_IN && !isPageInitialized) ||
-      waitAnimation
-    );
+      waitAnimation;
+
+    if (splashShowed) showSplash = false;
+    else if (!waitAnimation) splashShowed = true;
+
+    return showSplash;
   }
 
   onMount(async () => {
