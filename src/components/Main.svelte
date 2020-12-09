@@ -8,6 +8,15 @@
 
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
+  import PageLoading from "./PageLoading.svelte";
+
+  import { isPageInitialized } from "../Store";
+
+  const showLoadingAlways = false;
+
+  function showLoading(showLoadingAlways, isPageInitialized) {
+    return showLoadingAlways || !isPageInitialized;
+  }
 
   export let hidden;
 </script>
@@ -29,11 +38,12 @@
 {/if}
 {#if $loginStatus === LoginStates.LOGGED_IN}
   <div hidden="{hidden}">
-
     <div class="d-flex flex-column min-vh-100">
       <nav class="navbar py-3">
         <div class="container">
-          <div class="w-100 d-flex flex-row align-items-between align-items-center">
+          <div
+            class="w-100 d-flex flex-row align-items-between align-items-center"
+          >
             <a class="navbar-brand" href="/">
               <img
                 src="/assets/img/logo.svg"
@@ -74,8 +84,8 @@
               >
                 <h6 class="dropdown-header mb-1">Username</h6>
                 <a class="dropdown-item" href="/settings"><i
-                  class="fas fa-cog mr-2"
-                ></i>
+                    class="fas fa-cog mr-2"
+                  ></i>
                   Ayarlar</a>
                 <a class="dropdown-item text-danger" href="/logout">
                   <i class="fas fa-sign-out-alt mr-2"></i>
@@ -88,7 +98,14 @@
 
       <main class="flex-fill">
         <div class="container">
-          <Router routerConfig="{RouterConfigLoggedIn}" />
+          {#if showLoading(showLoadingAlways, $isPageInitialized)}
+            <PageLoading />
+          {/if}
+
+          <Router
+            hidden="{showLoading(showLoadingAlways, $isPageInitialized)}"
+            routerConfig="{RouterConfigLoggedIn}"
+          />
         </div>
       </main>
 
