@@ -2,9 +2,7 @@
   import { _, locales, locale as currentLocale } from "svelte-i18n";
 </script>
 
-<nav
-  class="navbar navbar-expand-md navbar-light bg-transparent py-3 px-4 fixed-top"
->
+<nav class="navbar navbar-expand-md navbar-light bg-transparent py-3 fixed-top">
   <div class="nav-item mr-3">
     <a href="/"> <img src="/assets/img/logo.svg" alt="Parnote Logo" /> </a>
   </div>

@@ -51,6 +51,39 @@ body {
   }
 }
 
-.search-input::focus {
+.search-input {
   width: 250px !important;
+  margin: auto;
+  transition: 0.2s linear;
+  &:focus {
+    transition: 0.2s linear;
+    width: 300px !important;
+  }
+}
+
+.card-columns {
+  @include media-breakpoint-only(xl) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
+  }
+  @include media-breakpoint-only(sm) {
+    column-count: 2;
+  }
+}
+
+.note-card {
+  transition: 0.2s;
+  border: 2px solid $light !important;
+  &:hover {
+    transition: 0.2s;
+    border: 2px solid $primary !important;
+  }
+}
+
+.modal-note-content {
+  border-bottom: 3px solid #f6f9fc !important;
+  padding: 0.5px !important;
+  border-radius: 0 !important;
 }
