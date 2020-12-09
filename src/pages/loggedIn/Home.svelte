@@ -39,15 +39,15 @@
       Archive
     </a>
   </li>
-  <div class="ml-auto d-flex flex-row">
+  <div class="ml-md-auto d-flex flex-row">
     <li class="nav-item">
       <a
         class="nav-link"
-        id="pills-slash-tab"
+        id="pills-search-tab"
         data-toggle="pill"
-        href="#pills-slash"
+        href="#pills-search"
         role="tab"
-        aria-controls="pills-slash"
+        aria-controls="pills-search"
         aria-selected="false"
       >
         <i class="fas fa-search mr-2"></i>
@@ -76,7 +76,7 @@
     class="tab-pane fade active show"
     id="pills-notes"
     role="tabpanel"
-    aria-labelledby="pills-home-tab-1"
+    aria-labelledby="pills-notes-tab-1"
   >
     <!-- Note Layout Starts Here -->
 
@@ -108,7 +108,7 @@
       <a class="btn btn-outline-primary" href="#"><i
           class="fas fa-plus mr-1"
         ></i>
-        Yeni Not</a>
+        New Note</a>
     </div>
   </div>
 
@@ -116,7 +116,7 @@
     class="tab-pane fade"
     id="pills-archive"
     role="tabpanel"
-    aria-labelledby="pills-profile-tab-1"
+    aria-labelledby="pills-archive-tab-1"
   >
     <p>
       Stream UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT
