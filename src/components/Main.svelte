@@ -45,7 +45,7 @@
 
   function getBasicLoggedInData() {
     (function getData() {
-      ApiUtil.post("loggedIn/initialData")
+      ApiUtil.post("loggedIn/initialData", {})
         .then((response) => {
           if (response.data.result === "ok") {
             userData.update((userData) => {
