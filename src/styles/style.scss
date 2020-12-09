@@ -75,7 +75,7 @@ body {
 
 .note-card {
   transition: 0.2s;
-  border: 2px solid transparent !important;
+  border: 2px solid $light !important;
   &:hover {
     transition: 0.2s;
     border: 2px solid $primary !important;
