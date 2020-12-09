@@ -5,13 +5,12 @@
 
   import NoteModal from "../../components/modals/NoteModal.svelte";
 
-
   onMount(() => {
     isPageInitialized.set(true);
   });
 </script>
 
-<ul class="nav nav-tabs" id="pills-tab" role="tablist">
+<ul class="nav nav-tabs pt-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a
       class="nav-link active show"
@@ -91,7 +90,7 @@
         <h4 class="font-weight-bolder">Not yok.</h4>
         <p>Not bulanamadı.</p>
         <br />
-        <a class="btn btn-sm btn-outline-primary" href="#"><i
+        <a class="btn btn-outline-primary" href="#"><i
             class="fas fa-plus mr-1"
           ></i>
           Yeni Not</a>
@@ -128,4 +127,4 @@
   </div>
 </div>
 
-<NoteModal/>
+<NoteModal />
