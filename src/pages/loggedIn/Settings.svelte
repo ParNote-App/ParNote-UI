@@ -2,6 +2,12 @@
   import { onMount } from "svelte";
   import { isPageInitialized } from "../../Store";
 
+  import { userData } from "../../Store";
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   onMount(() => {
     isPageInitialized.set(true);
   });
@@ -13,7 +19,10 @@
   <div class="container">
     <div class="d-block my-3">
       <i class="fas fa-user mr-2 text-muted"></i>
-      <b>Selim Gökçek</b>
+      <b>
+        {capitalizeFirstLetter($userData.name)}
+        {capitalizeFirstLetter($userData.surname)}
+      </b>
       olarak giriş yapıldı.
     </div>
 
