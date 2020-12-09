@@ -1,7 +1,8 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import { fade } from "svelte/transition";
   import jQuery from "jquery";
+  import moment from "moment";
 
   import { isPageInitialized } from "../../Store";
 
@@ -12,6 +13,8 @@
   import ApiUtil from "../../util/api.util";
 
   let notes = [];
+  let checkTime = 0;
+  let interval;
 
   function getData(handler = () => {}) {
     ApiUtil.post("user/getNotes", {})
@@ -76,6 +79,10 @@
 
   onMount(() => {
     getData();
+
+    interval = setInterval(() => {
+      checkTime += 1;
+    }, 1000);
   });
 
   setNoteModalSuccessCallback((note, dismiss) => {
@@ -83,6 +90,14 @@
       dismiss();
       jQuery("#pills-tab li:nth-child(1) a").tab("show");
     });
+  });
+
+  function getTime(check,time) {
+    return moment(time).fromNow()
+  }
+
+  onDestroy(() => {
+    clearInterval(interval);
   });
 </script>
 
@@ -115,20 +130,20 @@
       Archive
     </a>
   </li>
-<!--  <li class="nav-item ml-auto">-->
-<!--    <a-->
-<!--      class="nav-link"-->
-<!--      id="pills-search-tab"-->
-<!--      data-toggle="pill"-->
-<!--      href="#pills-search"-->
-<!--      role="tab"-->
-<!--      aria-controls="pills-search"-->
-<!--      aria-selected="false"-->
-<!--    >-->
-<!--      <i class="fas fa-search mr-2"></i>-->
-<!--      Search-->
-<!--    </a>-->
-<!--  </li>-->
+  <!--  <li class="nav-item ml-auto">-->
+  <!--    <a-->
+  <!--      class="nav-link"-->
+  <!--      id="pills-search-tab"-->
+  <!--      data-toggle="pill"-->
+  <!--      href="#pills-search"-->
+  <!--      role="tab"-->
+  <!--      aria-controls="pills-search"-->
+  <!--      aria-selected="false"-->
+  <!--    >-->
+  <!--      <i class="fas fa-search mr-2"></i>-->
+  <!--      Search-->
+  <!--    </a>-->
+  <!--  </li>-->
   <li class="nav-item ml-auto">
     <a
       class="nav-link"
@@ -168,7 +183,7 @@
                   <h5 class="card-title font-weight-bolder">{note.title}</h5>
                   <p class="card-text">{note.text}</p>
                   <p class="card-text">
-                    <small class="text-muted">Last updated 3 mins ago</small>
+                    <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified))}</small>
                   </p>
                 </div>
               </div>
@@ -178,7 +193,9 @@
       </div>
     {:else}
       <div class="text-center py-4">
-        <h4 class="font-weight-bolder"> <i class="fas fa-sticky-note mr-1"></i></h4>
+        <h4 class="font-weight-bolder">
+          <i class="fas fa-sticky-note mr-1"></i>
+        </h4>
         <p>Burası boş.</p>
         <br />
         <button
@@ -226,21 +243,23 @@
         </div>
       {:else}
         <div class="text-center py-4">
-          <h4 class="font-weight-bolder"> <i class="fas fa-archive mr-1"></i></h4>
+          <h4 class="font-weight-bolder">
+            <i class="fas fa-archive mr-1"></i>
+          </h4>
           <p>Burası boş.</p>
         </div>
       {/if}
     </div>
   </div>
 
-<!--  <div-->
-<!--    class="tab-pane fade"-->
-<!--    id="pills-search"-->
-<!--    role="tabpanel"-->
-<!--    aria-labelledby="pills-search-tab-1"-->
-<!--  >-->
-<!--    <div class="container">search</div>-->
-<!--  </div>-->
+  <!--  <div-->
+  <!--    class="tab-pane fade"-->
+  <!--    id="pills-search"-->
+  <!--    role="tabpanel"-->
+  <!--    aria-labelledby="pills-search-tab-1"-->
+  <!--  >-->
+  <!--    <div class="container">search</div>-->
+  <!--  </div>-->
 
   <div
     class="tab-pane fade"
@@ -275,7 +294,7 @@
         </div>
       {:else}
         <div class="text-center py-4">
-          <h4 class="font-weight-bolder"> <i class="fas fa-trash mr-1"></i></h4>
+          <h4 class="font-weight-bolder"><i class="fas fa-trash mr-1"></i></h4>
           <p>Burası boş.</p>
         </div>
       {/if}

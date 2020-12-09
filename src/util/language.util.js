@@ -1,6 +1,18 @@
 import { init, addMessages, locale, getLocaleFromNavigator } from "svelte-i18n";
 import { get } from "svelte/store";
 
+import moment from "moment";
+
+import localizationTR from 'moment/locale/tr';
+import localizationDE from 'moment/locale/de';
+import localizationRU from 'moment/locale/ru';
+import localizationHU from 'moment/locale/hu';
+
+moment.updateLocale('tr', localizationTR);
+moment.updateLocale('de', localizationDE);
+moment.updateLocale('ru', localizationRU);
+moment.updateLocale('hu', localizationHU);
+
 import EN from "../lang/en.json";
 import TR from "../lang/tr.json";
 import DE from "../lang/de.json";
@@ -33,3 +45,7 @@ init({
   fallbackLocale: "en",
   initialLocale: convertLocale(getLocaleFromNavigator()),
 });
+
+locale.subscribe((locale) => {
+  moment.locale(convertLocale())
+})
