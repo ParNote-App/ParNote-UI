@@ -52,7 +52,7 @@ body {
 }
 
 .search-input {
-  width: 250px !important;
+  max-width: 250px !important;
   margin: auto;
   transition: 0.2s linear;
   &:focus {

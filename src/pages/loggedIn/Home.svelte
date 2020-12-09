@@ -85,7 +85,7 @@
   });
 </script>
 
-<ul class="nav nav-tabs pt-3" id="pills-tab" role="tablist">
+<ul class="nav nav-tabs pt-3 d-flex flex-row" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a
       class="nav-link active show"
@@ -117,6 +117,20 @@
   <li class="nav-item ml-auto">
     <a
       class="nav-link"
+      id="pills-search-tab"
+      data-toggle="pill"
+      href="#pills-search"
+      role="tab"
+      aria-controls="pills-search"
+      aria-selected="false"
+    >
+      <i class="fas fa-search mr-2"></i>
+      Search
+    </a>
+  </li>
+  <li class="nav-item">
+    <a
+      class="nav-link"
       id="pills-trash-tab"
       data-toggle="pill"
       href="#pills-trash"
@@ -135,57 +149,55 @@
     class="tab-pane fade active show"
     id="pills-notes"
     role="tabpanel"
-    aria-labelledby="pills-home-tab-1"
+    aria-labelledby="pills-notes-tab-1"
   >
-    <div class="container">
-      <!-- Note Layout Starts Here -->
+    <!-- Note Layout Starts Here -->
 
-      {#if getCountOfNormalNotes(notes) > 0}
-        <div class="card-columns">
-          {#each notes as note, index (note)}
-            {#if note.status === 1}
-              <a
-                href="javascript:void(0);"
-                class="text-dark"
-                on:click="{() => showNoteModal(note)}"
-              >
-                <div class="card note-card" in:fade>
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
-                    <p class="card-text">{note.text}</p>
-                    <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                  </div>
+    {#if getCountOfNormalNotes(notes) > 0}
+      <div class="card-columns">
+        {#each notes as note, index (note)}
+          {#if note.status === 1}
+            <a
+              href="javascript:void(0);"
+              class="text-dark"
+              on:click="{() => showNoteModal(note)}"
+            >
+              <div class="card note-card" in:fade>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bolder">{note.title}</h5>
+                  <p class="card-text">{note.text}</p>
+                  <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins ago</small>
+                  </p>
                 </div>
-              </a>
-            {/if}
-          {/each}
-        </div>
-      {:else}
-        <div class="text-center py-4">
-          <h4 class="font-weight-bolder">Not yok.</h4>
-          <p>Not bulanamadı.</p>
-          <br />
-          <button
-            type="button"
-            class="btn btn-outline-primary"
-            href="javascript:void(0);"
-            on:click="{showNoteModal}"
-          >
-            <i class="fas fa-plus mr-1"></i>
-            Yeni Not
-          </button>
-        </div>
-      {/if}
-    </div>
+              </div>
+            </a>
+          {/if}
+        {/each}
+      </div>
+    {:else}
+      <div class="text-center py-4">
+        <h4 class="font-weight-bolder">Not yok.</h4>
+        <p>Not bulanamadı.</p>
+        <br />
+        <button
+          type="button"
+          class="btn btn-outline-primary"
+          href="javascript:void(0);"
+          on:click="{showNoteModal}"
+        >
+          <i class="fas fa-plus mr-1"></i>
+          Yeni Not
+        </button>
+      </div>
+    {/if}
   </div>
 
   <div
     class="tab-pane fade"
     id="pills-archive"
     role="tabpanel"
-    aria-labelledby="pills-profile-tab-1"
+    aria-labelledby="pills-archive-tab-1"
   >
     <div class="container">
       <!-- Note Layout Starts Here -->
@@ -232,9 +244,18 @@
 
   <div
     class="tab-pane fade"
+    id="pills-search"
+    role="tabpanel"
+    aria-labelledby="pills-search-tab-1"
+  >
+    <div class="container">search</div>
+  </div>
+
+  <div
+    class="tab-pane fade"
     id="pills-trash"
     role="tabpanel"
-    aria-labelledby="pills-contact-tab-1"
+    aria-labelledby="pills-trash-tab-1"
   >
     <div class="container">
       <!-- Note Layout Starts Here -->

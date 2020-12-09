@@ -133,7 +133,7 @@
               on:click="{showNewNote}"
             >
               <i class="fa fa-plus"></i>
-              <span class="ml-2 d-md-inline d-none">New Note</span>
+              <span class="ml-2 d-lg-inline d-none">New Note</span>
             </button>
             <input
               class="form-control border-0 bg-light rounded text-center text-primary search-input"
