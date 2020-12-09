@@ -18,7 +18,7 @@
     <li class="nav-item dropdown">
       <a
         class="nav-link nav-login-colors-link"
-        href="#"
+        href="javascript:void(0);"
         id="navbarDropdown"
         role="button"
         data-toggle="dropdown"

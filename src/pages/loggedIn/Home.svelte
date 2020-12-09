@@ -94,7 +94,7 @@
       {#if notes.length > 1}
         <div class="card-columns">
           <a
-            href="#"
+            href="javascript:void(0);"
             class="text-dark"
             data-toggle="modal"
             data-target="#noteModal"
@@ -117,7 +117,7 @@
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <a class="btn btn-outline-primary" href="#"><i
+          <a class="btn btn-outline-primary" href="javascript:void(0);"><i
               class="fas fa-plus mr-1"
             ></i>
             Yeni Not</a>

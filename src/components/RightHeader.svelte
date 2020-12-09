@@ -8,7 +8,7 @@
       <li class="nav-item dropdown">
         <a
           class="nav-link text-primary"
-          href="#"
+          href="javascript:void(0);"
           id="navbarDropdown"
           role="button"
           data-toggle="dropdown"
