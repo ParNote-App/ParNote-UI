@@ -1,6 +1,7 @@
 <script>
   import Router from "routve";
   import md5 from "md5";
+  import { _, locales, locale as currentLocale } from "svelte-i18n";
 
   import {
     checkLogin,
@@ -140,8 +141,36 @@
               type="search"
               placeholder="Find a note..."
             />
-
             <div class="dropdown ml-auto">
+              <a
+                class="nav-link"
+                href="javascript:void(0);"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {$_('language-name')}
+                <i class="fas fa-angle-down"></i>
+              </a>
+              <div
+                class="dropdown-menu position-absolute"
+                aria-labelledby="navbarDropdown"
+              >
+                {#each $locales as locale}
+                  <a
+                    class="dropdown-item text-primary"
+                    href="javascript:void(0);"
+                    class:font-weight-bold="{$currentLocale
+                      .toLowerCase()
+                      .startsWith(locale)}"
+                    on:click="{() => currentLocale.set(locale)}"
+                  >{$_('language-name', { locale })}</a>
+                {/each}
+              </div>
+            </div>
+            <div class="dropdown ml-3">
               <a
                 href="javascript:void(0);"
                 class="nav-item"

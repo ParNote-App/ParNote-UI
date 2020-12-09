@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import jQuery from "jquery";
   import moment from "moment";
+  import { _, locales, locale as currentLocale } from "svelte-i18n";
 
   import { isPageInitialized } from "../../Store";
 
@@ -92,8 +93,8 @@
     });
   });
 
-  function getTime(check,time) {
-    return moment(time).fromNow()
+  function getTime(check, time, locale) {
+    return moment(time).fromNow();
   }
 
   onDestroy(() => {
@@ -183,7 +184,9 @@
                   <h5 class="card-title font-weight-bolder">{note.title}</h5>
                   <p class="card-text">{note.text}</p>
                   <p class="card-text">
-                    <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified))}</small>
+                    <small
+                      class="text-muted"
+                    >{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
                   </p>
                 </div>
               </div>
