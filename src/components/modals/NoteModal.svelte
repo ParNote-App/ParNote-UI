@@ -24,6 +24,9 @@
 
 <script>
   import ApiUtil from "../../util/api.util";
+  import ConfirmDeleteNoteModal, {
+    show as showConfirmDeleteNoteModal,
+  } from "./ConfirmDeleteNoteModal.svelte";
 
   let buttonsLoading = false;
 
@@ -88,6 +91,38 @@
         location.reload();
       });
   }
+
+  function deleteNote() {
+    ApiUtil.post("user/deleteNote", {
+      id: get(note).id,
+    })
+      .then((response) => {
+        if (response.data.result === "ok") {
+          callback(get(note), () => {
+            dismiss();
+
+            buttonsLoading = false;
+          });
+        } else location.reload();
+      })
+      .catch(() => {
+        location.reload();
+      });
+  }
+
+  function deleteNoteClick() {
+    buttonsLoading = true;
+
+    showConfirmDeleteNoteModal(
+      get(note),
+      () => {
+        deleteNote()
+      },
+      () => {
+        buttonsLoading = false;
+      }
+    );
+  }
 </script>
 
 <div
@@ -112,6 +147,8 @@
             class="close"
             data-dismiss="modal"
             aria-label="Close"
+            class:disabled="{buttonsLoading}"
+            disabled="{buttonsLoading}"
           >
             <span aria-hidden="true">&times;</span>
           </button>
@@ -146,6 +183,7 @@
               class="btn btn-link text-danger"
               class:disabled="{buttonsLoading}"
               disabled="{buttonsLoading}"
+              on:click="{deleteNoteClick}"
             >
               <i class="fas fa-trash-alt mr-2"></i>
               Kalıcı Sil
@@ -177,3 +215,5 @@
     </div>
   </div>
 </div>
+
+<ConfirmDeleteNoteModal />

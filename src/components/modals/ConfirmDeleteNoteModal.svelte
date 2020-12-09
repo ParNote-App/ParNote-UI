@@ -1,5 +1,41 @@
+<script context="module">
+  import jquery from "jquery";
+  import { writable, get } from "svelte/store";
+
+  const modalID = "confirmDeleteNoteModal";
+  const note = writable({ id: -1, title: "", text: "", status: 0 });
+
+  let confirmHandler = (note, dismiss) => {};
+  let cancelHandler = (note, dismiss) => {};
+
+  export function show(newNote, newConfirmHandler, newCancelHandler) {
+    note.set(newNote);
+
+    confirmHandler = newConfirmHandler;
+    cancelHandler = newCancelHandler;
+
+    jquery("#" + modalID).modal({ backdrop: "static", keyboard: false });
+  }
+
+  export function dismiss() {
+    jquery("#" + modalID).modal("hide");
+  }
+</script>
+
+<script>
+  function onConfirm() {
+    dismiss();
+    confirmHandler();
+  }
+
+  function onClose() {
+    dismiss();
+    cancelHandler();
+  }
+</script>
+
 <div
-  class="modal"
+  class="modal fade"
   id="confirmDeleteNoteModal"
   tabindex="-1"
   aria-labelledby="confirmDeleteNoteModal"
@@ -8,24 +44,25 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" on:click="{cancelHandler}">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <b>xxx</b>
+        <b>{$note.title}</b>
         adlı notu silmek istediğinizden emin misiniz?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-link text-danger"> İptal</button>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-link text-danger"
+          on:click="{onClose}"
+        >
+          İptal</button>
+        <button type="button" class="btn btn-danger" on:click="{onConfirm}">
           <i class="fas fa-trash-alt mr-2"></i>
-          Evet</button>
+          Evet
+        </button>
       </div>
     </div>
   </div>
