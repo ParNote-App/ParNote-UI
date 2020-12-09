@@ -5,7 +5,6 @@
 
   import NoteModal from "../../components/modals/NoteModal.svelte";
 
-
   onMount(() => {
     isPageInitialized.set(true);
   });
@@ -128,4 +127,4 @@
   </div>
 </div>
 
-<NoteModal/>
+<NoteModal />
