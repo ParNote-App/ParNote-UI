@@ -13,7 +13,7 @@
 
   import { isPageInitialized } from "../Store";
 
-  const showLoadingAlways = false;
+  const showLoadingAlways = true;
 
   function showLoading(showLoadingAlways, isPageInitialized) {
     return showLoadingAlways || !isPageInitialized;

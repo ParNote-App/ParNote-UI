@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="d-flex justify-content-center align-items-center h-100"
+  class="d-flex justify-content-center align-items-center h-100 py-5"
   in:fade
   out:fade
 >
