@@ -1,7 +1,13 @@
 <script>
   import Router from "routve";
+  import md5 from "md5"
 
-  import { loginStatus, LoginStates, setLogout } from "../util/login.util";
+  import {
+    checkLogin,
+    loginStatus,
+    LoginStates,
+    setLogout,
+  } from "../util/login.util";
   import ApiUtil from "../util/api.util";
 
   import RouterConfig from "../router.config";
@@ -11,7 +17,11 @@
   import Footer from "./Footer.svelte";
   import PageLoading from "./PageLoading.svelte";
 
-  import { isPageInitialized } from "../Store";
+  import {
+    isPageInitialized,
+    isBasicDataInitialized,
+    userData,
+  } from "../Store";
 
   const showLoadingAlways = false;
 
@@ -31,6 +41,47 @@
         setLogout();
         window.location = "/";
       });
+  }
+
+  function getBasicLoggedInData() {
+    (function getData() {
+      ApiUtil.post("loggedIn/initialData")
+        .then((response) => {
+          if (response.data.result === "ok") {
+            userData.update((userData) => {
+              userData.name = response.data.name;
+              userData.surname = response.data.surname;
+              userData.username = response.data.username;
+              userData.email = response.data.email;
+
+              return userData;
+            });
+
+            isBasicDataInitialized.set(true);
+          } else {
+            setTimeout(() => {
+              getData();
+            }, 500);
+          }
+        })
+        .catch(() => {
+          setTimeout(() => {
+            getData();
+          }, 500);
+        });
+    })();
+  }
+
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  checkLogin(() => {
+    getBasicLoggedInData();
+  });
+
+  function getMd5Hash(text) {
+    return md5(text.toLowerCase())
   }
 
   export let hidden;
@@ -82,7 +133,7 @@
 
             <div class="dropdown">
               <a
-                href="/"
+                href="javascript:void(0);"
                 class="nav-item ml-auto"
                 id="userMenu"
                 data-toggle="dropdown"
@@ -90,9 +141,9 @@
                 aria-expanded="false"
               >
                 <img
-                  src="https://www.gravatar.com/avatar/00000000000000000000000000000000"
-                  alt="Username"
-                  title="Username"
+                  src="https://www.gravatar.com/avatar/{getMd5Hash($userData.email)}"
+                  alt="{$userData.username}"
+                  title="{$userData.username}"
                   width="32"
                   height="32"
                   class="border rounded-circle"
@@ -102,7 +153,8 @@
                 class="dropdown-menu dropdown-menu-right shadow-sm"
                 aria-labelledby="userMenu"
               >
-                <h6 class="dropdown-header mb-1">Username</h6>
+                <h6 class="dropdown-header mb-0">{capitalizeFirstLetter($userData.name)} {capitalizeFirstLetter($userData.surname)}</h6>
+                <h8 class="dropdown-header mb-1">@{$userData.username}</h8>
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
                   ></i>
@@ -136,7 +188,7 @@
       <footer>
         <div class="container d-flex">
           <a href="/terms-and-policy">Terms & Policy</a>
-          <p class="ml-auto">&copy; Parnote - 2020</p>
+          <p class="ml-auto">ParNote &copy; 2020</p>
         </div>
       </footer>
     </div>

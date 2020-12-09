@@ -71,7 +71,7 @@
   </div>
 </ul>
 
-<div class="tab-content tab-content--v1" id="pills-tabContent">
+<div class="tab-content tab-content--v1 mb-5" id="pills-tabContent">
   <div
     class="tab-pane fade active show"
     id="pills-notes"
