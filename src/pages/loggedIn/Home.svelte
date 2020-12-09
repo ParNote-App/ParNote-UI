@@ -178,8 +178,8 @@
       </div>
     {:else}
       <div class="text-center py-4">
-        <h4 class="font-weight-bolder">Not yok.</h4>
-        <p>Not bulanamadı.</p>
+        <h4 class="font-weight-bolder"> <i class="fas fa-sticky-note mr-1"></i></h4>
+        <p>Burası boş.</p>
         <br />
         <button
           type="button"
@@ -226,17 +226,8 @@
         </div>
       {:else}
         <div class="text-center py-4">
-          <h4 class="font-weight-bolder">Not yok.</h4>
-          <p>Not bulanamadı.</p>
-          <br />
-          <a
-            type="button"
-            class="btn btn-outline-primary"
-            on:click="{() => showNoteModal()}"
-          >
-            <i class="fas fa-plus mr-1"></i>
-            Yeni Not
-          </a>
+          <h4 class="font-weight-bolder"> <i class="fas fa-archive mr-1"></i></h4>
+          <p>Burası boş.</p>
         </div>
       {/if}
     </div>
@@ -284,17 +275,8 @@
         </div>
       {:else}
         <div class="text-center py-4">
-          <h4 class="font-weight-bolder">Not yok.</h4>
-          <p>Not bulanamadı.</p>
-          <br />
-          <a
-            type="button"
-            class="btn btn-outline-primary"
-            on:click="{() => showNoteModal()}"
-          >
-            <i class="fas fa-plus mr-1"></i>
-            Yeni Not
-          </a>
+          <h4 class="font-weight-bolder"> <i class="fas fa-trash mr-1"></i></h4>
+          <p>Burası boş.</p>
         </div>
       {/if}
     </div>
