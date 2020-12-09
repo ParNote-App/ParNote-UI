@@ -39,20 +39,36 @@
       Archive
     </a>
   </li>
-  <li class="nav-item ml-auto">
-    <a
-      class="nav-link"
-      id="pills-trash-tab"
-      data-toggle="pill"
-      href="#pills-trash"
-      role="tab"
-      aria-controls="pills-trash"
-      aria-selected="false"
-    >
-      <i class="far fa-trash-alt mr-2"></i>
-      Trash
-    </a>
-  </li>
+  <div class="ml-auto d-flex flex-row">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="pills-slash-tab"
+        data-toggle="pill"
+        href="#pills-slash"
+        role="tab"
+        aria-controls="pills-slash"
+        aria-selected="false"
+      >
+        <i class="fas fa-search mr-2"></i>
+        Search
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        id="pills-trash-tab"
+        data-toggle="pill"
+        href="#pills-trash"
+        role="tab"
+        aria-controls="pills-trash"
+        aria-selected="false"
+      >
+        <i class="far fa-trash-alt mr-2"></i>
+        Trash
+      </a>
+    </li>
+  </div>
 </ul>
 
 <div class="tab-content tab-content--v1" id="pills-tabContent">
@@ -62,39 +78,37 @@
     role="tabpanel"
     aria-labelledby="pills-home-tab-1"
   >
-    <div class="container">
-      <!-- Note Layout Starts Here -->
+    <!-- Note Layout Starts Here -->
 
-      <div class="card-columns">
-        <a
-          href="#"
-          class="text-dark"
-          data-toggle="modal"
-          data-target="#noteModal"
-        >
-          <div class="card note-card">
-            <div class="card-body">
-              <h5 class="card-title font-weight-bolder">Note title</h5>
-              <p class="card-text">
-                Note content here lorem impsum dolor sit amet. Bla bla bla
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
+    <div class="card-columns">
+      <a
+        href="#"
+        class="text-dark"
+        data-toggle="modal"
+        data-target="#noteModal"
+      >
+        <div class="card note-card">
+          <div class="card-body">
+            <h5 class="card-title font-weight-bolder">Note title</h5>
+            <p class="card-text">
+              Note content here lorem impsum dolor sit amet. Bla bla bla
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
           </div>
-        </a>
-      </div>
+        </div>
+      </a>
+    </div>
 
-      <div class="text-center py-4">
-        <h4 class="font-weight-bolder">Not yok.</h4>
-        <p>Not bulanamadı.</p>
-        <br />
-        <a class="btn btn-outline-primary" href="#"><i
-            class="fas fa-plus mr-1"
-          ></i>
-          Yeni Not</a>
-      </div>
+    <div class="text-center py-4">
+      <h4 class="font-weight-bolder">Not yok.</h4>
+      <p>Not bulanamadı.</p>
+      <br />
+      <a class="btn btn-outline-primary" href="#"><i
+          class="fas fa-plus mr-1"
+        ></i>
+        Yeni Not</a>
     </div>
   </div>
 
@@ -114,9 +128,23 @@
 
   <div
     class="tab-pane fade"
+    id="pills-search"
+    role="tabpanel"
+    aria-labelledby="pills-search-tab-1"
+  >
+    <p>
+      Stream UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT
+      license. The UI Kit comes with 5 beautiful complete pages and includes
+      over 20 reusable and customizable UI Blocks. It’s lightweight and only
+      ~17kb when minified.
+    </p>
+  </div>
+
+  <div
+    class="tab-pane fade"
     id="pills-trash"
     role="tabpanel"
-    aria-labelledby="pills-contact-tab-1"
+    aria-labelledby="pills-trash-tab-1"
   >
     <p>
       Stream UI Kit is beautiful Open Source Bootstrap 4 UI Kit under MIT
