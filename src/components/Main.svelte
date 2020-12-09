@@ -136,15 +136,15 @@
               <span class="ml-2 d-lg-inline d-none">New Note</span>
             </button>
             <input
-              class="form-control border-0 bg-light rounded text-center text-primary search-input"
+              class="form-control border-0 bg-light rounded text-center text-primary search-input d-none"
               type="search"
               placeholder="Find a note..."
             />
 
-            <div class="dropdown">
+            <div class="dropdown ml-auto">
               <a
                 href="javascript:void(0);"
-                class="nav-item ml-auto"
+                class="nav-item"
                 id="userMenu"
                 data-toggle="dropdown"
                 aria-haspopup="true"

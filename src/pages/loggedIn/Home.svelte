@@ -115,21 +115,21 @@
       Archive
     </a>
   </li>
+<!--  <li class="nav-item ml-auto">-->
+<!--    <a-->
+<!--      class="nav-link"-->
+<!--      id="pills-search-tab"-->
+<!--      data-toggle="pill"-->
+<!--      href="#pills-search"-->
+<!--      role="tab"-->
+<!--      aria-controls="pills-search"-->
+<!--      aria-selected="false"-->
+<!--    >-->
+<!--      <i class="fas fa-search mr-2"></i>-->
+<!--      Search-->
+<!--    </a>-->
+<!--  </li>-->
   <li class="nav-item ml-auto">
-    <a
-      class="nav-link"
-      id="pills-search-tab"
-      data-toggle="pill"
-      href="#pills-search"
-      role="tab"
-      aria-controls="pills-search"
-      aria-selected="false"
-    >
-      <i class="fas fa-search mr-2"></i>
-      Search
-    </a>
-  </li>
-  <li class="nav-item">
     <a
       class="nav-link"
       id="pills-trash-tab"
@@ -233,14 +233,14 @@
     </div>
   </div>
 
-  <div
-    class="tab-pane fade"
-    id="pills-search"
-    role="tabpanel"
-    aria-labelledby="pills-search-tab-1"
-  >
-    <div class="container">search</div>
-  </div>
+<!--  <div-->
+<!--    class="tab-pane fade"-->
+<!--    id="pills-search"-->
+<!--    role="tabpanel"-->
+<!--    aria-labelledby="pills-search-tab-1"-->
+<!--  >-->
+<!--    <div class="container">search</div>-->
+<!--  </div>-->
 
   <div
     class="tab-pane fade"
