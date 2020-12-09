@@ -24,13 +24,22 @@ export function checkLogin() {
   if (!LoginSessionStorageUtil.isSessionSaved()) {
     setLogout();
   } else {
-    ApiUtil.post("auth/checkLoggedIn", {})
-      .then((response) => {
-        if (response.data.result === "ok") setLoggedIn();
-        else setLogout();
-      })
-      .catch(() => {
-        setLogout();
-      });
+    (function check() {
+      ApiUtil.post("auth/checkLoggedIn", {})
+        .then((response) => {
+          if (response.data.result === "ok") setLoggedIn();
+          else if (response.data.error === "NOT_LOGGED_IN") setLogout();
+          else {
+            setTimeout(() => {
+              check();
+            }, 500);
+          }
+        })
+        .catch(() => {
+          setTimeout(() => {
+            check();
+          }, 500);
+        });
+    })();
   }
 }
