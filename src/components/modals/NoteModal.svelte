@@ -1,5 +1,5 @@
 <div
-  class="modal"
+  class="modal fade"
   id="noteModal"
   tabindex="-1"
   aria-labelledby="noteModalLabel"

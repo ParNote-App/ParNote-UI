@@ -1,6 +1,6 @@
 <script>
   import Router from "routve";
-  import md5 from "md5"
+  import md5 from "md5";
 
   import {
     checkLogin,
@@ -81,7 +81,7 @@
   });
 
   function getMd5Hash(text) {
-    return md5(text.toLowerCase())
+    return md5(text.toLowerCase());
   }
 
   export let hidden;
@@ -123,7 +123,11 @@
 
             <button type="button" class="btn btn-link mr-2">
               <i class="fa fa-plus"></i>
-              <span class="ml-2 d-md-inline d-none">New Note</span>
+              <span
+                class="ml-2 d-md-inline d-none"
+                data-toggle="modal"
+                data-target="#noteModal"
+              >New Note</span>
             </button>
             <input
               class="form-control border-0 bg-light rounded text-center text-primary search-input"
@@ -153,7 +157,10 @@
                 class="dropdown-menu dropdown-menu-right shadow-sm"
                 aria-labelledby="userMenu"
               >
-                <h6 class="dropdown-header mb-0">{capitalizeFirstLetter($userData.name)} {capitalizeFirstLetter($userData.surname)}</h6>
+                <h6 class="dropdown-header mb-0">
+                  {capitalizeFirstLetter($userData.name)}
+                  {capitalizeFirstLetter($userData.surname)}
+                </h6>
                 <h8 class="dropdown-header mb-1">@{$userData.username}</h8>
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
