@@ -5,38 +5,60 @@
 </script>
 
 <div class="d-flex flex-column min-vh-100">
-  <nav class="navbar bg-light-primary">
+  <nav class="navbar">
     <div class="container">
-      <a class="navbar-brand" href="/">
-        <img
-          src="/assets/img/logo.svg"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
-      </a>
+      <div class="w-100 d-flex flex-row align-items-between align-items-center">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/assets/img/logo.svg"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="Parnote"
+            title="Parnote"
+          />
+        </a>
 
-      <form class="form-inline col-lg mr-auto my-2 my-lg-0">
-        <input
-          class="form-control w-75 mr-sm-2"
-          type="search"
-          placeholder="Find a note..."
-        />
-        <button
-          class="btn btn-primary my-2 my-sm-0"
-          type="submit"
-        >Search</button>
-      </form>
-
-      <button type="button" class="btn btn-outline-primary">
-        <i class="far fa-plus-square"></i>
-        New Note
-      </button>
-
-      <button type="button" class="btn btn-outline-primary bg-transparent ml-5">
-        <i class="fas fa-ellipsis-h"></i>
-      </button>
+        <div class="input-group">
+          <input
+            class="form-control search-input border-0 bg-light mx-5 rounded text-center text-primary"
+            type="search"
+            placeholder="Find a note..."
+          />
+        </div>
+        <div class="dropdown">
+          <a
+            href="/"
+            class="nav-item ml-auto"
+            id="userMenu"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="https://www.gravatar.com/avatar/00000000000000000000000000000000"
+              alt="Username"
+              title="Username"
+              width="32"
+              height="32"
+              class="border rounded-circle"
+            />
+          </a>
+          <div
+            class="dropdown-menu dropdown-menu-right shadow-sm"
+            aria-labelledby="userMenu"
+          >
+            <h6 class="dropdown-header mb-1">Username</h6>
+            <a class="dropdown-item" href="/settings"><i
+                class="fas fa-cog mr-2"
+              ></i>
+              Ayarlar</a>
+            <a class="dropdown-item text-danger" href="/logout">
+              <i class="fas fa-sign-out-alt mr-2"></i>
+              Çıkış</a>
+          </div>
+        </div>
+      </div>
     </div>
   </nav>
 
