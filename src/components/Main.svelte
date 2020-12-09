@@ -23,6 +23,8 @@
     userData,
   } from "../Store";
 
+  import { show as showNoteModal } from "./modals/NoteModal.svelte";
+
   const showLoadingAlways = false;
 
   function showLoading(showLoadingAlways, isPageInitialized) {
@@ -84,6 +86,10 @@
     return md5(text.toLowerCase());
   }
 
+  function showNewNote() {
+    showNoteModal();
+  }
+
   export let hidden;
 </script>
 
@@ -121,13 +127,13 @@
               />
             </a>
 
-            <button type="button" class="btn btn-link mr-2">
+            <button
+              type="button"
+              class="btn btn-link mr-2"
+              on:click="{showNewNote}"
+            >
               <i class="fa fa-plus"></i>
-              <span
-                class="ml-2 d-md-inline d-none"
-                data-toggle="modal"
-                data-target="#noteModal"
-              >New Note</span>
+              <span class="ml-2 d-md-inline d-none">New Note</span>
             </button>
             <input
               class="form-control border-0 bg-light rounded text-center text-primary search-input"

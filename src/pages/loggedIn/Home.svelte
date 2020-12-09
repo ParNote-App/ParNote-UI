@@ -1,39 +1,42 @@
 <script>
   import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
 
   import { isPageInitialized } from "../../Store";
 
-  import NoteModal from "../../components/modals/NoteModal.svelte";
+  import NoteModal, {
+    show as showNoteModal,
+    setSuccessCallback as setNoteModalSuccessCallback,
+  } from "../../components/modals/NoteModal.svelte";
   import ApiUtil from "../../util/api.util";
 
   let notes = [];
 
-  onMount(() => {
-    (function getData() {
-      ApiUtil.post("user/getNotes", {})
-        .then((response) => {
-          if (response.data.result === "ok") {
-            notes = [];
+  function getData(handler = () => {}) {
+    ApiUtil.post("user/getNotes", {})
+      .then((response) => {
+        if (response.data.result === "ok") {
+          notes = [];
 
-            response.data.notes.forEach((note) => {
-              notes.push(note);
-            });
+          response.data.notes.forEach((note) => {
+            notes.push(note);
+          });
 
-            isPageInitialized.set(true);
-          } else {
-            console.log(response.data);
-            setTimeout(() => {
-              getData();
-            }, 500);
-          }
-        })
-        .catch(() => {
+          isPageInitialized.set(true);
+          handler();
+        } else {
+          console.log(response.data);
           setTimeout(() => {
-            getData();
+            getData(handler);
           }, 500);
-        });
-    })();
-  });
+        }
+      })
+      .catch(() => {
+        setTimeout(() => {
+          getData(handler);
+        }, 500);
+      });
+  }
 
   function getCountOfNormalNotes(notes) {
     let count = 0;
@@ -70,6 +73,16 @@
 
     return count;
   }
+
+  onMount(() => {
+    getData();
+  });
+
+  setNoteModalSuccessCallback((note, dismiss) => {
+    getData(() => {
+      dismiss();
+    });
+  });
 </script>
 
 <ul class="nav nav-tabs pt-3" id="pills-tab" role="tablist">
@@ -127,36 +140,42 @@
     <div class="container">
       <!-- Note Layout Starts Here -->
 
-      {#if getCountOfNormalNotes(notes) > 1}
+      {#if getCountOfNormalNotes(notes) > 0}
         <div class="card-columns">
-          <a
-            href="javascript:void(0);"
-            class="text-dark"
-            data-toggle="modal"
-            data-target="#noteModal"
-          >
-            <div class="card note-card">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bolder">Note title</h5>
-                <p class="card-text">
-                  Note content here lorem impsum dolor sit amet. Bla bla bla
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </a>
+          {#each notes as note, index (note)}
+            {#if note.status === 1}
+              <a
+                href="javascript:void(0);"
+                class="text-dark"
+                on:click="{() => showNoteModal(note)}"
+              >
+                <div class="card note-card" in:fade>
+                  <div class="card-body">
+                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
+                    <p class="card-text">{note.text}</p>
+                    <p class="card-text">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            {/if}
+          {/each}
         </div>
       {:else}
         <div class="text-center py-4">
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <a class="btn btn-outline-primary" href="javascript:void(0);"><i
-              class="fas fa-plus mr-1"
-            ></i>
-            Yeni Not</a>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            href="javascript:void(0);"
+            on:click="{showNoteModal}"
+          >
+            <i class="fas fa-plus mr-1"></i>
+            Yeni Not
+          </button>
         </div>
       {/if}
     </div>
@@ -171,7 +190,7 @@
     <div class="container">
       <!-- Note Layout Starts Here -->
 
-      {#if getCountOfArchivedNotes(notes) > 1}
+      {#if getCountOfArchivedNotes(notes) > 0}
         <div class="card-columns">
           <a
             href="javascript:void(0);"
@@ -197,10 +216,15 @@
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <a class="btn btn-outline-primary" href="javascript:void(0);"><i
-            class="fas fa-plus mr-1"
-          ></i>
-            Yeni Not</a>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            href="javascript:void(0);"
+            on:click="{showNoteModal}"
+          >
+            <i class="fas fa-plus mr-1"></i>
+            Yeni Not
+          </button>
         </div>
       {/if}
     </div>
@@ -215,7 +239,7 @@
     <div class="container">
       <!-- Note Layout Starts Here -->
 
-      {#if getCountOfTrashNotes(notes) > 1}
+      {#if getCountOfTrashNotes(notes) > 0}
         <div class="card-columns">
           <a
             href="javascript:void(0);"
@@ -241,10 +265,15 @@
           <h4 class="font-weight-bolder">Not yok.</h4>
           <p>Not bulanamadı.</p>
           <br />
-          <a class="btn btn-outline-primary" href="javascript:void(0);"><i
-            class="fas fa-plus mr-1"
-          ></i>
-            Yeni Not</a>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            href="javascript:void(0);"
+            on:click="{showNoteModal}"
+          >
+            <i class="fas fa-plus mr-1"></i>
+            Yeni Not
+          </button>
         </div>
       {/if}
     </div>
