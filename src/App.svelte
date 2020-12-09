@@ -38,7 +38,9 @@
       showSplashAlways ||
       loginStatus === LoginStates.LOADING ||
       (loginStatus === LoginStates.LOGGED_IN && !isPageInitialized) ||
-      waitAnimation;
+      ((loginStatus === LoginStates.LOADING ||
+        loginStatus === LoginStates.LOGGED_IN) &&
+        waitAnimation);
 
     if (splashShowed) showSplash = false;
     else if (!waitAnimation) splashShowed = true;
