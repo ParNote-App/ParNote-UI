@@ -214,5 +214,21 @@
     "terms": "Политика конфиденциальности",
     "contact": "Контакты"
   },
-  "close": "Закрыть"
+  "close": "Закрыть",
+  "modals": {
+    "note-modal": {
+      "note-title": "Название заметки",
+      "note-text": "Текст ...",
+      "trash": "Корзина",
+      "delete-permanent": "Удалить навсегда",
+      "archive": "Архив",
+      "save": "Сохранить",
+      "close": "Закрыть"
+    },
+    "confirm-delete-note-modal": {
+      "title": "Вы уверены что хотите удалить заметку под названием {note_title}?",
+      "cancel": "Отмена",
+      "yes": "Да"
+    }
+  }
 }
