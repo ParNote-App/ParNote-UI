@@ -1,3 +1,213 @@
 {
-  "language-name": "TR"
+  "language-name": "TR",
+  "error-codes": {
+    "UNKNOWN_ERROR_1": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #1",
+    "UNKNOWN_ERROR_2": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #2",
+    "UNKNOWN_ERROR_3": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #3",
+    "UNKNOWN_ERROR_4": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #4",
+    "UNKNOWN_ERROR_5": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #5",
+    "UNKNOWN_ERROR_6": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #6",
+    "UNKNOWN_ERROR_7": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #7",
+    "UNKNOWN_ERROR_8": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #8",
+    "UNKNOWN_ERROR_9": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #9",
+    "UNKNOWN_ERROR_10": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #10",
+    "UNKNOWN_ERROR_11": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #11",
+    "UNKNOWN_ERROR_12": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #12",
+    "UNKNOWN_ERROR_13": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #13",
+    "UNKNOWN_ERROR_14": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #14",
+    "UNKNOWN_ERROR_15": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #15",
+    "UNKNOWN_ERROR_16": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #16",
+    "UNKNOWN_ERROR_17": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #17",
+    "UNKNOWN_ERROR_18": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #18",
+    "UNKNOWN_ERROR_19": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #19",
+    "UNKNOWN_ERROR_20": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #20",
+    "UNKNOWN_ERROR_21": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #21",
+    "UNKNOWN_ERROR_22": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #22",
+    "UNKNOWN_ERROR_23": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #23",
+    "UNKNOWN_ERROR_24": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #24",
+    "UNKNOWN_ERROR_25": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #25",
+    "UNKNOWN_ERROR_26": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #26",
+    "UNKNOWN_ERROR_27": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #27",
+    "UNKNOWN_ERROR_28": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #28",
+    "UNKNOWN_ERROR_29": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #29",
+    "UNKNOWN_ERROR_30": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #30",
+    "UNKNOWN_ERROR_31": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #31",
+    "UNKNOWN_ERROR_32": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #32",
+    "UNKNOWN_ERROR_33": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #33",
+    "UNKNOWN_ERROR_34": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #34",
+    "UNKNOWN_ERROR_35": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #35",
+    "UNKNOWN_ERROR_36": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #36",
+    "UNKNOWN_ERROR_37": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #37",
+    "UNKNOWN_ERROR_38": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #38",
+    "UNKNOWN_ERROR_39": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #39",
+    "UNKNOWN_ERROR_40": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #40",
+    "UNKNOWN_ERROR_41": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #41",
+    "UNKNOWN_ERROR_42": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #42",
+    "UNKNOWN_ERROR_43": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #43",
+    "UNKNOWN_ERROR_44": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #44",
+    "UNKNOWN_ERROR_45": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #45",
+    "UNKNOWN_ERROR_46": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #46",
+    "UNKNOWN_ERROR_47": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #47",
+    "UNKNOWN_ERROR_48": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #48",
+    "UNKNOWN_ERROR_49": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #49",
+    "UNKNOWN_ERROR_50": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #50",
+    "UNKNOWN_ERROR_51": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #51",
+    "UNKNOWN_ERROR_52": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #52",
+    "UNKNOWN_ERROR_53": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #53",
+    "UNKNOWN_ERROR_54": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #54",
+    "UNKNOWN_ERROR_55": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #55",
+    "UNKNOWN_ERROR_56": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #56",
+    "UNKNOWN_ERROR_57": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #57",
+    "UNKNOWN_ERROR_58": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #58",
+    "UNKNOWN_ERROR_59": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #59",
+    "UNKNOWN_ERROR_60": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #60",
+    "UNKNOWN_ERROR_61": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #61",
+    "UNKNOWN_ERROR_62": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #62",
+    "UNKNOWN_ERROR_63": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #63",
+    "UNKNOWN_ERROR_64": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #64",
+    "UNKNOWN_ERROR_65": "Bilinmeyen bir hata oluştu. Daha sonra tekrar deneyiniz. Kod #65",
+    "REGISTER_NAME_EMPTY": "İsim alanı boş.",
+    "REGISTER_NAME_SHORT": "İsim çok kısa.",
+    "REGISTER_NAME_LONG": "İsim çok uzun.",
+    "REGISTER_SURNAME_EMPTY": "Soyisim alanı boş.",
+    "REGISTER_SURNAME_SHORT": "Soyisim çok kısa.",
+    "REGISTER_SURNAME_LONG": "Soyisim çok uzun.",
+    "REGISTER_NAME_INVALID": "İsim istenilmeyen karakterler içeriyor.",
+    "REGISTER_SURNAME_INVALID": "Soyisim istenilmeyen karakterler içeriyor.",
+    "REGISTER_USERNAME_EMPTY": "Kullanıcı adı alanı boş.",
+    "REGISTER_USERNAME_LONG": "Kullanıcı adı çok uzun.",
+    "REGISTER_USERNAME_SHORT": "Kullanıcı adı çok kısa.",
+    "REGISTER_USERNAME_INVALID": "Kullanıcı adı sadece A-Z0-9_ karakterler içerebilir.",
+    "REGISTER_EMAIL_EMPTY": "E-Mail alanı boş.",
+    "REGISTER_EMAIL_INVALID": "Geçersiz E-Mail.",
+    "REGISTER_PASSWORD_EMPTY": "Şifre alanı boş.",
+    "REGISTER_PASSWORD_INVALID": ":Şifre 1 büyük harf, 1 küçük harf, 1 rakam içermeli ve minimum 8, maksimum 64 karakter olmalıdır.",
+    "REGISTER_NOT_ACCEPTED_TERMS": "Şartları ve politikayı kabul etmelisiniz.",
+    "RESET_PASSWORD_USERNAME_OR_EMAIL_INVALID": "Geçersiz kullanıcı adı veya e-posta.",
+    "LOGIN_LOGIN_IS_INVALID": "Kullanıcı adı / E-posta veya Parola geçersiz.",
+    "LOGIN_EMAIL_NOT_VERIFIED": "E-postanızı doğrulamadınız. E-postanızı kontrol edin, yeni bir doğrulama gönderdik!",
+    "EMAIL_VERIFICATION_INVALID_TOKEN": "Bu bağlantı bozuk, lütfen tekrar giriş yapmayı deneyin.",
+    "REGISTER_TAKEN_EMAIL_ERROR": "Bu e-posta alındı.",
+    "REGISTER_TAKEN_USERNAME_ERROR": "Bu e-kullanıcı adı alındı.",
+    "RECAPTCHA_NOT_VALID": "Beep boop, robotlara izin vermiyoruz.",
+    "RESET_PASSWORD_NEW_PASSWORD_EMPTY": "Yeni şifre boş.",
+    "RESET_PASSWORD_NEW_PASSWORD_INVALID": "Yeni şifre 1 büyük harf, 1 küçük harf, 1 rakam içermeli ve minimum 8, maksimum 64 karakter olmalıdır.",
+    "RESET_PASSWORD_NEW_PASSWORD_DOESNT_MATCH": "Yeni şifre ve tekrarı aynı değil!",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_EMPTY": "Yeni şifre tekrarı boş.",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "Yeni şifre tekrarı 1 büyük harf, 1 küçük harf, 1 rakam içermeli ve minimum 8, maksimum 64 karakter olmalıdır.",
+    "RESET_PASSWORD_INVALID_TOKEN": "Bu bağlantı bozuk, lütfen tekrar yeni şifre isteyin.",
+    "undefined": "Bilinmeyen hata, lütfen tekrar deneyin.",
+    "NETWORK_ERROR": "Ağ hatası, lütfen internet bağlantınızı kontrol edin."
+  },
+  "success-codes": {
+    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Başarıyla kaydedildi! Lütfen doğrulama için e-postanızı kontrol edin."
+  },
+  "pages": {
+    "about": {
+      "title": "Hakkımızda",
+      "body": "Biz ParNote ekibiyiz!"
+    },
+    "terms-and-policy": {
+      "title": "Şartlar ve Politika",
+      "body": "Kullanmakta özgürsünüz!"
+    },
+    "home": {
+      "title": "Kolayca not alın.",
+      "description": "Kişisel notlar eklemenize, düzenlemenize ve paylaşmanıza, arkadaşlarınızla işbirliği yapmanıza ve ayrıca diğer kişilerin notlarını keşfetmenize olanak tanıyan bir not uygulamasıdır.",
+      "links": {
+        "create-account": "Hesap Oluştur",
+        "discover-notes": "Notları Keşfet"
+      }
+    },
+    "register": {
+      "title": "Hesap Oluştur",
+      "form": {
+        "name": "İsim",
+        "surname": "Soyisim",
+        "username": "Kullanıcı Adı",
+        "email": "E-Mail",
+        "password": "Şifre",
+        "terms-and-policies-text": "Kabul ediyorum <a href=\"/terms-and-policy\" class=\"font-weight-bold\">Şartlar ve Politika</a>.",
+        "button": "Hesap Oluştur",
+        "login": "Giriş Yap"
+      }
+    },
+    "login": {
+      "title": "Giriş Yap",
+      "form": {
+        "username-or-email": "Kullanıcı Adı / E-mail",
+        "password": "Password",
+        "remember-me": "Beni Hatırla",
+        "login": "Giriş Yap",
+        "create-account": "Hesap Oluştur",
+        "forgot-password": "Şifremi Unuttum?"
+      }
+    },
+    "reset-password": {
+      "title": "Şifremi Sıfırla.",
+      "form": {
+        "new-password": "Yeni Şifre",
+        "new-password-repeat": "Yeni Şifre Tekrarı",
+        "reset-password": "Şifremi Sıfırla"
+      }
+    },
+    "forgot-password": {
+      "title": "Şifremi Sıfırla",
+      "form": {
+        "username-or-email": "Kullanıcı Adı / E-Mail",
+        "reset-password": "Şifremi Sıfırla"
+      }
+    },
+    "error-404": {
+      "title": "HATA: 404",
+      "description": "Sayfa Bulunamadı.",
+      "go-back": "Geri Dön"
+    },
+    "activate-email": {
+      "title": "E-mail'i doğrula",
+      "description": "Hesabınıza giriş yapmak için lütfen E-posta adresinizi doğrulayın.",
+      "form": {
+        "button": "E-Postamı Doğrula"
+      }
+    },
+    "logged-in": {
+      "home": {
+        "my-notes": "Notlarım",
+        "archive": "Arşiv",
+        "trash": "Çöp Kutusu",
+        "here-is-empty": "Burası boş.",
+        "new-note": "Yeni Not"
+      },
+      "settings": {
+        "title": "Ayarlar",
+        "change-password-title": "Şifre Değiştir",
+        "change-password-form": {
+          "current-password": "Mevcut Şifre",
+          "new-password": "Yeni Şifre",
+          "repeat-password": "Şifre Tekrarı",
+          "save": "Kaydet"
+        },
+        "delete-account-title": "Hesabı Sil",
+        "delete-account-form": {
+          "delete-my-account-permanently": "Hesabımı ve tüm verilerimi <b>kalıcı</b> olarak sil.",
+          "confirm": "Onayla"
+        }
+      }
+    }
+  },
+  "main": {
+    "new-note": "Yeni Not",
+    "settings": "Ayarlar",
+    "logout": "Çıkış Yap",
+    "terms-and-policy": "Şartlar & Politika"
+  },
+  "header": {
+    "login-button": "Giriş Yap"
+  },
+  "footer": {
+    "about": "Hakkımızda",
+    "terms": "Şartlar",
+    "contact": "İletişim"
+  },
+  "close": "Kapat"
 }
