@@ -78,8 +78,8 @@
     "REGISTER_USERNAME_LONG": "Kullanıcı adı çok uzun.",
     "REGISTER_USERNAME_SHORT": "Kullanıcı adı çok kısa.",
     "REGISTER_USERNAME_INVALID": "Kullanıcı adı sadece A-Z0-9_ karakterler içerebilir.",
-    "REGISTER_EMAIL_EMPTY": "E-Mail alanı boş.",
-    "REGISTER_EMAIL_INVALID": "Geçersiz E-Mail.",
+    "REGISTER_EMAIL_EMPTY": "E-Posta alanı boş.",
+    "REGISTER_EMAIL_INVALID": "Geçersiz E-Posta.",
     "REGISTER_PASSWORD_EMPTY": "Şifre alanı boş.",
     "REGISTER_PASSWORD_INVALID": ":Şifre 1 büyük harf, 1 küçük harf, 1 rakam içermeli ve minimum 8, maksimum 64 karakter olmalıdır.",
     "REGISTER_NOT_ACCEPTED_TERMS": "Şartları ve politikayı kabul etmelisiniz.",
@@ -125,7 +125,7 @@
         "name": "İsim",
         "surname": "Soyisim",
         "username": "Kullanıcı Adı",
-        "email": "E-Mail",
+        "email": "E-Posta",
         "password": "Şifre",
         "terms-and-policies-text": "Kabul ediyorum <a href=\"/terms-and-policy\" class=\"font-weight-bold\">Şartlar ve Politika</a>.",
         "button": "Hesap Oluştur",
@@ -135,7 +135,7 @@
     "login": {
       "title": "Giriş Yap",
       "form": {
-        "username-or-email": "Kullanıcı Adı / E-mail",
+        "username-or-email": "Kullanıcı Adı / E-Posta",
         "password": "Password",
         "remember-me": "Beni Hatırla",
         "login": "Giriş Yap",
@@ -154,7 +154,7 @@
     "forgot-password": {
       "title": "Şifremi Sıfırla",
       "form": {
-        "username-or-email": "Kullanıcı Adı / E-Mail",
+        "username-or-email": "Kullanıcı Adı / E-Posta",
         "reset-password": "Şifremi Sıfırla"
       }
     },
@@ -164,7 +164,7 @@
       "go-back": "Geri Dön"
     },
     "activate-email": {
-      "title": "E-mail'i doğrula",
+      "title": "E-Posta doğrula",
       "description": "Hesabınıza giriş yapmak için lütfen E-posta adresinizi doğrulayın.",
       "form": {
         "button": "E-Postamı Doğrula"
