@@ -214,5 +214,21 @@
     "terms": "Terms",
     "contact": "Contact"
   },
-  "close": "Close"
+  "close": "Close",
+  "modals": {
+    "note-modal": {
+      "note-title": "Note title",
+      "note-text": "Text ...",
+      "trash": "Trash",
+      "delete-permanent": "Delete Permanent",
+      "archive": "Archive",
+      "save": "Save",
+      "close": "Close"
+    },
+    "confirm-delete-note-modal": {
+      "title": "Are you sure you want to delete {note_title} named note?",
+      "cancel": "Cancel",
+      "yes": "Yes"
+    }
+  }
 }

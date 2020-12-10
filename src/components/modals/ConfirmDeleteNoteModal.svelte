@@ -23,6 +23,8 @@
 </script>
 
 <script>
+  import { _ } from "svelte-i18n";
+
   function onConfirm() {
     dismiss();
     confirmHandler();
@@ -49,8 +51,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <b>{$note.title}</b>
-        adlı notu silmek istediğinizden emin misiniz?
+        {@html $_('modals.confirm-delete-note-modal.title', {
+          values: { note_title: "<b>" +$note.title + "</b>" },
+        })}
       </div>
       <div class="modal-footer">
         <button
@@ -58,10 +61,10 @@
           class="btn btn-link text-danger"
           on:click="{onClose}"
         >
-          İptal</button>
+          {$_('modals.confirm-delete-note-modal.cancel')}</button>
         <button type="button" class="btn btn-danger" on:click="{onConfirm}">
           <i class="fas fa-trash-alt mr-2"></i>
-          Evet
+          {$_('modals.confirm-delete-note-modal.yes')}
         </button>
       </div>
     </div>

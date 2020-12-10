@@ -23,6 +23,7 @@
 </script>
 
 <script>
+  import { _ } from "svelte-i18n";
   import ApiUtil from "../../util/api.util";
   import ConfirmDeleteNoteModal, {
     show as showConfirmDeleteNoteModal,
@@ -116,7 +117,7 @@
     showConfirmDeleteNoteModal(
       get(note),
       () => {
-        deleteNote()
+        deleteNote();
       },
       () => {
         buttonsLoading = false;
@@ -139,14 +140,14 @@
           <input
             type="text"
             class="form-control form-control-lg bg-transparent border-0 font-weight-bolder p-1 modal-note-content"
-            placeholder="Note title"
+            placeholder="{$_('modals.note-modal.note-title')}"
             bind:value="{$note.title}"
           />
           <button
             type="button"
             class="close"
             data-dismiss="modal"
-            aria-label="Close"
+            aria-label="{$_('modals.note-modal.close')}"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
           >
@@ -157,7 +158,7 @@
           <div class="form-floating">
             <textarea
               class="form-control bg-transparent border-0 font-weight-normal p-1 modal-note-content"
-              placeholder="Text ..."
+              placeholder="{$_('modals.note-modal.note-text')}"
               id="noteNote"
               style="height: 100px"
               bind:value="{$note.text}"
@@ -174,7 +175,7 @@
               on:click="{moveTrash}"
             >
               <i class="far fa-trash-alt mr-2"></i>
-              Çöp
+              {$_('modals.note-modal.trash')}
             </button>
           {/if}
           {#if $note.status === 3}
@@ -186,7 +187,7 @@
               on:click="{deleteNoteClick}"
             >
               <i class="fas fa-trash-alt mr-2"></i>
-              Kalıcı Sil
+              {$_('modals.note-modal.delete-permanent')}
             </button>
           {/if}
           {#if $note.status === 1 || $note.status === 3}
@@ -198,7 +199,7 @@
               on:click="{moveArchive}"
             >
               <i class="fas fa-archive mr-2"></i>
-              Arşiv
+              {$_('modals.note-modal.archive')}
             </button>
           {/if}
 
@@ -208,7 +209,7 @@
             class:disabled="{buttonsLoading || $note.title.length === 0 || $note.text.length === 0}"
             disabled="{buttonsLoading || $note.title.length === 0 || $note.text.length === 0}"
           >
-            Save
+            {$_('modals.note-modal.save')}
           </button>
         </div>
       </form>

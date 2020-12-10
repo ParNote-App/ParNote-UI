@@ -211,5 +211,21 @@
     "terms": "Şartlar",
     "contact": "Bize Ulaşın"
   },
-  "close": "Kapat"
+  "close": "Kapat",
+  "modals": {
+    "note-modal": {
+      "note-title": "Not başlığı",
+      "note-text": "Yazı ...",
+      "trash": "Çöp",
+      "delete-permanent": "Kalıcı Sil",
+      "archive": "Arşiv",
+      "save": "Kaydet",
+      "close": "Kapat"
+    },
+    "confirm-delete-note-modal": {
+      "title": "{note_title} adlı notu silmek istediğinizden emin misiniz?",
+      "cancel": "İptal",
+      "yes": "Evet"
+    }
+  }
 }
