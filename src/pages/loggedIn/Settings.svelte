@@ -49,7 +49,7 @@
             changePasswordData.newPassword = "";
             changePasswordData.newPasswordRepeat = "";
 
-            showSuccess("SUCCESSFULLY_CHANGED_PASSWORD");
+            showSuccess("PASSWORD_CHANGED_SUCCESSFULLY");
           } else if (response.data.result === "error") {
             buttonsLoading = false;
 
