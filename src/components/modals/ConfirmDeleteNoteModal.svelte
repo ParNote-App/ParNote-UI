@@ -46,7 +46,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" on:click="{cancelHandler}">
+        <button type="button" class="close" on:click="{onClose}">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
