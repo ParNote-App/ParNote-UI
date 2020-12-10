@@ -97,10 +97,12 @@
     "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "Yeni şifre tekrarı 1 büyük harf, 1 küçük harf, 1 rakam içermeli ve minimum 8, maksimum 64 karakter olmalıdır.",
     "RESET_PASSWORD_INVALID_TOKEN": "Bu bağlantı bozuk, lütfen tekrar yeni şifre isteyin.",
     "undefined": "Bilinmeyen hata, lütfen tekrar deneyin.",
-    "NETWORK_ERROR": "Ağ hatası, lütfen internet bağlantınızı kontrol edin."
+    "NETWORK_ERROR": "Ağ hatası, lütfen internet bağlantınızı kontrol edin.",
+    "": ""
   },
   "success-codes": {
-    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Başarıyla kaydedildi! Lütfen doğrulama için e-postanızı kontrol edin."
+    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Başarıyla kaydedildi! Lütfen doğrulama için e-postanızı kontrol edin.",
+    "": ""
   },
   "pages": {
     "about": {
