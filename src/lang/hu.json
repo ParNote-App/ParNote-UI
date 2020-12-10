@@ -1,3 +1,234 @@
 {
-  "language-name": "HU"
+  "language-name": "HU",
+  "error-codes": {
+    "UNKNOWN_ERROR_1": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #1",
+    "UNKNOWN_ERROR_2": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #2",
+    "UNKNOWN_ERROR_3": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #3",
+    "UNKNOWN_ERROR_4": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #4",
+    "UNKNOWN_ERROR_5": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #5",
+    "UNKNOWN_ERROR_6": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #6",
+    "UNKNOWN_ERROR_7": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #7",
+    "UNKNOWN_ERROR_8": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #8",
+    "UNKNOWN_ERROR_9": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #9",
+    "UNKNOWN_ERROR_10": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #10",
+    "UNKNOWN_ERROR_11": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #11",
+    "UNKNOWN_ERROR_12": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #12",
+    "UNKNOWN_ERROR_13": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #13",
+    "UNKNOWN_ERROR_14": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #14",
+    "UNKNOWN_ERROR_15": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #15",
+    "UNKNOWN_ERROR_16": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #16",
+    "UNKNOWN_ERROR_17": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #17",
+    "UNKNOWN_ERROR_18": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #18",
+    "UNKNOWN_ERROR_19": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #19",
+    "UNKNOWN_ERROR_20": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #20",
+    "UNKNOWN_ERROR_21": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #21",
+    "UNKNOWN_ERROR_22": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #22",
+    "UNKNOWN_ERROR_23": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #23",
+    "UNKNOWN_ERROR_24": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #24",
+    "UNKNOWN_ERROR_25": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #25",
+    "UNKNOWN_ERROR_26": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #26",
+    "UNKNOWN_ERROR_27": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #27",
+    "UNKNOWN_ERROR_28": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #28",
+    "UNKNOWN_ERROR_29": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #29",
+    "UNKNOWN_ERROR_30": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #30",
+    "UNKNOWN_ERROR_31": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #31",
+    "UNKNOWN_ERROR_32": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #32",
+    "UNKNOWN_ERROR_33": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #33",
+    "UNKNOWN_ERROR_34": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #34",
+    "UNKNOWN_ERROR_35": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #35",
+    "UNKNOWN_ERROR_36": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #36",
+    "UNKNOWN_ERROR_37": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #37",
+    "UNKNOWN_ERROR_38": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #38",
+    "UNKNOWN_ERROR_39": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #39",
+    "UNKNOWN_ERROR_40": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #40",
+    "UNKNOWN_ERROR_41": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #41",
+    "UNKNOWN_ERROR_42": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #42",
+    "UNKNOWN_ERROR_43": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #43",
+    "UNKNOWN_ERROR_44": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #44",
+    "UNKNOWN_ERROR_45": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #45",
+    "UNKNOWN_ERROR_46": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #46",
+    "UNKNOWN_ERROR_47": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #47",
+    "UNKNOWN_ERROR_48": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #48",
+    "UNKNOWN_ERROR_49": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #49",
+    "UNKNOWN_ERROR_50": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #50",
+    "UNKNOWN_ERROR_51": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #51",
+    "UNKNOWN_ERROR_52": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #52",
+    "UNKNOWN_ERROR_53": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #53",
+    "UNKNOWN_ERROR_54": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #54",
+    "UNKNOWN_ERROR_55": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #55",
+    "UNKNOWN_ERROR_56": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #56",
+    "UNKNOWN_ERROR_57": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #57",
+    "UNKNOWN_ERROR_58": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #58",
+    "UNKNOWN_ERROR_59": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #59",
+    "UNKNOWN_ERROR_60": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #60",
+    "UNKNOWN_ERROR_61": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #61",
+    "UNKNOWN_ERROR_62": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #62",
+    "UNKNOWN_ERROR_63": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #63",
+    "UNKNOWN_ERROR_64": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #64",
+    "UNKNOWN_ERROR_65": "Ismeretlen hiba történt. Kérlek, próbáld újra később. Kód #65",
+    "REGISTER_NAME_EMPTY": "A név üres.",
+    "REGISTER_NAME_SHORT": "A név túl rövid.",
+    "REGISTER_NAME_LONG": "A név túl hosszú.",
+    "REGISTER_SURNAME_EMPTY": "A családnév üres.",
+    "REGISTER_SURNAME_SHORT": "A családnév túl rövid.",
+    "REGISTER_SURNAME_LONG": "A családnév túl hosszú.",
+    "REGISTER_NAME_INVALID": "A név nem kivétel karaktereket tartalmaz.",
+    "REGISTER_SURNAME_INVALID": "A vezetéknév nem kivételes karaktereket tartalmaz.",
+    "REGISTER_USERNAME_EMPTY": "A felhasználónév üres.",
+    "REGISTER_USERNAME_LONG": "A felhasználónév túl hosszú.",
+    "REGISTER_USERNAME_SHORT": "A felhasználónév túl rövid.",
+    "REGISTER_USERNAME_INVALID": "A felhasználónév csak A-Z0-9_ karaktereket tartalmazhat.",
+    "REGISTER_EMAIL_EMPTY": "Az e-mail üres",
+    "REGISTER_EMAIL_INVALID": "Az e-mail nem érvényes.",
+    "REGISTER_PASSWORD_EMPTY": "A jelszó üres",
+    "REGISTER_PASSWORD_INVALID": "A jelszónak tartalmaznia kell 1 nagy betűt, 1 kis betűt, 1 számot, és legalább 8, legfeljebb 64 karakterből állhat.",
+    "REGISTER_NOT_ACCEPTED_TERMS": "El kell fogadnod a feltételeket.",
+    "RESET_PASSWORD_USERNAME_OR_EMAIL_INVALID": "Érvénytelen felhasználónév vagy e-mail cím.",
+    "LOGIN_LOGIN_IS_INVALID": "A felhasználónév / e-mail cím vagy jelszó érvénytelen.",
+    "LOGIN_EMAIL_NOT_VERIFIED": "Nem igazolta az e-mail címét. Ellenőrizze az e-mailt, és új ellenőrzést küldtünk!",
+    "EMAIL_VERIFICATION_INVALID_TOKEN": "Ez a link megszakadt, próbálkozzon újra.",
+    "REGISTER_TAKEN_EMAIL_ERROR": "Ezt az e-mailt elfoglaltuk.",
+    "REGISTER_TAKEN_USERNAME_ERROR": "Ez a felhasználónév elfoglalt.",
+    "RECAPTCHA_NOT_VALID": "Beep boop, nem engedélyezzük a robotokat..",
+    "RESET_PASSWORD_NEW_PASSWORD_EMPTY": "Az új jelszó üres.",
+    "RESET_PASSWORD_NEW_PASSWORD_INVALID": "Az új jelszónak tartalmaznia kell 1 nagy betűt, 1 kis betűt, 1 számot, és minimum 8, legfeljebb 64 karakter lehet.",
+    "RESET_PASSWORD_NEW_PASSWORD_DOESNT_MATCH": "Az új jelszó és az ismétlés nem ugyanaz!",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_EMPTY": "Az új jelszó megismétlése üres.",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "Az új jelszóismétlésnek tartalmaznia kell 1 nagy betűt, 1 kis betűt, 1 számot, és legalább 8, legfeljebb 64 karakterből állhat.",
+    "RESET_PASSWORD_INVALID_TOKEN": "Ez a link megszakadt, kérjen új jelszót.",
+    "undefined": "Ismeretlen hiba, próbálja újra.",
+    "NETWORK_ERROR": "Hálózati hiba, ellenőrizze internetkapcsolatát.",
+    "": ""
+  },
+  "success-codes": {
+    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Sikeres regisztráció! Ellenőrizze az e-mail címét.",
+    "EMAIL_VERIFIED_SUCCESSFULLY": "Az e-mail sikeresen ellenőrizve! Most már bejelentkezhet.",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "A jelszó sikeresen megváltozott!",
+    "EMAIL_SENT_SUCCESSFULLY": "Az e-mail sikeresen elküldve! Kérjük, ellenőrizze az e-mail címét.",
+    "": ""
+  },
+  "pages": {
+    "about": {
+      "title": "Rólunk",
+      "body": "2020 szeptemberében Parnote csapatként a következő szakaszba akartuk vinni a ParNote projektet, amelyet az egyetemen előadási projektként indítottunk el, és amelyet valós projektként hoztunk létre. A ParNote egy ezen alapuló jegyzetalkalmazás, de sok más hangalkalmazással ellentétben más emberekkel is együttműködhet, ha meghívja őket a jegyzeteihez, megoszthatja személyes jegyzeteit másokkal, és láthatja az övékét is. A ParNote egyszerű kezelőfelületével és stílusos kialakításával meghívja Önt jegyzetek írására."
+    },
+    "terms-and-policy": {
+      "title": "Feltételek és İrányelvek",
+      "body": "Szabadon használhatja!"
+    },
+    "home": {
+      "title": "Könnyen jegyzetelhet.",
+      "description": "Jegyzet alkalmazás, amely lehetővé teszi személyes jegyzetek hozzáadását, szerkesztését és megosztását, együttműködést a barátaival és ráadásul más feljegyzések felfedezését.",
+      "links": {
+        "create-account": "Fiók létrehozása",
+        "discover-notes": "Felfedezni a jegyzeteket"
+      }
+    },
+    "register": {
+      "title": "Fiók a létrehozása",
+      "form": {
+        "name": "Név",
+        "surname": "családnév",
+        "username": "felhasználónév",
+        "email": "E-Mail",
+        "password": "Jelszó",
+        "terms-and-policies-text": "Elfogadom <a href=\"/terms-and-policy\" class=\"font-weight-bold\">feltételek és irányelvek</a>.",
+        "button": "Fiók létrehozása",
+        "login": "Bejelentkezés"
+      }
+    },
+    "login": {
+      "title": "Bejelentkezés",
+      "form": {
+        "username-or-email": "Felhasználónév / E-mail",
+        "password": "Jelszó",
+        "remember-me": "Emlékezz rám",
+        "login": "Bejelentkezés",
+        "create-account": "Létrehoz",
+        "forgot-password": "Elfelejtette a jelszavát?"
+      }
+    },
+    "reset-password": {
+      "title": "Jelszó Visszaállítás",
+      "form": {
+        "new-password": "Új jelszó",
+        "new-password-repeat": "Új jelszó megismétlése",
+        "reset-password": "Jelszó visszaállítás"
+      }
+    },
+    "forgot-password": {
+      "title": "Jelszó Visszaállítás",
+      "form": {
+        "username-or-email": "Felhasználónév / E-mail",
+        "reset-password": "Jelszó Visszaállítás"
+      }
+    },
+    "error-404": {
+      "title": "Hiba: 404",
+      "description": "Az oldal nem található.",
+      "go-back": "Visszamegy"
+    },
+    "activate-email": {
+      "title": "E-mail megerősítés",
+      "description": "A fiókjához való bejelentkezéshez ellenőrizze az e-mail címét.",
+      "form": {
+        "button": "Ellenőrizze az e-mail címemet"
+      }
+    },
+    "logged-in": {
+      "home": {
+        "my-notes": "Jegyzeteim",
+        "archive": "Archívum",
+        "trash": "Szemét",
+        "here-is-empty": "Itt üres.",
+        "new-note": "Új jegyzet"
+      },
+      "settings": {
+        "title": "Beállítások",
+        "change-password-title": "Jelszó módosítása",
+        "change-password-form": {
+          "current-password": "Jelenlegi jelszó",
+          "new-password": "Uj jelszó",
+          "repeat-password": "Jelszó újra",
+          "save": "Megment"
+        },
+        "delete-account-title": "Fiók törlése",
+        "delete-account-form": {
+          "delete-my-account-permanently": "Törölje <b>véglegesen</b> a fiókomat és az összes adatot.",
+          "confirm": "Megerősít"
+        }
+      }
+    }
+  },
+  "main": {
+    "new-note": "Új jegyzet",
+    "settings": "Beállítások",
+    "logout": "Kijelentkezés",
+    "terms-and-policy": "Feltételek & İrányelvek"
+  },
+  "header": {
+    "login-button": "Bejelentkezés"
+  },
+  "footer": {
+    "about": "Rólunk",
+    "terms": "Feltételek",
+    "contact": "Lépjen kapcsolatba velünk"
+  },
+  "close": "Bezárás",
+  "modals": {
+    "note-modal": {
+      "note-title": "Jegyzet címe",
+      "note-text": "Szöveg ...",
+      "trash": "Szemét",
+      "delete-permanent": "Törölje véglegesen",
+      "archive": "Archívum",
+      "save": "Megment",
+      "close": "Bezárás"
+    },
+    "confirm-delete-note-modal": {
+      "title": "Biztosan törli az {note_title} nevű jegyzetet??",
+      "cancel": "Megszünteti",
+      "yes": "Igen"
+    }
+  }
 }
