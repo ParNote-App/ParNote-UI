@@ -97,13 +97,15 @@
     "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "New password repeat must contain 1 big letter, 1 small letter, 1 number and must be minimum 8, maximum 64 characters.",
     "RESET_PASSWORD_INVALID_TOKEN": "This link is broken, please request new password again.",
     "undefined": "Unknown error please try again.",
-    "NETWORK_ERROR": "Network error, please check your internet connection."
+    "NETWORK_ERROR": "Network error, please check your internet connection.",
+    "": ""
   },
   "success-codes": {
     "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Successfully registered! Please check your e-mail for verification.",
     "EMAIL_VERIFIED_SUCCESSFULLY": "E-Mail verified successfully! Now you can login.",
     "PASSWORD_CHANGED_SUCCESSFULLY": "Password has changed successfully!",
-    "EMAIL_SENT_SUCCESSFULLY": "E-Mail sent successfully! Please check your e-mail."
+    "EMAIL_SENT_SUCCESSFULLY": "E-Mail sent successfully! Please check your e-mail.",
+    "": ""
   },
   "pages": {
     "about": {
