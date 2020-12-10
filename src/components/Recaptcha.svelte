@@ -60,5 +60,5 @@
 <!--and-->
 <!--<a href="https://policies.google.com/terms" target="_blank">Terms of Service</a>-->
 <!--apply.-->
-
+{process.env.RECAPTCHA_API_KEY}
 <div id="{recaptcha + id}"></div>
