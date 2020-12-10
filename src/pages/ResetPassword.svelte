@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n"
   import { get, writable } from "svelte/store";
 
   import SuccessAlert, {
@@ -78,7 +79,7 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-auto">
-        <h1 class="text-center">Reset Password</h1>
+        <h1 class="text-center">{$_("pages.reset-password.title")}</h1>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -91,7 +92,7 @@
       <div class="col-5">
         <form on:submit|preventDefault="{submit}">
           <div class="form-group mt-4">
-            <label for="newPassword" class="u-font-size-90">New Password</label>
+            <label for="newPassword" class="u-font-size-90">{$_("pages.reset-password.form.new-password")}</label>
             <input
               type="password"
               class="form-control"
@@ -102,8 +103,7 @@
           </div>
 
           <div class="form-group mt-4">
-            <label for="newPasswordRepeat" class="u-font-size-90">New Password
-              Repeat</label>
+            <label for="newPasswordRepeat" class="u-font-size-90">{$_("pages.reset-password.form.new-password-repeat")}</label>
             <input
               type="password"
               class="form-control"
@@ -118,7 +118,7 @@
             class="btn btn-lg btn-primary d-block mx-auto mt-4"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
-          >Reset Password
+          >{$_("pages.reset-password.form.reset-password")}
           </button>
 
           <Recaptcha

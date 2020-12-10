@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n"
   import { onMount } from "svelte";
 
   import { isPageInitialized, userData } from "../../Store";
@@ -96,7 +97,7 @@
 </script>
 
 <div class="pt-3">
-  <h4 class="font-weight-bolder">Ayarlar</h4>
+  <h4 class="font-weight-bolder">{$_("pages.logged-in.settings.title")}</h4>
   <hr />
   <div class="container">
     <div class="d-block my-3">
@@ -105,7 +106,6 @@
         {capitalizeFirstLetter($userData.name)}
         {capitalizeFirstLetter($userData.surname)}
       </b>
-      olarak giriş yapıldı.
     </div>
 
     <SuccessAlert />
@@ -114,14 +114,14 @@
     <div class="row">
       <div class="col-lg-6 col-12 mb-3">
         <div class="card-body">
-          <h6 class="font-weight-bolder pb-3">Change password</h6>
+          <h6 class="font-weight-bolder pb-3">{$_("pages.logged-in.settings.change-password-title")}</h6>
 
           <!-- Title Here -->
 
           <form on:submit|preventDefault="{changePassword}">
             <div class="form-row align-items-end">
               <div class="form-group col-md-4">
-                <label for="oldPassword">Current Password</label>
+                <label for="oldPassword">{$_("pages.logged-in.settings.change-password-form.current-password")}</label>
                 <input
                   type="password"
                   class="form-control"
@@ -130,7 +130,7 @@
                 />
               </div>
               <div class="form-group col-md-4">
-                <label for="newPassword">New Password</label>
+                <label for="newPassword">{$_("pages.logged-in.settings.change-password-form.new-password")}</label>
                 <input
                   type="password"
                   class="form-control"
@@ -139,7 +139,7 @@
                 />
               </div>
               <div class="form-group col-md-4">
-                <label for="repeatPassword">Repeat Password</label>
+                <label for="repeatPassword">{$_("pages.logged-in.settings.change-password-form.repeat-password")}</label>
                 <input
                   type="password"
                   class="form-control"
@@ -154,7 +154,7 @@
                 class="btn btn-primary"
                 class:disabled="{buttonsLoading}"
                 disabled="{buttonsLoading}"
-              >Save</button>
+              >{$_("pages.logged-in.settings.change-password-form.save")}</button>
             </div>
           </form>
         </div>
@@ -193,7 +193,7 @@
 
       <div class="col-lg-6 col-12 mb-3">
         <div class="card-body">
-          <h6 class="font-weight-bolder pb-3">Delete account</h6>
+          <h6 class="font-weight-bolder pb-3">{$_("pages.logged-in.settings.delete-account-title")}</h6>
 
           <!-- Title Here -->
 
@@ -206,9 +206,7 @@
                   id="deleteAccount"
                   bind:checked="{deleteAccountData.confirm}"
                 />
-                <label class="custom-control-label" for="deleteAccount">Delete
-                  my account and all data
-                  <b>permanently</b></label>
+                <label class="custom-control-label" for="deleteAccount">{@html $_("pages.logged-in.settings.delete-account-form.delete-my-account-permanently")}</label>
               </div>
             </div>
             <div class="form-group">
@@ -217,7 +215,7 @@
                 class="btn btn-outline-danger"
                 class:disabled="{buttonsLoading}"
                 disabled="{buttonsLoading}"
-              >Confirm</button>
+              >{$_("pages.logged-in.settings.delete-account-form.confirm")}</button>
             </div>
           </form>
         </div>

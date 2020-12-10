@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n"
   import { get, writable } from "svelte/store";
 
   import SuccessAlert, {
@@ -74,13 +75,13 @@
   }
 </script>
 
-<h2 class="text-center mb-4">Reset Password</h2>
+<h2 class="text-center mb-4">{$_("pages.forgot-password.title")}</h2>
 
 <form class="homepage-form" on:submit|preventDefault="{submit}">
   <SuccessAlert />
   <ErrorAlert />
   <div class="form-group mb-4 ">
-    <label for="usernameOrEmail" class="u-font-size-90">Username / E-mail</label>
+    <label for="usernameOrEmail" class="u-font-size-90">{$_("pages.forgot-password.form.username-or-email")}</label>
     <input
       type="text"
       class="form-control"
@@ -95,7 +96,7 @@
     class="btn btn-primary d-block mx-auto"
     class:disabled="{buttonsLoading}"
     disabled="{buttonsLoading}"
-  >Reset Password
+  >{$_("pages.forgot-password.form.reset-password")}
     <i class="fas fa-chevron-right ml-2"></i>
   </button>
 

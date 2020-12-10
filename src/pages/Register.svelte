@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n"
   import { get, writable } from "svelte/store";
 
   import ApiUtil, { NETWORK_ERROR } from "../util/api.util";
@@ -79,7 +80,7 @@
   }
 </script>
 
-<h2 class="text-center mb-4">Create an Account</h2>
+<h2 class="text-center mb-4">{$_("pages.register.title")}</h2>
 <form class="homepage-form" on:submit|preventDefault="{submit}">
   <SuccessAlert />
   <ErrorAlert />
@@ -87,7 +88,7 @@
   <div class="row">
     <div class="col-6">
       <div class="form-group mb-4">
-        <label for="name" class="u-font-size-90">Name</label>
+        <label for="name" class="u-font-size-90">{$_("pages.register.form.name")}</label>
         <input
           type="text"
           class="form-control"
@@ -99,7 +100,7 @@
     </div>
     <div class="col-6">
       <div class="form-group mb-4">
-        <label for="surname" class="u-font-size-90">Surname</label>
+        <label for="surname" class="u-font-size-90">{$_("pages.register.form.surname")}</label>
         <input
           type="text"
           class="form-control"
@@ -112,7 +113,7 @@
   </div>
 
   <div class="form-group mb-4">
-    <label for="username" class="u-font-size-90">Username</label>
+    <label for="username" class="u-font-size-90">{$_("pages.register.form.username")}</label>
     <input
       type="text"
       class="form-control"
@@ -123,7 +124,7 @@
   </div>
 
   <div class="form-group mb-4">
-    <label for="email" class="u-font-size-90">Email</label>
+    <label for="email" class="u-font-size-90">{$_("pages.register.form.email")}</label>
     <input
       type="email"
       class="form-control"
@@ -134,7 +135,7 @@
   </div>
 
   <div class="form-group mb-4">
-    <label for="password" class="u-font-size-90">Password</label>
+    <label for="password" class="u-font-size-90">{$_("pages.register.form.password")}</label>
     <input
       type="password"
       class="form-control"
@@ -152,8 +153,7 @@
       bind:checked="{data.termsBox}"
     />
     <label class="custom-control-label u-font-size-90" for="termsBox">
-      I accept
-      <a href="/terms-and-policy" class="font-weight-bold">terms and policies</a>.
+      {@html $_("pages.register.form.terms-and-policies-text")}
     </label>
   </div>
 
@@ -165,7 +165,7 @@
           class="btn btn-primary"
           class:disabled="{buttonsLoading}"
           disabled="{buttonsLoading}"
-        >Create Account</button>
+        >{$_("pages.register.form.button")}</button>
       </div>
       <div class="col-auto justify-content-end d-flex pr-0 ml-auto">
         <a
@@ -174,7 +174,7 @@
           class:disabled="{buttonsLoading}"
           disabled="{buttonsLoading}"
         >
-          Login
+          {$_("pages.register.form.login")}
         </a>
       </div>
     </div>

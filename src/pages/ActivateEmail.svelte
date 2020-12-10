@@ -1,4 +1,5 @@
 <script>
+  import {_} from "svelte-i18n"
   import { get, writable } from "svelte/store";
 
   import Recaptcha, {
@@ -73,12 +74,12 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-8 text-center">
-        <h1><strong>Verify E-Mail</strong></h1>
+        <h1><strong>{$_("pages.activate-email.title")}</strong></h1>
 
         <SuccessAlert />
         <ErrorAlert />
 
-        <h4>To login your account please verify your E-Mail address.</h4>
+        <h4>{$_("pages.activate-email.description")}</h4>
 
         <form on:submit|preventDefault="{submit}">
           <button
@@ -86,7 +87,7 @@
             class="btn btn-primary btn-lg m-3"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
-          >Verify My E-Mail</button>
+          >{$_("pages.activate-email.form.button")}</button>
           <Recaptcha
             recaptchaID="{recaptchaID}"
             on:callback="{recaptchaCallback}"

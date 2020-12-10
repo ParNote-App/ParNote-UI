@@ -1,4 +1,5 @@
 <script context="module">
+  import {_} from "svelte-i18n"
   import jQuery from "jquery";
   import {writable} from "svelte/store"
 
@@ -22,14 +23,14 @@
     </div>
 
     <div class="align-self-center mr-3">
-      {$message}
+      {$_("success-codes."+$message)}
     </div>
 
     <div class="ml-auto">
       <button
         type="button"
         class="alert__close alert__close--light"
-        aria-label="Close"
+        aria-label="{$_('close')}"
         on:click={hide}
       >
         <span aria-hidden="true" class="text-success">×</span>

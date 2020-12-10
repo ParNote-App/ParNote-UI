@@ -124,8 +124,8 @@
                 width="30"
                 height="30"
                 class="d-inline-block align-top"
-                alt="Parnote"
-                title="Parnote"
+                alt="ParNote"
+                title="ParNote"
               />
             </a>
 
@@ -135,7 +135,7 @@
               on:click="{showNewNote}"
             >
               <i class="fa fa-plus"></i>
-              <span class="ml-2 d-lg-inline d-none">New Note</span>
+              <span class="ml-2 d-lg-inline d-none">{$_("main.new-note")}</span>
             </button>
             <input
               class="form-control border-0 bg-light rounded text-center text-primary search-input d-none"
@@ -201,14 +201,14 @@
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
                   ></i>
-                  Ayarlar</a>
+                  {$_("main.settings")}</a>
                 <a
                   class="dropdown-item text-danger"
                   href="javascript:void(0);"
                   on:click="{() => logout()}"
                 >
                   <i class="fas fa-sign-out-alt mr-2"></i>
-                  Çıkış</a>
+                  {$_("main.logout")}</a>
               </div>
             </div>
           </div>
@@ -230,7 +230,7 @@
 
       <footer>
         <div class="container d-flex">
-          <a href="/terms-and-policy" target="_blank">Terms & Policy</a>
+          <a href="/terms-and-policy" target="_blank">{$_("main.terms-and-policy")}</a>
           <p class="ml-auto">ParNote &copy; 2020</p>
         </div>
       </footer>

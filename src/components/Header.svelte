@@ -10,7 +10,7 @@
       href="{$loginStatus === LoginStates.LOGGED_OUT ? '/' : 'javascript:void(0);'}"
       on:click="{() => ($loginStatus === LoginStates.LOGGED_OUT ? void 0 : (window.location = '/'))}"
     >
-      <img src="/assets/img/logo.svg" alt="ParNote Logo" />
+      <img src="/assets/img/logo.svg" alt="ParNote" />
     </a>
   </div>
 
@@ -60,7 +60,7 @@
           class:disabled="{$loginStatus === LoginStates.LOADING}"
           disabled="{$loginStatus === LoginStates.LOADING}"
         ><i class="far fa-user fa-xs mr-2"></i>
-          Login
+          {$_("header.login-button")}
           <i class="fas fa-chevron-right fa-xs ml-2"></i>
         </a>
       {/if}

@@ -114,7 +114,7 @@
       aria-selected="true"
     >
       <i class="far fa-sticky-note mr-2"></i>
-      My Notes
+      {$_("pages.logged-in.home.my-notes")}
     </a>
   </li>
   <li class="nav-item">
@@ -128,7 +128,7 @@
       aria-selected="false"
     >
       <i class="fas fa-archive mr-2"></i>
-      Archive
+      {$_("pages.logged-in.home.archive")}
     </a>
   </li>
   <!--  <li class="nav-item ml-auto">-->
@@ -156,7 +156,7 @@
       aria-selected="false"
     >
       <i class="far fa-trash-alt mr-2"></i>
-      Trash
+      {$_("pages.logged-in.home.trash")}
     </a>
   </li>
 </ul>
@@ -199,7 +199,7 @@
         <h4 class="font-weight-bolder">
           <i class="fas fa-sticky-note mr-1"></i>
         </h4>
-        <p>Burası boş.</p>
+        <p>{$_("pages.logged-in.home.here-is-empty")}</p>
         <br />
         <button
           type="button"
@@ -207,7 +207,7 @@
           on:click="{() => showNoteModal()}"
         >
           <i class="fas fa-plus mr-1"></i>
-          Yeni Not
+          {$_("pages.logged-in.home.new-note")}
         </button>
       </div>
     {/if}
@@ -236,7 +236,7 @@
                     <h5 class="card-title font-weight-bolder">{note.title}</h5>
                     <p class="card-text">{note.text}</p>
                     <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                      <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
                     </p>
                   </div>
                 </div>
@@ -249,7 +249,7 @@
           <h4 class="font-weight-bolder">
             <i class="fas fa-archive mr-1"></i>
           </h4>
-          <p>Burası boş.</p>
+          <p>{$_("pages.logged-in.home.here-is-empty")}</p>
         </div>
       {/if}
     </div>
@@ -287,7 +287,7 @@
                     <h5 class="card-title font-weight-bolder">{note.title}</h5>
                     <p class="card-text">{note.text}</p>
                     <p class="card-text">
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                      <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
                     </p>
                   </div>
                 </div>
@@ -298,7 +298,7 @@
       {:else}
         <div class="text-center py-4">
           <h4 class="font-weight-bolder"><i class="fas fa-trash mr-1"></i></h4>
-          <p>Burası boş.</p>
+          <p>{$_("pages.logged-in.home.here-is-empty")}</p>
         </div>
       {/if}
     </div>

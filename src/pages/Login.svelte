@@ -1,4 +1,5 @@
 <script>
+  import { _ } from "svelte-i18n";
   import { get, writable } from "svelte/store";
 
   import ErrorAlert, {
@@ -15,7 +16,7 @@
   import { convertLocale } from "../util/language.util";
   import { setLoggedIn } from "../util/login.util";
 
-  import {route} from "routve"
+  import { route } from "routve";
 
   const recaptchaID = writable(0);
   const data = {
@@ -57,7 +58,7 @@
       .then((response) => {
         if (response.data.result === "ok") {
           setLoggedIn();
-          window.location="/"
+          window.location = "/";
         } else {
           const errorCode = response.data.error;
 
@@ -74,14 +75,14 @@
   }
 </script>
 
-<h2 class="text-center mb-4">Login</h2>
+<h2 class="text-center mb-4">{$_('pages.login.title')}</h2>
 
 <form class="homepage-form" on:submit|preventDefault="{submit}">
   <ErrorAlert />
 
   <div class="form-group mb-4">
     <label for="usernameOrEmail" class="u-font-size-90">
-      Username / E-mail
+      {$_('pages.login.form.username-or-email')}
     </label>
     <input
       type="text"
@@ -93,7 +94,7 @@
   </div>
 
   <div class="form-group mb-4">
-    <label for="password" class="u-font-size-90">Password</label>
+    <label for="password" class="u-font-size-90">{$_('pages.login.form.password')}</label>
     <input
       type="password"
       class="form-control"
@@ -111,7 +112,7 @@
       bind:checked="{data.rememberMe}"
     />
     <label class="custom-control-label u-font-size-90" for="termsBox">
-      Remember Me
+      {$_('pages.login.form.remember-me')}
     </label>
   </div>
 
@@ -123,7 +124,7 @@
           class="btn btn-primary"
           class:disabled="{buttonsLoading}"
           disabled="{buttonsLoading}"
-        >Login
+        >{$_('pages.login.form.login')}
           <i class="fas fa-chevron-right ml-2"></i>
         </button>
       </div>
@@ -133,7 +134,7 @@
           class="btn btn-link"
           class:disabled="{buttonsLoading}"
           disabled="{buttonsLoading}"
-        >Create Account
+        >{$_('pages.login.form.create-account')}
         </a>
       </div>
     </div>
@@ -146,7 +147,7 @@
             class="btn btn-outline-primary btn-sm"
             class:disabled="{buttonsLoading}"
             disabled="{buttonsLoading}"
-          >Forget Password?
+          >{$_('pages.login.form.forgot-password')}
           </a>
         </div>
       </div>

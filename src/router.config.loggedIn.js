@@ -7,7 +7,7 @@ export default {
       component: () => import("./pages/loggedIn/Settings.svelte"),
     },
     "*": {
-      component: () => import("./pages/loggedIn/Error404.svelte"),
+      component: () => import("./pages/Error404.svelte"),
     },
   },
 };
