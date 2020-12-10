@@ -118,7 +118,7 @@ const plugins = [
   replace({
     "process.env.API_URL": JSON.stringify(production ? "https://parnote.me/api/" : config["api-url"]),
     "process.env.RECAPTCHA_API_KEY": JSON.stringify(
-      production ? "" : config["recaptcha-site-key"]
+      config["recaptcha-site-key"]
     ),
   }),
 
