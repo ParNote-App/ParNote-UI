@@ -102,6 +102,9 @@
   },
   "success-codes": {
     "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Başarıyla kaydedildi! Lütfen doğrulama için e-postanızı kontrol edin.",
+    "EMAIL_VERIFIED_SUCCESSFULLY": "E-posta başarıyla doğrulandı! Şimdi giriş yapabilirsiniz.",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "Şifre başarıyla değiştirildi!",
+    "EMAIL_SENT_SUCCESSFULLY": "Başarıyla e-posta gönderildi! Lütfen e-posta adresinizi kontrol edin.",
     "": ""
   },
   "pages": {
