@@ -1,0 +1,234 @@
+{
+  "language-name": "EN (US)",
+  "error-codes": {
+    "UNKNOWN_ERROR_1": "An unknown error occurred. Try again later. Code #1",
+    "UNKNOWN_ERROR_2": "An unknown error occurred. Try again later. Code #2",
+    "UNKNOWN_ERROR_3": "An unknown error occurred. Try again later. Code #3",
+    "UNKNOWN_ERROR_4": "An unknown error occurred. Try again later. Code #4",
+    "UNKNOWN_ERROR_5": "An unknown error occurred. Try again later. Code #5",
+    "UNKNOWN_ERROR_6": "An unknown error occurred. Try again later. Code #6",
+    "UNKNOWN_ERROR_7": "An unknown error occurred. Try again later. Code #7",
+    "UNKNOWN_ERROR_8": "An unknown error occurred. Try again later. Code #8",
+    "UNKNOWN_ERROR_9": "An unknown error occurred. Try again later. Code #9",
+    "UNKNOWN_ERROR_10": "An unknown error occurred. Try again later. Code #10",
+    "UNKNOWN_ERROR_11": "An unknown error occurred. Try again later. Code #11",
+    "UNKNOWN_ERROR_12": "An unknown error occurred. Try again later. Code #12",
+    "UNKNOWN_ERROR_13": "An unknown error occurred. Try again later. Code #13",
+    "UNKNOWN_ERROR_14": "An unknown error occurred. Try again later. Code #14",
+    "UNKNOWN_ERROR_15": "An unknown error occurred. Try again later. Code #15",
+    "UNKNOWN_ERROR_16": "An unknown error occurred. Try again later. Code #16",
+    "UNKNOWN_ERROR_17": "An unknown error occurred. Try again later. Code #17",
+    "UNKNOWN_ERROR_18": "An unknown error occurred. Try again later. Code #18",
+    "UNKNOWN_ERROR_19": "An unknown error occurred. Try again later. Code #19",
+    "UNKNOWN_ERROR_20": "An unknown error occurred. Try again later. Code #20",
+    "UNKNOWN_ERROR_21": "An unknown error occurred. Try again later. Code #21",
+    "UNKNOWN_ERROR_22": "An unknown error occurred. Try again later. Code #22",
+    "UNKNOWN_ERROR_23": "An unknown error occurred. Try again later. Code #23",
+    "UNKNOWN_ERROR_24": "An unknown error occurred. Try again later. Code #24",
+    "UNKNOWN_ERROR_25": "An unknown error occurred. Try again later. Code #25",
+    "UNKNOWN_ERROR_26": "An unknown error occurred. Try again later. Code #26",
+    "UNKNOWN_ERROR_27": "An unknown error occurred. Try again later. Code #27",
+    "UNKNOWN_ERROR_28": "An unknown error occurred. Try again later. Code #28",
+    "UNKNOWN_ERROR_29": "An unknown error occurred. Try again later. Code #29",
+    "UNKNOWN_ERROR_30": "An unknown error occurred. Try again later. Code #30",
+    "UNKNOWN_ERROR_31": "An unknown error occurred. Try again later. Code #31",
+    "UNKNOWN_ERROR_32": "An unknown error occurred. Try again later. Code #32",
+    "UNKNOWN_ERROR_33": "An unknown error occurred. Try again later. Code #33",
+    "UNKNOWN_ERROR_34": "An unknown error occurred. Try again later. Code #34",
+    "UNKNOWN_ERROR_35": "An unknown error occurred. Try again later. Code #35",
+    "UNKNOWN_ERROR_36": "An unknown error occurred. Try again later. Code #36",
+    "UNKNOWN_ERROR_37": "An unknown error occurred. Try again later. Code #37",
+    "UNKNOWN_ERROR_38": "An unknown error occurred. Try again later. Code #38",
+    "UNKNOWN_ERROR_39": "An unknown error occurred. Try again later. Code #39",
+    "UNKNOWN_ERROR_40": "An unknown error occurred. Try again later. Code #40",
+    "UNKNOWN_ERROR_41": "An unknown error occurred. Try again later. Code #41",
+    "UNKNOWN_ERROR_42": "An unknown error occurred. Try again later. Code #42",
+    "UNKNOWN_ERROR_43": "An unknown error occurred. Try again later. Code #43",
+    "UNKNOWN_ERROR_44": "An unknown error occurred. Try again later. Code #44",
+    "UNKNOWN_ERROR_45": "An unknown error occurred. Try again later. Code #45",
+    "UNKNOWN_ERROR_46": "An unknown error occurred. Try again later. Code #46",
+    "UNKNOWN_ERROR_47": "An unknown error occurred. Try again later. Code #47",
+    "UNKNOWN_ERROR_48": "An unknown error occurred. Try again later. Code #48",
+    "UNKNOWN_ERROR_49": "An unknown error occurred. Try again later. Code #49",
+    "UNKNOWN_ERROR_50": "An unknown error occurred. Try again later. Code #50",
+    "UNKNOWN_ERROR_51": "An unknown error occurred. Try again later. Code #51",
+    "UNKNOWN_ERROR_52": "An unknown error occurred. Try again later. Code #52",
+    "UNKNOWN_ERROR_53": "An unknown error occurred. Try again later. Code #53",
+    "UNKNOWN_ERROR_54": "An unknown error occurred. Try again later. Code #54",
+    "UNKNOWN_ERROR_55": "An unknown error occurred. Try again later. Code #55",
+    "UNKNOWN_ERROR_56": "An unknown error occurred. Try again later. Code #56",
+    "UNKNOWN_ERROR_57": "An unknown error occurred. Try again later. Code #57",
+    "UNKNOWN_ERROR_58": "An unknown error occurred. Try again later. Code #58",
+    "UNKNOWN_ERROR_59": "An unknown error occurred. Try again later. Code #59",
+    "UNKNOWN_ERROR_60": "An unknown error occurred. Try again later. Code #60",
+    "UNKNOWN_ERROR_61": "An unknown error occurred. Try again later. Code #61",
+    "UNKNOWN_ERROR_62": "An unknown error occurred. Try again later. Code #62",
+    "UNKNOWN_ERROR_63": "An unknown error occurred. Try again later. Code #63",
+    "UNKNOWN_ERROR_64": "An unknown error occurred. Try again later. Code #64",
+    "UNKNOWN_ERROR_65": "An unknown error occurred. Try again later. Code #65",
+    "REGISTER_NAME_EMPTY": "Name is empty.",
+    "REGISTER_NAME_SHORT": "Name is too short.",
+    "REGISTER_NAME_LONG": "Name is too long.",
+    "REGISTER_SURNAME_EMPTY": "Surname is empty.",
+    "REGISTER_SURNAME_SHORT": "Surname is too short.",
+    "REGISTER_SURNAME_LONG": "Surname is too long.",
+    "REGISTER_NAME_INVALID": "Name is containing not excepted characters.",
+    "REGISTER_SURNAME_INVALID": "Surname is containing not excepted characters.",
+    "REGISTER_USERNAME_EMPTY": "Username is empty.",
+    "REGISTER_USERNAME_LONG": "Username is too long.",
+    "REGISTER_USERNAME_SHORT": "Username is too short.",
+    "REGISTER_USERNAME_INVALID": "Username can contain only A-Z0-9_ characters.",
+    "REGISTER_EMAIL_EMPTY": "E-Mail is empty.",
+    "REGISTER_EMAIL_INVALID": "E-Mail is not valid.",
+    "REGISTER_PASSWORD_EMPTY": "Password is empty.",
+    "REGISTER_PASSWORD_INVALID": "Password must contain 1 big letter, 1 small letter, 1 number and must be minimum 8, maximum 64 characters.",
+    "REGISTER_NOT_ACCEPTED_TERMS": "You must accept terms and policy.",
+    "RESET_PASSWORD_USERNAME_OR_EMAIL_INVALID": "Invalid username or e-mail.",
+    "LOGIN_LOGIN_IS_INVALID": "Username / E-mail or Password is invalid.",
+    "LOGIN_EMAIL_NOT_VERIFIED": "You haven't verify your e-mail. Check your e-mail we sent a new verification!",
+    "EMAIL_VERIFICATION_INVALID_TOKEN": "This link is broken, please try login again.",
+    "REGISTER_TAKEN_EMAIL_ERROR": "This e-mail has taken.",
+    "REGISTER_TAKEN_USERNAME_ERROR": "This username has taken.",
+    "RECAPTCHA_NOT_VALID": "Beep boop, we don't allow robots.",
+    "RESET_PASSWORD_NEW_PASSWORD_EMPTY": "New password is empty.",
+    "RESET_PASSWORD_NEW_PASSWORD_INVALID": "New password must contain 1 big letter, 1 small letter, 1 number and must be minimum 8, maximum 64 characters.",
+    "RESET_PASSWORD_NEW_PASSWORD_DOESNT_MATCH": "New password and repeat are not same!",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_EMPTY": "New password repeat is empty.",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "New password repeat must contain 1 big letter, 1 small letter, 1 number and must be minimum 8, maximum 64 characters.",
+    "RESET_PASSWORD_INVALID_TOKEN": "This link is broken, please request new password again.",
+    "undefined": "Unknown error please try again.",
+    "NETWORK_ERROR": "Network error, please check your internet connection.",
+    "": ""
+  },
+  "success-codes": {
+    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Successfully registered! Please check your e-mail for verification.",
+    "EMAIL_VERIFIED_SUCCESSFULLY": "E-Mail verified successfully! Now you can login.",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "Password has changed successfully!",
+    "EMAIL_SENT_SUCCESSFULLY": "E-Mail sent successfully! Please check your e-mail.",
+    "": ""
+  },
+  "pages": {
+    "about": {
+      "title": "About Us",
+      "body": "In September 2020 as the ParNote team, we wanted to take the ParNote project, which we started as a lecture project at the university, to the next stage and created as a real project. ParNote is a note app based on it, but unlike many other note apps, you can collaborate with other people by inviting them to your notes, share your personal notes with other people and see theirs too. With its simple interface and stylish design, ParNote invites you to write notes."
+    },
+    "terms-and-policy": {
+      "title": "Terms And Policy",
+      "body": "You are free to use!"
+    },
+    "home": {
+      "title": "Take notes easily.",
+      "description": "A note application which allows you to add, edit and share personal notes, collaborate with your friends and moreover discover other people notes.",
+      "links": {
+        "create-account": "Create Account",
+        "discover-notes": "Discover Notes"
+      }
+    },
+    "register": {
+      "title": "Create An Account",
+      "form": {
+        "name": "Name",
+        "surname": "Surname",
+        "username": "Username",
+        "email": "E-Mail",
+        "password": "Password",
+        "terms-and-policies-text": "I accept <a href=\"/terms-and-policy\" class=\"font-weight-bold\">terms and policies</a>.",
+        "button": "Create Account",
+        "login": "Login"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "form": {
+        "username-or-email": "Username / E-mail",
+        "password": "Password",
+        "remember-me": "Remember Me",
+        "login": "Login",
+        "create-account": "Create Account",
+        "forgot-password": "Forgot Password?"
+      }
+    },
+    "reset-password": {
+      "title": "Reset Password",
+      "form": {
+        "new-password": "New Password",
+        "new-password-repeat": "New Password Repeat",
+        "reset-password": "Reset Password"
+      }
+    },
+    "forgot-password": {
+      "title": "Reset Password",
+      "form": {
+        "username-or-email": "Username / E-Mail",
+        "reset-password": "Reset Password"
+      }
+    },
+    "error-404": {
+      "title": "Error: 404",
+      "description": "Page not found.",
+      "go-back": "Go back"
+    },
+    "activate-email": {
+      "title": "Verify E-Mail",
+      "description": "To login your account please verify your E-Mail address.",
+      "form": {
+        "button": "Verify My E-Mail"
+      }
+    },
+    "logged-in": {
+      "home": {
+        "my-notes": "My Notes",
+        "archive": "Archive",
+        "trash": "Trash",
+        "here-is-empty": "Here is empty.",
+        "new-note": "New Note"
+      },
+      "settings": {
+        "title": "Settings",
+        "change-password-title": "Change Password",
+        "change-password-form": {
+          "current-password": "Current Password",
+          "new-password": "New Password",
+          "repeat-password": "Repeat Password",
+          "save": "Save"
+        },
+        "delete-account-title": "Delete Account",
+        "delete-account-form": {
+          "delete-my-account-permanently": "Delete my account and all data <b>permanently</b>.",
+          "confirm": "Confirm"
+        }
+      }
+    }
+  },
+  "main": {
+    "new-note": "New Note",
+    "settings": "Settings",
+    "logout": "Logout",
+    "terms-and-policy": "Terms & Policy"
+  },
+  "header": {
+    "login-button": "Login"
+  },
+  "footer": {
+    "about": "About",
+    "terms": "Terms",
+    "contact": "Contact"
+  },
+  "close": "Close",
+  "modals": {
+    "note-modal": {
+      "note-title": "Note title",
+      "note-text": "Text ...",
+      "trash": "Trash",
+      "delete-permanent": "Delete Permanent",
+      "archive": "Archive",
+      "save": "Save",
+      "close": "Close"
+    },
+    "confirm-delete-note-modal": {
+      "title": "Are you sure you want to delete {note_title} named note?",
+      "cancel": "Cancel",
+      "yes": "Yes"
+    }
+  }
+}

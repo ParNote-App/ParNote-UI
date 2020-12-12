@@ -8,17 +8,20 @@ import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
 import babel from "rollup-plugin-babel";
 import rmdir from "rimraf";
+import css from "rollup-plugin-css-only";
+import json from "@rollup/plugin-json";
 
 rmdir("public/assets", function (error) {});
 
 const fs = require("fs");
 const configPath = "./config.js";
 
-let systemBuildStarted = false;
+let cssExported = false;
 
 const config = {
   port: 5000,
   "api-url": "http://localhost:8088/api/",
+  "recaptcha-site-key": "6LcxpucZAAAAAMArVVikW3dutT37_FMB8TYLe3gO",
 };
 
 try {
@@ -58,48 +61,13 @@ const plugins = [
 
   svelte({
     // enable run-time checks when not in production
-    dev: !production,
+    compilerOptions: {
+      dev: !production,
+    },
 
     preprocess: sveltePreprocess({
       postcss: true,
     }),
-
-    css: function (css) {
-      if (!systemBuildStarted) {
-        const cssFileName = "bundle.css",
-          stupidOutputDir = "public/assets/js/es",
-          sensibleOutputDir = "public/assets/css",
-          maxAttempts = 4;
-
-        // console.log(css.code); // the concatenated CSS
-        // console.log(css.map); // a sourcemap
-
-        // creates `bundle.css` and `bundle.css.map`
-        // using a falsy name will default to the bundle name
-        // — pass `false` as the second argument if you don't want the sourcemap
-        css.write(cssFileName, true);
-
-        setTimeout(function check_for_css(attempts = 0) {
-          const outputCSS = stupidOutputDir + "/" + cssFileName;
-          const outputMap = outputCSS + ".map";
-
-          const newOutputCSS = sensibleOutputDir + "/" + cssFileName;
-          const newOutputMap = sensibleOutputDir + "/" + cssFileName + ".map";
-
-          if (fs.existsSync(outputCSS) && fs.existsSync(outputMap)) {
-            if (!fs.existsSync(sensibleOutputDir))
-              fs.mkdirSync(sensibleOutputDir);
-
-            fs.renameSync(outputCSS, newOutputCSS);
-            fs.renameSync(outputMap, newOutputMap);
-          } else {
-            if (attempts < maxAttempts) {
-              setTimeout(() => check_for_css(attempts + 1), 250);
-            }
-          }
-        }, 250);
-      }
-    },
 
     onwarn: (warning, handler) => {
       // e.g. don't warn on <marquee> elements, cos they're cool
@@ -107,6 +75,23 @@ const plugins = [
 
       // let Rollup handle all other warnings normally
       handler(warning);
+    },
+  }),
+
+  css({
+    output: function (styles, styleNodes) {
+      if (!cssExported) {
+        const cssFileName = "bundle.css",
+          cssOutput = "public/assets/css/";
+        // cssMapFileName = cssFileName + ".map";
+
+        if (!fs.existsSync(cssOutput)) fs.mkdirSync(cssOutput);
+
+        fs.writeFileSync(cssOutput + cssFileName, styles);
+        // fs.writeFileSync(cssOutput + cssMapFileName, styleNodes);
+
+        if (production) cssExported = true;
+      }
     },
   }),
 
@@ -128,8 +113,13 @@ const plugins = [
     ),
   }),
 
+  json(),
+
   replace({
-    "process.env.API_URL": JSON.stringify(production ? "" : config["api-url"]),
+    "process.env.API_URL": JSON.stringify(production ? "https://parnote.me/api/" : config["api-url"]),
+    "process.env.RECAPTCHA_API_KEY": JSON.stringify(
+      config["recaptcha-site-key"]
+    ),
   }),
 
   // In dev mode, call `npm run start` once
@@ -159,7 +149,7 @@ const esExport = {
   watch: watch,
 };
 
-const systemBundlePlugins = [...plugins, onSystemBuildStart()];
+const systemBundlePlugins = [...plugins];
 
 const systemExport = {
   input: input,
@@ -180,14 +170,6 @@ const listExports = [esExport];
 if (production) listExports.push(systemExport);
 
 export default listExports;
-
-function onSystemBuildStart() {
-  return {
-    buildStart() {
-      systemBuildStarted = true;
-    },
-  };
-}
 
 function serve() {
   let started = false;

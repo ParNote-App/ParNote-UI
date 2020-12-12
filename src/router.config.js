@@ -15,14 +15,14 @@ export default {
     "/terms-and-policy": {
       component: () => import("./pages/TermsAndPolicy.svelte"),
     },
-    "/reset-password": {
+    "/reset-password?token": {
       component: () => import("./pages/ResetPassword.svelte"),
     },
-    "/activate": {
+    "/activate?token": {
       component: () => import("./pages/ActivateEmail.svelte"),
     },
-    "/forgotten-password": {
-      component: () => import("./pages/ForgottenPassword.svelte"),
+    "/forgot-password": {
+      component: () => import("./pages/ForgotPassword.svelte"),
     },
     "*": {
       component: () => import("./pages/Error404.svelte"),

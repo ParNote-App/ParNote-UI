@@ -1,22 +1,16 @@
-<main role="main" class="px-5">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-auto">
-        <h1>Take notes easily.</h1>
-        <p class="lead">
-          A note application which allows you to add, edit and share personal notes, collaborate with your friends and
-          moreover discover other people notes.
-        </p>
-        <div class="mt-4">
-          <a href="/register" class="btn btn-lg btn-primary">Create Account</a>
-          <a href="#" class="btn btn-lg btn-outline-primary align-items-center ml-3">
-            <i
-            class="far fa-compass mr-1"
-          ></i>
-            Discover Notes</a>
-        </div>
-      </div>
-      <div class="col-2"></div>
-    </div>
+<script>
+  import {_} from "svelte-i18n"
+</script>
+
+<main class="px-lg-5 px-3">
+  <h1>{$_("pages.home.title")}</h1>
+  <p class="lead">
+    {$_("pages.home.description")}
+  </p>
+  <div class="mt-4">
+    <a href="/register" class="btn btn-primary">{$_("pages.home.links.create-account")}</a>
+    <a href="javascript:void(0);" class="btn btn-link align-items-center">
+      <i class="far fa-compass mr-1"></i>
+      {$_("pages.home.links.discover-notes")}</a>
   </div>
 </main>
