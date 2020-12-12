@@ -1,3 +1,234 @@
 {
-  "language-name": "DE"
+  "language-name": "DE",
+  "error-codes": {
+    "UNKNOWN_ERROR_1": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #1",
+    "UNKNOWN_ERROR_2": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #2",
+    "UNKNOWN_ERROR_3": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #3",
+    "UNKNOWN_ERROR_4": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #4",
+    "UNKNOWN_ERROR_5": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #5",
+    "UNKNOWN_ERROR_6": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #6",
+    "UNKNOWN_ERROR_7": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #7",
+    "UNKNOWN_ERROR_8": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #8",
+    "UNKNOWN_ERROR_9": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #9",
+    "UNKNOWN_ERROR_10": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #10",
+    "UNKNOWN_ERROR_11": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #11",
+    "UNKNOWN_ERROR_12": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #12",
+    "UNKNOWN_ERROR_13": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #13",
+    "UNKNOWN_ERROR_14": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #14",
+    "UNKNOWN_ERROR_15": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #15",
+    "UNKNOWN_ERROR_16": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #16",
+    "UNKNOWN_ERROR_17": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #17",
+    "UNKNOWN_ERROR_18": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #18",
+    "UNKNOWN_ERROR_19": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #19",
+    "UNKNOWN_ERROR_20": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #20",
+    "UNKNOWN_ERROR_21": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #21",
+    "UNKNOWN_ERROR_22": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #22",
+    "UNKNOWN_ERROR_23": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #23",
+    "UNKNOWN_ERROR_24": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #24",
+    "UNKNOWN_ERROR_25": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #25",
+    "UNKNOWN_ERROR_26": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #26",
+    "UNKNOWN_ERROR_27": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #27",
+    "UNKNOWN_ERROR_28": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #28",
+    "UNKNOWN_ERROR_29": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #29",
+    "UNKNOWN_ERROR_30": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #30",
+    "UNKNOWN_ERROR_31": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #31",
+    "UNKNOWN_ERROR_32": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #32",
+    "UNKNOWN_ERROR_33": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #33",
+    "UNKNOWN_ERROR_34": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #34",
+    "UNKNOWN_ERROR_35": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #35",
+    "UNKNOWN_ERROR_36": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #36",
+    "UNKNOWN_ERROR_37": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #37",
+    "UNKNOWN_ERROR_38": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #38",
+    "UNKNOWN_ERROR_39": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #39",
+    "UNKNOWN_ERROR_40": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #40",
+    "UNKNOWN_ERROR_41": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #41",
+    "UNKNOWN_ERROR_42": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #42",
+    "UNKNOWN_ERROR_43": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #43",
+    "UNKNOWN_ERROR_44": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #44",
+    "UNKNOWN_ERROR_45": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #45",
+    "UNKNOWN_ERROR_46": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #46",
+    "UNKNOWN_ERROR_47": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #47",
+    "UNKNOWN_ERROR_48": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #48",
+    "UNKNOWN_ERROR_49": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #49",
+    "UNKNOWN_ERROR_50": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #50",
+    "UNKNOWN_ERROR_51": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #51",
+    "UNKNOWN_ERROR_52": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #52",
+    "UNKNOWN_ERROR_53": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #53",
+    "UNKNOWN_ERROR_54": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #54",
+    "UNKNOWN_ERROR_55": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #55",
+    "UNKNOWN_ERROR_56": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #56",
+    "UNKNOWN_ERROR_57": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #57",
+    "UNKNOWN_ERROR_58": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #58",
+    "UNKNOWN_ERROR_59": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #59",
+    "UNKNOWN_ERROR_60": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #60",
+    "UNKNOWN_ERROR_61": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #61",
+    "UNKNOWN_ERROR_62": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #62",
+    "UNKNOWN_ERROR_63": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #63",
+    "UNKNOWN_ERROR_64": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #64",
+    "UNKNOWN_ERROR_65": "Ein unbekannter Fehler ist aufgetreten. Bitte versuchen Sie es später noch einmal. Code #65",
+    "REGISTER_NAME_EMPTY": "Name ist leer.",
+    "REGISTER_NAME_SHORT": "Name ist zu kurz.",
+    "REGISTER_NAME_LONG": "Name ist zu lang.",
+    "REGISTER_SURNAME_EMPTY": "Nachname ist leer.",
+    "REGISTER_SURNAME_SHORT": "Nachname ist zu kurz.",
+    "REGISTER_SURNAME_LONG": "Nachname ist zu lang.",
+    "REGISTER_NAME_INVALID": "Name enthält Sonderzeichen.",
+    "REGISTER_SURNAME_INVALID": "Nachname enthält Sonderzeichen.",
+    "REGISTER_USERNAME_EMPTY": "Benutzername ist leer.",
+    "REGISTER_USERNAME_LONG": "Benutzername ist zu lang.",
+    "REGISTER_USERNAME_SHORT": "Benutzername ist zu kurz.",
+    "REGISTER_USERNAME_INVALID": "Nutzernamen dürfen nur alphanumerische Zeichen (Buchstaben von A bis Z, Zahlen von 0 bis 9) enthalten.",
+    "REGISTER_EMAIL_EMPTY": "E-Mail ist leer.",
+    "REGISTER_EMAIL_INVALID": "E-Mail-Adresse ist ungültig.",
+    "REGISTER_PASSWORD_EMPTY": "Passwort ist leer.",
+    "REGISTER_PASSWORD_INVALID": "Passwort muss 1 großer Buchstabe, 1 kleiner Buchstabe, 1 Zahl enthalten und muss mindestens 8 bis maximal 64 Zeichen enthalten.",
+    "REGISTER_NOT_ACCEPTED_TERMS": "Sie müssen die Teilnahme und Richtlinie akzeptieren.",
+    "RESET_PASSWORD_USERNAME_OR_EMAIL_INVALID": "Ungültiger benutzername oder E-Mail.",
+    "LOGIN_LOGIN_IS_INVALID": "Benutzername / E-Mail oder Passwort ist ungültig.",
+    "LOGIN_EMAIL_NOT_VERIFIED": "Sie haben Ihre e-Mail nicht verifiziert.Überprüfen Sie Ihre E-Mail Postfach wir schicken Ihne neue Email zur Verifizierung!",
+    "EMAIL_VERIFICATION_INVALID_TOKEN": "Diese Verknüpfung ist aufgehoben, versuchen Sie erneut, sich anzumelden.",
+    "REGISTER_TAKEN_EMAIL_ERROR": "Diese e-Mail wurde angenommen.",
+    "REGISTER_TAKEN_USERNAME_ERROR": "Dieser Benutzername wurde angenommen.",
+    "RECAPTCHA_NOT_VALID": "Beep boop, wir erlauben keine Roboter.",
+    "RESET_PASSWORD_NEW_PASSWORD_EMPTY": "Neues Passwort ist leer.",
+    "RESET_PASSWORD_NEW_PASSWORD_INVALID": "Neues Passwort muss 1 großer Buchstabe, 1 kleiner Buchstabe, 1 Zahl enthalten und muss mindestens 8 bis maximal 64 Zeichen enthalten.",
+    "RESET_PASSWORD_NEW_PASSWORD_DOESNT_MATCH": "Neues Passwort und Wiederholung sind nicht identisch!",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_EMPTY": "Neue Passwort-Wiederholung ist leer.",
+    "RESET_PASSWORD_NEW_PASSWORD_REPEAT_INVALID": "Neue Passwort-Wiederholung muss 1 großer Buchstabe, 1 kleiner Buchstabe, 1 Zahl enthalten und muss mindestens 8 bis maximal 64 enthalten.",
+    "RESET_PASSWORD_INVALID_TOKEN": "Diese Verknüpfung ist aufgehoben, bitte fordern Sie erneut ein neues Passwort an.",
+    "undefined": "Unbekannter Fehler, bitte versuchen Sie es erneut.",
+    "NETWORK_ERROR": "Netzwerkfehler, Bitte prüfen Sie Ihre Internetverbindung.",
+    "": ""
+  },
+  "success-codes": {
+    "REGISTERED_SUCCESSFULLY_CHECK_YOUR_EMAIL": "Sie haben sich erfolgreich registriert! Bitte überprüfen Sie Ihre E-Mail zur Verifizierung.",
+    "EMAIL_VERIFIED_SUCCESSFULLY": "E-Mail erfolgreich verifiziert! Jetzt können Sie sich anmelden.",
+    "PASSWORD_CHANGED_SUCCESSFULLY": "Passwort wurde erfolgreich geändert!",
+    "EMAIL_SENT_SUCCESSFULLY": "E-Mail erfolgreich versendet! Bitte überprüfen Sie Ihre E-Mails.",
+    "": ""
+  },
+  "pages": {
+    "about": {
+      "title": "Über uns",
+      "body": "Im September 2020 wollten wir als ParNote-Team das Projekt ParNote, dass wir als Vorlesungsprojekt an der Universität begonnen haben, auf die nächste Stufe bringen und als echtes Projekt erstellen. ParNote ist eine Notiz-App aber im Gegensatz zu vielen anderen Notiz-Apps kann man mit anderen Leuten zusammenarbeiten, indem man sie zu seinen Notizen einlädt, seine persönlichen Notizen mit anderen Leuten teilt und auch deren Notizen sieht. Mit seiner einfachen Oberfläche und dem stilvollen Design lädt ParNote zum Schreiben von Notizen ein."
+    },
+    "terms-and-policy": {
+      "title": "Bedingungen und Richtlinien",
+      "body": "Sie können frei verwenden"
+    },
+    "home": {
+      "title": "Einfache Notizen machen.",
+      "description": "Eine Notizanwendung, die es Ihnen ermöglicht, persönliche Notizen hinzuzufügen, zu bearbeiten und zu teilen, mit Ihren Freunden zusammenzuarbeiten und darüber hinaus Notizen anderer Leute zu entdecken.",
+      "links": {
+        "create-account": "Benutzerkonto anlegen",
+        "discover-notes": "Notizen Entdecken"
+      }
+    },
+    "register": {
+      "title": "Benutzerkonto anlegen",
+      "form": {
+        "name": "Name",
+        "surname": "Nachname",
+        "username": "Nutzername",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "terms-and-policies-text": "Ich akzeptiere <a href=\"/terms-and-policy\" class=\"font-weight-bold\">Bedingungen und Richtlinien</a>.",
+        "button": "Benutzerkonto anlegen",
+        "login": "Einloggen"
+      }
+    },
+    "login": {
+      "title": "Einloggen",
+      "form": {
+        "username-or-email": "Nutzername / E-mail",
+        "password": "Passwort",
+        "remember-me": "Behalte mich in Erinnerung",
+        "login": "Einloggen",
+        "create-account": "Erstellen",
+        "forgot-password": "Passwort vergessen?"
+      }
+    },
+    "reset-password": {
+      "title": "Passwort Zurücksetzen",
+      "form": {
+        "new-password": "Neues Passwort",
+        "new-password-repeat": "Neue Passwortwiederholung",
+        "reset-password": "Passwort Zurücksetzen"
+      }
+    },
+    "forgot-password": {
+      "title": "Passwort Zurücksetzen",
+      "form": {
+        "username-or-email": "Nutzername / E-mail",
+        "reset-password": "Passwort Zurücksetzen"
+      }
+    },
+    "error-404": {
+      "title": "Error: 404",
+      "description": "Seite nicht gefunden.",
+      "go-back": "Geh zurück."
+    },
+    "activate-email": {
+      "title": "E-Mail bestätigen",
+      "description": "Um sich in Ihrem Konto anzumelden, überprüfen Sie bitte Ihre E-Mail-Adresse.",
+      "form": {
+        "button": "Überprüfen Sie meine E-Mail"
+      }
+    },
+    "logged-in": {
+      "home": {
+        "my-notes": "Meine Notizen",
+        "archive": "Archiv",
+        "trash": "Müll",
+        "here-is-empty": "Hier ist leer.",
+        "new-note": "Neue Notiz"
+      },
+      "settings": {
+        "title": "Einstellungen",
+        "change-password-title": "Passwort ändern",
+        "change-password-form": {
+          "current-password": "Derzeitiges Passwort",
+          "new-password": "Neues Passwort",
+          "repeat-password": "Wiederhole das Passwort",
+          "save": "Speichern"
+        },
+        "delete-account-title": "Konto Löschen",
+        "delete-account-form": {
+          "delete-my-account-permanently": "Lösche mein Konto und alle Daten <b>dauerhaft</b>.",
+          "confirm": "Bestätigen"
+        }
+      }
+    }
+  },
+  "main": {
+    "new-note": "Neuer Hinweis",
+    "settings": "Einstellungen",
+    "logout": "Ausloggen",
+    "terms-and-policy": "Bedingungen & Richtlinien"
+  },
+  "header": {
+    "login-button": "Einloggen"
+  },
+  "footer": {
+    "about": "Über",
+    "terms": "Bedingungen",
+    "contact": "Kontakt"
+  },
+  "close": "Schließen",
+  "modals": {
+    "note-modal": {
+      "note-title": "Titel notieren",
+      "note-text": "Text ...",
+      "trash": "Müll",
+      "delete-permanent": "Dauerhaft löschen",
+      "archive": "Archiv",
+      "save": "Speichern",
+      "close": "Schließen"
+    },
+    "confirm-delete-note-modal": {
+      "title": "Möchten Sie die {note_title} notiz sicher löschen?",
+      "cancel": "Stornieren",
+      "yes": "Ja"
+    }
+  }
 }
