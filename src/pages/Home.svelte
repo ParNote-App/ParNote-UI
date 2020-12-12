@@ -12,5 +12,5 @@
 <!--    <a href="javascript:void(0);" class="btn btn-link align-items-center">-->
 <!--      <i class="far fa-compass mr-1"></i>-->
 <!--      {$_("pages.home.links.discover-notes")}</a>-->
-<!--  </div>-->
+  </div>
 </main>
