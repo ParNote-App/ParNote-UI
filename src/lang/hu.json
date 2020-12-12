@@ -109,11 +109,11 @@
   },
   "pages": {
     "about": {
-      "title": "Rólunk",
+      "title": "Informació Rólunk",
       "body": "2020 szeptemberében Parnote csapatként a következő szakaszba akartuk vinni a ParNote projektet, amelyet az egyetemen előadási projektként indítottunk el, és amelyet valós projektként hoztunk létre. A ParNote egy ezen alapuló jegyzetalkalmazás, de sok más hangalkalmazással ellentétben más emberekkel is együttműködhet, ha meghívja őket a jegyzeteihez, megoszthatja személyes jegyzeteit másokkal, és láthatja az övékét is. A ParNote egyszerű kezelőfelületével és stílusos kialakításával meghívja Önt jegyzetek írására."
     },
     "terms-and-policy": {
-      "title": "Feltételek és İrányelvek",
+      "title": "Feltételek és Irányelvek",
       "body": "Szabadon használhatja!"
     },
     "home": {
@@ -128,9 +128,9 @@
       "title": "Fiók a létrehozása",
       "form": {
         "name": "Név",
-        "surname": "családnév",
-        "username": "felhasználónév",
-        "email": "E-Mail",
+        "surname": "Családnév",
+        "username": "Felhasználónév",
+        "email": "E-Mail Címe",
         "password": "Jelszó",
         "terms-and-policies-text": "Elfogadom <a href=\"/terms-and-policy\" class=\"font-weight-bold\">feltételek és irányelvek</a>.",
         "button": "Fiók létrehozása",
@@ -140,7 +140,7 @@
     "login": {
       "title": "Bejelentkezés",
       "form": {
-        "username-or-email": "Felhasználónév / E-mail",
+        "username-or-email": "Felhasználónév / E-mail Címe",
         "password": "Jelszó",
         "remember-me": "Emlékezz rám",
         "login": "Bejelentkezés",
@@ -159,7 +159,7 @@
     "forgot-password": {
       "title": "Jelszó Visszaállítás",
       "form": {
-        "username-or-email": "Felhasználónév / E-mail",
+        "username-or-email": "Felhasználónév / E-mail Címe",
         "reset-password": "Jelszó Visszaállítás"
       }
     },
@@ -204,7 +204,7 @@
     "new-note": "Új jegyzet",
     "settings": "Beállítások",
     "logout": "Kijelentkezés",
-    "terms-and-policy": "Feltételek & İrányelvek"
+    "terms-and-policy": "Feltételek & Irányelvek"
   },
   "header": {
     "login-button": "Bejelentkezés"
