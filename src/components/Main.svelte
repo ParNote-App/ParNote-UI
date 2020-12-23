@@ -103,7 +103,7 @@
       <div
         class="col-lg-6 col-12 h-100 d-flex h-100 flex-column justify-content-center"
       >
-        <Router routerConfig="{RouterConfig}" />
+        <Router config="{RouterConfig}" />
       </div>
       <div class="col-6 h-100 bg-primary d-lg-flex d-none"></div>
     </div>
@@ -223,7 +223,7 @@
 
           <Router
             hidden="{showLoading(showLoadingAlways, $isPageInitialized)}"
-            routerConfig="{RouterConfigLoggedIn}"
+            config="{RouterConfigLoggedIn}"
           />
         </div>
       </main>
