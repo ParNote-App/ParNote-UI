@@ -137,10 +137,10 @@
     shareLoading = true;
 
     ApiUtil.post(
-      note.shared ? "shareLink/delete" : "shareLink/create",
-      note.shared
+      get(note).shared ? "shareLink/delete" : "shareLink/create",
+      get(note).shared
         ? {
-            token: note.sharedToken,
+            token: get(note).sharedToken,
           }
         : {
             id: get(note).id,
@@ -148,11 +148,20 @@
     )
       .then((response) => {
         if (response.data.result === "ok") {
-          const deleted = note.shared === true;
-          note.shared = !note.shared;
+          const deleted = get(note).shared === true;
 
-          if(!deleted) {
-            note.sharedToken = response.data.token;
+          note.update((note) => {
+            note.shared = !note.shared;
+
+            return note;
+          });
+
+          if (!deleted) {
+            note.update((note) => {
+              note.sharedToken = response.data.token;
+
+              return note;
+            });
 
             copy("http://localhost:5000/shared-note/" + response.data.token);
           }
@@ -222,7 +231,7 @@
               class:disabled="{buttonsLoading}"
               disabled="{buttonsLoading}"
               on:click="{shareNoteClick}"
-              use:tooltip="{['bottom', shareLinkDeleted ? 'Link deleted, now note is private!' : shareLinkCopied ? 'Share link copied to clipboard!' : shareLoading ? 'Loading...' : note.shared ? 'Publicly Shared - Click to close sharing...' : 'Click to share this note and copy the link']}"
+              use:tooltip="{['bottom', shareLinkDeleted ? 'Link deleted, now note is private!' : shareLinkCopied ? 'Share link copied to clipboard!' : shareLoading ? 'Loading...' : $note.shared ? 'Publicly Shared - Click to close sharing...' : 'Click to share this note and copy the link']}"
             >
               <i class="fas fa-share mr-2"></i>
               Share
