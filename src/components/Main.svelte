@@ -149,7 +149,7 @@
               </button>
             </form>
 
-            <div class="dropdown ml-auto">
+            <div class="dropdown">
               <a
                 class="nav-link"
                 href="javascript:void(0);"
