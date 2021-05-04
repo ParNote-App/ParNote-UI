@@ -24,12 +24,19 @@
 
 <script>
   import { _ } from "svelte-i18n";
+  import copy from "copy-to-clipboard";
+
   import ApiUtil from "../../util/api.util";
+  import tooltip from "../../util/tooltip.util";
+
   import ConfirmDeleteNoteModal, {
     show as showConfirmDeleteNoteModal,
   } from "./ConfirmDeleteNoteModal.svelte";
 
+  let shareLoading = false;
   let buttonsLoading = false;
+  let shareLinkCopied = false;
+  let shareLinkDeleted = false;
 
   function submit() {
     buttonsLoading = true;
@@ -124,6 +131,48 @@
       }
     );
   }
+
+  function shareNoteClick() {
+    buttonsLoading = true;
+    shareLoading = true;
+
+    ApiUtil.post(
+      note.shared ? "shareLink/delete" : "shareLink/create",
+      note.shared
+        ? {
+            token: note.sharedToken,
+          }
+        : {
+            id: get(note).id,
+          }
+    )
+      .then((response) => {
+        if (response.data.result === "ok") {
+          const deleted = note.shared === true;
+          note.shared = !note.shared;
+
+          if(!deleted) {
+            note.sharedToken = response.data.token;
+
+            copy("http://localhost:5000/shared-note/" + response.data.token);
+          }
+
+          if (deleted) shareLinkDeleted = true;
+          else shareLinkCopied = true;
+
+          shareLoading = false;
+          buttonsLoading = false;
+
+          setTimeout(() => {
+            shareLinkCopied = false;
+            shareLinkDeleted = false;
+          }, 2000);
+        } else location.reload();
+      })
+      .catch(() => {
+        location.reload();
+      });
+  }
 </script>
 
 <div
@@ -166,16 +215,19 @@
           </div>
         </div>
         <div class="modal-footer border-top-0">
-          <button
-            type="button"
-            class="btn btn-link text-primary"
-            class:disabled="{buttonsLoading}"
-            disabled="{buttonsLoading}"
-            on:click="{deleteNoteClick}"
-          >
-            <i class="fas fa-share mr-2"></i>
-            Share
-          </button>
+          {#if $note.status !== 0}
+            <button
+              type="button"
+              class="btn btn-link text-primary"
+              class:disabled="{buttonsLoading}"
+              disabled="{buttonsLoading}"
+              on:click="{shareNoteClick}"
+              use:tooltip="{['bottom', shareLinkDeleted ? 'Link deleted, now note is private!' : shareLinkCopied ? 'Share link copied to clipboard!' : shareLoading ? 'Loading...' : note.shared ? 'Publicly Shared - Click to close sharing...' : 'Click to share this note and copy the link']}"
+            >
+              <i class="fas fa-share mr-2"></i>
+              Share
+            </button>
+          {/if}
           {#if $note.status === 1 || $note.status === 2}
             <button
               type="button"
