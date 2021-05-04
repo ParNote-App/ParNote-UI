@@ -1,16 +1,15 @@
 <script>
   import { onMount, onDestroy } from "svelte";
-  import { fade } from "svelte/transition";
   import jQuery from "jquery";
-  import moment from "moment";
-  import { _, locales, locale as currentLocale } from "svelte-i18n";
+  import { _, locale as currentLocale } from "svelte-i18n";
 
   import { isPageInitialized } from "../../Store";
 
   import NoteModal, {
-    show as showNoteModal,
     setSuccessCallback as setNoteModalSuccessCallback,
   } from "../../components/modals/NoteModal.svelte";
+  import Notes from "../../components/Notes.svelte";
+
   import ApiUtil from "../../util/api.util";
 
   let notes = [];
@@ -93,10 +92,6 @@
     });
   });
 
-  function getTime(check, time, locale) {
-    return moment(time).fromNow();
-  }
-
   onDestroy(() => {
     clearInterval(interval);
   });
@@ -114,7 +109,7 @@
       aria-selected="true"
     >
       <i class="far fa-sticky-note mr-2"></i>
-      {$_("pages.logged-in.home.my-notes")}
+      {$_('pages.logged-in.home.my-notes')}
     </a>
   </li>
   <li class="nav-item">
@@ -128,7 +123,7 @@
       aria-selected="false"
     >
       <i class="fas fa-archive mr-2"></i>
-      {$_("pages.logged-in.home.archive")}
+      {$_('pages.logged-in.home.archive')}
     </a>
   </li>
   <!--  <li class="nav-item ml-auto">-->
@@ -156,7 +151,7 @@
       aria-selected="false"
     >
       <i class="far fa-trash-alt mr-2"></i>
-      {$_("pages.logged-in.home.trash")}
+      {$_('pages.logged-in.home.trash')}
     </a>
   </li>
 </ul>
@@ -169,48 +164,12 @@
     aria-labelledby="pills-notes-tab-1"
   >
     <!-- Note Layout Starts Here -->
-
-    {#if getCountOfNormalNotes(notes) > 0}
-      <div class="card-columns">
-        {#each notes as note, index (note)}
-          {#if note.status === 1}
-            <a
-              href="javascript:void(0);"
-              class="text-dark"
-              on:click="{() => showNoteModal(note)}"
-            >
-              <div class="card note-card" in:fade>
-                <div class="card-body">
-                  <h5 class="card-title font-weight-bolder">{note.title}</h5>
-                  <p class="card-text">{note.text}</p>
-                  <p class="card-text">
-                    <small
-                      class="text-muted"
-                    >{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
-                  </p>
-                </div>
-              </div>
-            </a>
-          {/if}
-        {/each}
-      </div>
-    {:else}
-      <div class="text-center py-4">
-        <h4 class="font-weight-bolder">
-          <i class="fas fa-sticky-note mr-1"></i>
-        </h4>
-        <p>{$_("pages.logged-in.home.here-is-empty")}</p>
-        <br />
-        <button
-          type="button"
-          class="btn btn-outline-primary"
-          on:click="{() => showNoteModal()}"
-        >
-          <i class="fas fa-plus mr-1"></i>
-          {$_("pages.logged-in.home.new-note")}
-        </button>
-      </div>
-    {/if}
+    <Notes
+      count="{getCountOfNormalNotes(notes)}"
+      notes="{notes}"
+      status="{1}"
+      checkTime="{checkTime}"
+    />
   </div>
 
   <div
@@ -221,37 +180,12 @@
   >
     <div class="container">
       <!-- Note Layout Starts Here -->
-
-      {#if getCountOfArchivedNotes(notes) > 0}
-        <div class="card-columns">
-          {#each notes as note, index (note)}
-            {#if note.status === 2}
-              <a
-                href="javascript:void(0);"
-                class="text-dark"
-                on:click="{() => showNoteModal(note)}"
-              >
-                <div class="card note-card" in:fade>
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
-                    <p class="card-text">{note.text}</p>
-                    <p class="card-text">
-                      <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            {/if}
-          {/each}
-        </div>
-      {:else}
-        <div class="text-center py-4">
-          <h4 class="font-weight-bolder">
-            <i class="fas fa-archive mr-1"></i>
-          </h4>
-          <p>{$_("pages.logged-in.home.here-is-empty")}</p>
-        </div>
-      {/if}
+      <Notes
+        count="{getCountOfArchivedNotes(notes)}"
+        notes="{notes}"
+        status="{2}"
+        checkTime="{checkTime}"
+      />
     </div>
   </div>
 
@@ -272,35 +206,12 @@
   >
     <div class="container">
       <!-- Note Layout Starts Here -->
-
-      {#if getCountOfTrashNotes(notes) > 0}
-        <div class="card-columns">
-          {#each notes as note, index (note)}
-            {#if note.status === 3}
-              <a
-                href="javascript:void(0);"
-                class="text-dark"
-                on:click="{() => showNoteModal(note)}"
-              >
-                <div class="card note-card" in:fade>
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bolder">{note.title}</h5>
-                    <p class="card-text">{note.text}</p>
-                    <p class="card-text">
-                      <small class="text-muted">{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
-                    </p>
-                  </div>
-                </div>
-              </a>
-            {/if}
-          {/each}
-        </div>
-      {:else}
-        <div class="text-center py-4">
-          <h4 class="font-weight-bolder"><i class="fas fa-trash mr-1"></i></h4>
-          <p>{$_("pages.logged-in.home.here-is-empty")}</p>
-        </div>
-      {/if}
+      <Notes
+        count="{getCountOfTrashNotes(notes)}"
+        notes="{notes}"
+        status="{3}"
+        checkTime="{checkTime}"
+      />
     </div>
   </div>
 </div>
