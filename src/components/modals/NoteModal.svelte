@@ -166,6 +166,16 @@
           </div>
         </div>
         <div class="modal-footer border-top-0">
+          <button
+            type="button"
+            class="btn btn-link text-primary"
+            class:disabled="{buttonsLoading}"
+            disabled="{buttonsLoading}"
+            on:click="{deleteNoteClick}"
+          >
+            <i class="fas fa-share mr-2"></i>
+            Share
+          </button>
           {#if $note.status === 1 || $note.status === 2}
             <button
               type="button"

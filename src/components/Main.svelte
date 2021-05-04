@@ -2,6 +2,7 @@
   import Router from "routve";
   import md5 from "md5";
   import { _, locales, locale as currentLocale } from "svelte-i18n";
+  import { onDestroy, onMount } from "svelte";
 
   import {
     checkLogin,
@@ -26,6 +27,17 @@
   } from "../Store";
 
   import { show as showNoteModal } from "./modals/NoteModal.svelte";
+  import Notes from "./Notes.svelte";
+  import NoteModal from "./modals/NoteModal.svelte";
+
+  let searching = false;
+  let showSearch = false;
+  let searchNotes = [];
+  let query = "";
+  let searchedQuery = "";
+
+  let checkTime = 0;
+  let interval;
 
   const showLoadingAlways = false;
 
@@ -92,6 +104,51 @@
     showNoteModal();
   }
 
+  function search() {
+    showSearch = true;
+    searching = true;
+
+    (function searchData() {
+      ApiUtil.post("notes/search", { query })
+        .then((response) => {
+          if (response.data.result === "ok") {
+            searchNotes = [];
+
+            response.data.notes.forEach((note) => {
+              searchNotes.push(note);
+            });
+
+            searchedQuery = "" + query;
+
+            searching = false;
+          } else {
+            setTimeout(() => {
+              searchData();
+            }, 500);
+          }
+        })
+        .catch(() => {
+          setTimeout(() => {
+            searchData();
+          }, 500);
+        });
+    })();
+  }
+
+  function clearResults() {
+    showSearch = false;
+  }
+
+  onMount(() => {
+    interval = setInterval(() => {
+      checkTime += 1;
+    }, 1000);
+  });
+
+  onDestroy(() => {
+    clearInterval(interval);
+  });
+
   export let hidden;
 </script>
 
@@ -138,11 +195,15 @@
               <span class="ml-2 d-lg-inline d-none">{$_('main.new-note')}</span>
             </button>
 
-            <form class="d-flex flex-row mx-auto">
+            <form
+              on:submit|preventDefault="{search}"
+              class="d-flex flex-row mx-auto"
+            >
               <input
                 class="form-control border-0 bg-light rounded text-center text-primary search-input"
                 type="search"
                 placeholder="Find a note..."
+                bind:value="{query}"
               />
               <button type="submit" class="btn btn-link">
                 <i class="fa fa-search"></i>
@@ -224,14 +285,33 @@
 
       <main class="flex-fill">
         <div class="container">
-          {#if showLoading(showLoadingAlways, $isPageInitialized)}
+          {#if showLoading(showLoadingAlways, $isPageInitialized) || searching}
             <PageLoading />
           {/if}
 
           <Router
-            hidden="{showLoading(showLoadingAlways, $isPageInitialized)}"
+            hidden="{showLoading(showLoadingAlways, $isPageInitialized) || showSearch}"
             config="{RouterConfigLoggedIn}"
           />
+
+          {#if showSearch && !searching}
+            <div class="d-flex flex-row">
+              <h1>Searched: <strong>{searchedQuery}</strong></h1>
+
+              <a class="ml-auto my-auto" href="javascript:void(0);" on:click={clearResults}>
+                <h3>Clear Results</h3>
+              </a>
+            </div>
+
+            <div class="container">
+              <Notes
+                count="{searchNotes.length}"
+                notes="{searchNotes}"
+                status="{4}"
+                checkTime="{checkTime}"
+              />
+            </div>
+          {/if}
         </div>
       </main>
 
@@ -246,4 +326,6 @@
       </footer>
     </div>
   </div>
+
+  <NoteModal />
 {/if}

@@ -3,7 +3,7 @@
   import { fade } from "svelte/transition";
   import { _, locale as currentLocale } from "svelte-i18n";
 
-  import NoteModal, { show as showNoteModal } from "./modals/NoteModal.svelte";
+  import { show as showNoteModal } from "./modals/NoteModal.svelte";
 
   export let count;
   export let notes;
@@ -18,7 +18,7 @@
 {#if count > 0}
   <div class="card-columns">
     {#each notes as note, index (note)}
-      {#if note.status === status}
+      {#if status === 4 || note.status === status}
         <a
           href="javascript:void(0);"
           class="text-dark"
@@ -40,7 +40,12 @@
     {/each}
   </div>
 {:else}
-  {#if status === 3}
+  {#if status === 4}
+    <div class="text-center py-4">
+      <h4 class="font-weight-bolder"><i class="fas fa-search mr-1"></i></h4>
+      <p>{$_('pages.logged-in.home.here-is-empty')}</p>
+    </div>
+  {:else if status === 3}
     <div class="text-center py-4">
       <h4 class="font-weight-bolder"><i class="fas fa-trash mr-1"></i></h4>
       <p>{$_('pages.logged-in.home.here-is-empty')}</p>

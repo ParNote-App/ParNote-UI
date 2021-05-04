@@ -1,13 +1,11 @@
 <script>
   import { onMount, onDestroy } from "svelte";
   import jQuery from "jquery";
-  import { _, locale as currentLocale } from "svelte-i18n";
+  import { _ } from "svelte-i18n";
 
   import { isPageInitialized } from "../../Store";
 
-  import NoteModal, {
-    setSuccessCallback as setNoteModalSuccessCallback,
-  } from "../../components/modals/NoteModal.svelte";
+  import { setSuccessCallback as setNoteModalSuccessCallback } from "../../components/modals/NoteModal.svelte";
   import Notes from "../../components/Notes.svelte";
 
   import ApiUtil from "../../util/api.util";
@@ -215,5 +213,3 @@
     </div>
   </div>
 </div>
-
-<NoteModal />
