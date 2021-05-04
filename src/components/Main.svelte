@@ -22,7 +22,7 @@
     isPageInitialized,
     isBasicDataInitialized,
     userData,
-    forceNotLoggedInView
+    forceNotLoggedInView,
   } from "../Store";
 
   import { show as showNoteModal } from "./modals/NoteModal.svelte";
@@ -135,13 +135,20 @@
               on:click="{showNewNote}"
             >
               <i class="fa fa-plus"></i>
-              <span class="ml-2 d-lg-inline d-none">{$_("main.new-note")}</span>
+              <span class="ml-2 d-lg-inline d-none">{$_('main.new-note')}</span>
             </button>
-            <input
-              class="form-control border-0 bg-light rounded text-center text-primary search-input d-none"
-              type="search"
-              placeholder="Find a note..."
-            />
+
+            <form class="d-flex flex-row mx-auto">
+              <input
+                class="form-control border-0 bg-light rounded text-center text-primary search-input"
+                type="search"
+                placeholder="Find a note..."
+              />
+              <button type="submit" class="btn btn-link">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+
             <div class="dropdown ml-auto">
               <a
                 class="nav-link"
@@ -201,14 +208,14 @@
                 <a class="dropdown-item" href="/settings"><i
                     class="fas fa-cog mr-2"
                   ></i>
-                  {$_("main.settings")}</a>
+                  {$_('main.settings')}</a>
                 <a
                   class="dropdown-item text-danger"
                   href="javascript:void(0);"
                   on:click="{() => logout()}"
                 >
                   <i class="fas fa-sign-out-alt mr-2"></i>
-                  {$_("main.logout")}</a>
+                  {$_('main.logout')}</a>
               </div>
             </div>
           </div>
@@ -230,7 +237,10 @@
 
       <footer>
         <div class="container d-flex">
-          <a href="/terms-and-policy" target="_blank">{$_("main.terms-and-policy")}</a>
+          <a
+            href="/terms-and-policy"
+            target="_blank"
+          >{$_('main.terms-and-policy')}</a>
           <p class="ml-auto">ParNote &copy; 2020</p>
         </div>
       </footer>
