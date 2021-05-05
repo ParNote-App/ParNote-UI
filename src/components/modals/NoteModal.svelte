@@ -201,6 +201,16 @@
             placeholder="{$_('modals.note-modal.note-title')}"
             bind:value="{$note.title}"
           />
+
+          <i
+            class="fas mr-2 p-1 mt-2"
+            class:text-success="{$note.shared}"
+            class:text-danger="{!$note.shared}"
+            class:fa-globe-americas="{$note.shared}"
+            class:fa-lock="{!$note.shared}"
+            use:tooltip="{['bottom', $note.shared ? 'Note is Public' : 'Note is Private']}"
+          ></i>
+
           <button
             type="button"
             class="close"
