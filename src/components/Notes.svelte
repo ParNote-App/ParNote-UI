@@ -1,41 +1,18 @@
 <script>
-  import moment from "moment";
-  import { fade } from "svelte/transition";
-  import { _, locale as currentLocale } from "svelte-i18n";
-
-  import { show as showNoteModal } from "./modals/NoteModal.svelte";
+  import { _ } from "svelte-i18n";
+  import Note from "./Note.svelte";
 
   export let count;
   export let notes;
   export let status;
   export let checkTime;
-
-  function getTime(check, time, locale) {
-    return moment(time).fromNow();
-  }
 </script>
 
 {#if count > 0}
   <div class="card-columns">
     {#each notes as note, index (note)}
       {#if status === 4 || note.status === status}
-        <a
-          href="javascript:void(0);"
-          class="text-dark"
-          on:click="{() => showNoteModal(note)}"
-        >
-          <div class="card note-card" in:fade>
-            <div class="card-body">
-              <h5 class="card-title font-weight-bolder">{note.title}</h5>
-              <p class="card-text">{note.text}</p>
-              <p class="card-text">
-                <small
-                  class="text-muted"
-                >{getTime(checkTime, parseInt(note.last_modified), $currentLocale)}</small>
-              </p>
-            </div>
-          </div>
-        </a>
+        <Note note="{note}" checkTime="{checkTime}" />
       {/if}
     {/each}
   </div>
